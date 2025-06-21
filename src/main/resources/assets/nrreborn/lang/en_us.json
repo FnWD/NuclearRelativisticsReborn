@@ -1,0 +1,13 @@
+{
+  "itemGroup.nrreborn": "Example Mod Tab",
+  "block.nrreborn.example_block": "Example Block",
+  "item.nrreborn.example_item": "Example Item",
+
+  "nrreborn.configuration.title": "Nuclear Relativistics Reborn Configs",
+  "nrreborn.configuration.section.nrreborn.common.toml": "Nuclear Relativistics Reborn Configs",
+  "nrreborn.configuration.section.nrreborn.common.toml.title": "Nuclear Relativistics Reborn Configs",
+  "nrreborn.configuration.items": "Item List",
+  "nrreborn.configuration.logDirtBlock": "Log Dirt Block",
+  "nrreborn.configuration.magicNumberIntroduction": "Magic Number Text",
+  "nrreborn.configuration.magicNumber": "Magic Number"
+}
