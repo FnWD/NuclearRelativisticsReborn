@@ -15,5 +15,7 @@ public class NRRItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(NRRItems.TIN_INGOT.get());
         basicItem(NRRItems.ALUMINUM_INGOT.get());
+        basicItem(NRRItems.SILVER_INGOT.get());
+        basicItem(NRRItems.LEAD_INGOT.get());
     }
 }

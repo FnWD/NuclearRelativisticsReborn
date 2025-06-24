@@ -13,6 +13,10 @@ public class NRRTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/tin"));
         public static final TagKey<Item> INGOTS_ALUMINUM = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/aluminum"));
+        public static final TagKey<Item> INGOTS_SILVER = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/silver"));
+        public static final TagKey<Item> INGOTS_LEAD = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/lead"));
     }
 
     public static class Blocks {

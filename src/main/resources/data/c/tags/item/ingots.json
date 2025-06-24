@@ -1,6 +1,8 @@
 {
   "values": [
     "nrreborn:tin_ingot",
-    "nrreborn:aluminum_ingot"
+    "nrreborn:aluminum_ingot",
+    "nrreborn:silver_ingot",
+    "nrreborn:lead_ingot"
   ]
 }
