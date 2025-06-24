@@ -1,2 +1,5 @@
-package com.fnwd.nrreborn.datagen;public class NRRRecipeProvider {
+package com.fnwd.nrreborn.datagen;
+
+public class NRRRecipeProvider {
+
 }

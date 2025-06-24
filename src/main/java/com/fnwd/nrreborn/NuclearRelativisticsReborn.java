@@ -1,5 +1,7 @@
 package com.fnwd.nrreborn;
 
+import com.fnwd.nrreborn.item.NRRItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -33,6 +35,8 @@ public class NuclearRelativisticsReborn {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        NRRItems.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -45,7 +49,10 @@ public class NuclearRelativisticsReborn {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(NRRItems.TIN_INGOT);
+            event.accept(NRRItems.ALUMINUM_INGOT);
+        }
     }
 
     @SubscribeEvent
