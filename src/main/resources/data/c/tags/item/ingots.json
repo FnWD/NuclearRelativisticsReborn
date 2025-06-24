@@ -3,6 +3,13 @@
     "nrreborn:tin_ingot",
     "nrreborn:aluminum_ingot",
     "nrreborn:silver_ingot",
-    "nrreborn:lead_ingot"
+    "nrreborn:lead_ingot",
+    "nrreborn:magnesium_ingot",
+    "nrreborn:lithium_ingot",
+    "nrreborn:boron_ingot",
+    "nrreborn:beryllium_ingot",
+    "nrreborn:zirconium_ingot",
+    "nrreborn:thorium_ingot",
+    "nrreborn:uranium_ingot"
   ]
 }

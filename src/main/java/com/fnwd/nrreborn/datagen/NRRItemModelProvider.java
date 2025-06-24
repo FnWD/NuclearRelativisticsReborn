@@ -17,5 +17,12 @@ public class NRRItemModelProvider extends ItemModelProvider {
         basicItem(NRRItems.ALUMINUM_INGOT.get());
         basicItem(NRRItems.SILVER_INGOT.get());
         basicItem(NRRItems.LEAD_INGOT.get());
+        basicItem(NRRItems.MAGNESIUM_INGOT.get());
+        basicItem(NRRItems.LITHIUM_INGOT.get());
+        basicItem(NRRItems.BORON_INGOT.get());
+        basicItem(NRRItems.BERYLLIUM_INGOT.get());
+        basicItem(NRRItems.ZIRCONIUM_INGOT.get());
+        basicItem(NRRItems.THORIUM_INGOT.get());
+        basicItem(NRRItems.URANIUM_INGOT.get());
     }
 }

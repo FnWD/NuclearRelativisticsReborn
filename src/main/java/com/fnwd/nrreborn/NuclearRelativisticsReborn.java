@@ -1,5 +1,6 @@
 package com.fnwd.nrreborn;
 
+import com.fnwd.nrreborn.item.NRRCreativeModeTabs;
 import com.fnwd.nrreborn.item.NRRItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -26,6 +27,7 @@ public class NuclearRelativisticsReborn {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 
+        NRRCreativeModeTabs.register(modEventBus);
         NRRItems.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
@@ -36,12 +38,7 @@ public class NuclearRelativisticsReborn {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(NRRItems.TIN_INGOT);
-            event.accept(NRRItems.ALUMINUM_INGOT);
-            event.accept(NRRItems.SILVER_INGOT);
-            event.accept(NRRItems.LEAD_INGOT);
-        }
+
     }
 
     @SubscribeEvent

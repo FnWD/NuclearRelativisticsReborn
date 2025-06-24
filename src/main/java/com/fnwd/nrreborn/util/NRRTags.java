@@ -17,6 +17,20 @@ public class NRRTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/silver"));
         public static final TagKey<Item> INGOTS_LEAD = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/lead"));
+        public static final TagKey<Item> INGOTS_MAGNESIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/magnesium"));
+        public static final TagKey<Item> INGOTS_LITHIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/lithium"));
+        public static final TagKey<Item> INGOTS_BORON = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/boron"));
+        public static final TagKey<Item> INGOTS_BERYLLIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/beryllium"));
+        public static final TagKey<Item> INGOTS_ZIRCONIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/zirconium"));
+        public static final TagKey<Item> INGOTS_THORIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/thorium"));
+        public static final TagKey<Item> INGOTS_URANIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/uranium"));
     }
 
     public static class Blocks {

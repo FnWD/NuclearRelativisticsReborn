@@ -2,5 +2,14 @@
   "item.nrreborn.tin_ingot": "锡锭",
   "item.nrreborn.aluminum_ingot": "铝锭",
   "item.nrreborn.silver_ingot": "银锭",
-  "item.nrreborn.lead_ingot": "铅锭"
+  "item.nrreborn.lead_ingot": "铅锭",
+  "item.nrreborn.magnesium_ingot": "镁锭",
+  "item.nrreborn.lithium_ingot": "锂锭",
+  "item.nrreborn.boron_ingot": "硼锭",
+  "item.nrreborn.beryllium_ingot": "铍锭",
+  "item.nrreborn.zirconium_ingot": "锆锭",
+  "item.nrreborn.thorium_ingot": "钍锭",
+  "item.nrreborn.uranium_ingot": "铀锭",
+
+  "creativemodetab.nrreborn.nrr_ingredients": "核电工艺重制：原材料"
 }
