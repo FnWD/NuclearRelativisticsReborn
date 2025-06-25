@@ -10,6 +10,11 @@
   "item.nrreborn.zirconium_ingot": "锆锭",
   "item.nrreborn.thorium_ingot": "钍锭",
   "item.nrreborn.uranium_ingot": "铀锭",
+  "item.nrreborn.thorium_oxide_ingot": "氧化钍锭",
+  "item.nrreborn.uranium_oxide_ingot": "氧化铀锭",
+  "item.nrreborn.manganese_ingot": "锰锭",
+  "item.nrreborn.manganese_oxide_ingot": "氧化锰锭",
+  "item.nrreborn.manganese_dioxide_ingot": "二氧化锰锭",
 
-  "creativemodetab.nrreborn.nrr_ingredients": "核电工艺重制：原材料"
+  "creativemodetab.nrreborn.nrr_ingredients": "核电工艺复兴：原材料"
 }

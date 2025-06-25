@@ -10,6 +10,11 @@
     "nrreborn:beryllium_ingot",
     "nrreborn:zirconium_ingot",
     "nrreborn:thorium_ingot",
-    "nrreborn:uranium_ingot"
+    "nrreborn:uranium_ingot",
+    "nrreborn:thorium_oxide_ingot",
+    "nrreborn:uranium_oxide_ingot",
+    "nrreborn:manganese_ingot",
+    "nrreborn:manganese_oxide_ingot",
+    "nrreborn:manganese_dioxide_ingot"
   ]
 }

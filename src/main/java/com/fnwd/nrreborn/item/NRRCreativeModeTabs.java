@@ -30,6 +30,11 @@ public class NRRCreativeModeTabs {
                         output.accept(NRRItems.ZIRCONIUM_INGOT);
                         output.accept(NRRItems.THORIUM_INGOT);
                         output.accept(NRRItems.URANIUM_INGOT);
+                        output.accept(NRRItems.THORIUM_OXIDE_INGOT);
+                        output.accept(NRRItems.URANIUM_OXIDE_INGOT);
+                        output.accept(NRRItems.MANGANESE_INGOT);
+                        output.accept(NRRItems.MANGANESE_OXIDE_INGOT);
+                        output.accept(NRRItems.MANGANESE_DIOXIDE_INGOT);
                     }).build());
 
     public static void register(IEventBus eventBus) {

@@ -31,6 +31,16 @@ public class NRRItems {
             "thorium_ingot", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> URANIUM_INGOT = ITEMS.register(
             "uranium_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> THORIUM_OXIDE_INGOT = ITEMS.register(
+            "thorium_oxide_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> URANIUM_OXIDE_INGOT = ITEMS.register(
+            "uranium_oxide_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MANGANESE_INGOT = ITEMS.register(
+            "manganese_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MANGANESE_OXIDE_INGOT = ITEMS.register(
+            "manganese_oxide_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MANGANESE_DIOXIDE_INGOT = ITEMS.register(
+            "manganese_dioxide_ingot", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

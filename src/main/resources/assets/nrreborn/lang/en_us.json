@@ -10,6 +10,11 @@
   "item.nrreborn.zirconium_ingot": "Zirconium Ingot",
   "item.nrreborn.thorium_ingot": "Thorium Ingot",
   "item.nrreborn.uranium_ingot": "Uranium Ingot",
+  "item.nrreborn.thorium_oxide_ingot": "Thorium Oxide Ingot",
+  "item.nrreborn.uranium_oxide_ingot": "Uranium Oxide Ingot",
+  "item.nrreborn.manganese_ingot": "Manganese Ingot",
+  "item.nrreborn.manganese_oxide_ingot": "Manganese Oxide Ingot",
+  "item.nrreborn.manganese_dioxide_ingot": "Manganese Dioxide Ingot",
 
   "creativemodetab.nrreborn.nrr_ingredients": "NRR Ingredients"
 }
