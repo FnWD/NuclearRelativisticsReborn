@@ -1,6 +1,7 @@
 package com.fnwd.nrreborn.item;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
+import com.fnwd.nrreborn.block.NRRBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,6 +36,27 @@ public class NRRCreativeModeTabs {
                         output.accept(NRRItems.MANGANESE_INGOT);
                         output.accept(NRRItems.MANGANESE_OXIDE_INGOT);
                         output.accept(NRRItems.MANGANESE_DIOXIDE_INGOT);
+                        output.accept(NRRItems.RAW_TIN);
+                        output.accept(NRRItems.RAW_LEAD);
+                        output.accept(NRRItems.RAW_MAGNESIUM);
+                        output.accept(NRRItems.RAW_LITHIUM);
+                        output.accept(NRRItems.RAW_BORON);
+                        output.accept(NRRItems.RAW_THORIUM);
+                        output.accept(NRRItems.RAW_URANIUM);
+                        output.accept(NRRBlocks.TIN_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_TIN_ORE);
+                        output.accept(NRRBlocks.LEAD_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_LEAD_ORE);
+                        output.accept(NRRBlocks.MAGNESIUM_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_MAGNESIUM_ORE);
+                        output.accept(NRRBlocks.LITHIUM_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_LITHIUM_ORE);
+                        output.accept(NRRBlocks.BORON_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_BORON_ORE);
+                        output.accept(NRRBlocks.THORIUM_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_THORIUM_ORE);
+                        output.accept(NRRBlocks.URANIUM_ORE);
+                        output.accept(NRRBlocks.DEEPSLATE_URANIUM_ORE);
                     }).build());
 
     public static void register(IEventBus eventBus) {

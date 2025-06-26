@@ -15,6 +15,28 @@
   "item.nrreborn.manganese_ingot": "Manganese Ingot",
   "item.nrreborn.manganese_oxide_ingot": "Manganese Oxide Ingot",
   "item.nrreborn.manganese_dioxide_ingot": "Manganese Dioxide Ingot",
+  "item.nrreborn.raw_tin": "Raw Tin",
+  "item.nrreborn.raw_lead": "Raw Lead",
+  "item.nrreborn.raw_magnesium": "Raw Magnesium",
+  "item.nrreborn.raw_lithium": "Raw Lithium",
+  "item.nrreborn.raw_boron": "Raw Boron",
+  "item.nrreborn.raw_thorium": "Raw Thorium",
+  "item.nrreborn.raw_uranium": "Raw Uranium",
+
+  "block.nrreborn.tin_ore": "Tin Ore",
+  "block.nrreborn.deepslate_tin_ore": "Deepslate Tin Ore",
+  "block.nrreborn.lead_ore": "Lead Ore",
+  "block.nrreborn.deepslate_lead_ore": "Deepslate Lead Ore",
+  "block.nrreborn.magnesium_ore": "Magnesium Ore",
+  "block.nrreborn.deepslate_magnesium_ore": "Deepslate Magnesium Ore",
+  "block.nrreborn.lithium_ore": "Lithium Ore",
+  "block.nrreborn.deepslate_lithium_ore": "Deepslate Lithium Ore",
+  "block.nrreborn.boron_ore": "Boron Ore",
+  "block.nrreborn.deepslate_boron_ore": "Deepslate Boron Ore",
+  "block.nrreborn.thorium_ore": "Thorium Ore",
+  "block.nrreborn.deepslate_thorium_ore": "Deepslate Thorium Ore",
+  "block.nrreborn.uranium_ore": "Uranium Ore",
+  "block.nrreborn.deepslate_uranium_ore": "Deepslate Uranium Ore",
 
   "creativemodetab.nrreborn.nrr_ingredients": "NRR Ingredients"
 }

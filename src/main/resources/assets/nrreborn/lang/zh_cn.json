@@ -15,6 +15,28 @@
   "item.nrreborn.manganese_ingot": "锰锭",
   "item.nrreborn.manganese_oxide_ingot": "氧化锰锭",
   "item.nrreborn.manganese_dioxide_ingot": "二氧化锰锭",
+  "item.nrreborn.raw_tin": "粗锡",
+  "item.nrreborn.raw_lead": "粗铅",
+  "item.nrreborn.raw_magnesium": "粗镁",
+  "item.nrreborn.raw_lithium": "粗锂",
+  "item.nrreborn.raw_boron": "粗硼",
+  "item.nrreborn.raw_thorium": "粗钍",
+  "item.nrreborn.raw_uranium": "粗铀",
+
+  "block.nrreborn.tin_ore": "锡矿石",
+  "block.nrreborn.deepslate_tin_ore": "深层锡矿石",
+  "block.nrreborn.lead_ore": "铅矿石",
+  "block.nrreborn.deepslate_lead_ore": "深层铅矿石",
+  "block.nrreborn.magnesium_ore": "镁矿石",
+  "block.nrreborn.deepslate_magnesium_ore": "深层镁矿石",
+  "block.nrreborn.lithium_ore": "锂矿石",
+  "block.nrreborn.deepslate_lithium_ore": "深层锂矿石",
+  "block.nrreborn.boron_ore": "硼矿石",
+  "block.nrreborn.deepslate_boron_ore": "深层硼矿石",
+  "block.nrreborn.thorium_ore": "钍矿石",
+  "block.nrreborn.deepslate_thorium_ore": "深层钍矿石",
+  "block.nrreborn.uranium_ore": "铀矿石",
+  "block.nrreborn.deepslate_uranium_ore": "深层铀矿石",
 
   "creativemodetab.nrreborn.nrr_ingredients": "核电工艺复兴：原材料"
 }

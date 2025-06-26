@@ -1,0 +1,4 @@
+// 1.21.1	2025-06-26T16:44:27.6534164	Tags for minecraft:block mod id nrreborn
+e4848f48e1a654ba594538ae672fc3dbade6a989 data/minecraft/tags/block/mineable/pickaxe.json
+e34b68322de2e84e8f43e84db6c35819ad491541 data/minecraft/tags/block/needs_iron_tool.json
+71af82de79acdff3816818291d005efc0d7f551b data/minecraft/tags/block/needs_stone_tool.json

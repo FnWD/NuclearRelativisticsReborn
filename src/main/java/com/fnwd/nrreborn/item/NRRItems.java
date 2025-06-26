@@ -41,6 +41,20 @@ public class NRRItems {
             "manganese_oxide_ingot", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MANGANESE_DIOXIDE_INGOT = ITEMS.register(
             "manganese_dioxide_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_TIN = ITEMS.register(
+            "raw_tin", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_LEAD = ITEMS.register(
+            "raw_lead", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_MAGNESIUM = ITEMS.register(
+            "raw_magnesium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_LITHIUM = ITEMS.register(
+            "raw_lithium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_BORON = ITEMS.register(
+            "raw_boron", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_THORIUM = ITEMS.register(
+            "raw_thorium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_URANIUM = ITEMS.register(
+            "raw_uranium", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

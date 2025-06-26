@@ -1,5 +1,6 @@
 package com.fnwd.nrreborn;
 
+import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.item.NRRCreativeModeTabs;
 import com.fnwd.nrreborn.item.NRRItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -29,6 +30,7 @@ public class NuclearRelativisticsReborn {
 
         NRRCreativeModeTabs.register(modEventBus);
         NRRItems.register(modEventBus);
+        NRRBlocks.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
     }
