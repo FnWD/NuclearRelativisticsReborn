@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 400,
+  "input": {
+    "tag": "c:dusts/carobbiite"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 1,
+    "id": "nrreborn:potassium_fluoride"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 10,
+  "base_process_time": 200,
+  "input": {
+    "item": "minecraft:porkchop"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 8,
+    "id": "nrreborn:gelatin"
+  }
+}

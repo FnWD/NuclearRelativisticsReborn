@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "nrreborn:block/manufactory_front_off",
+    "side": "nrreborn:block/casing",
+    "top": "nrreborn:block/casing"
+  }
+}

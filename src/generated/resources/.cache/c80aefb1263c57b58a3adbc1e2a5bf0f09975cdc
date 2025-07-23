@@ -1,7 +1,8 @@
-// 1.21.1	2025-06-26T16:44:27.6502586	Item Models: nrreborn
+// 1.21.1	2025-07-18T14:41:27.5556728	Item Models: nrreborn
 96bc911d609780917fe5bdb9faa9ac4ce8becd51 assets/nrreborn/models/item/aluminum_ingot.json
 6648b24e8d5f05b5d6c8616d9871123070f7cf0e assets/nrreborn/models/item/beryllium_ingot.json
 cf43b48b9ecef22ee811a0b02f7ac7036ab3c05a assets/nrreborn/models/item/boron_ingot.json
+63f6765a73c9292b8e61fe695523889f33ae1806 assets/nrreborn/models/item/energy_upgrade.json
 9af714d634274b54a83bfe494c44b48248be8f99 assets/nrreborn/models/item/lead_ingot.json
 007541cde56a90b9ad1b39b266b4fac3c7753491 assets/nrreborn/models/item/lithium_ingot.json
 7f8244d5c4529031be88122aeae44186db1aa5d9 assets/nrreborn/models/item/magnesium_ingot.json
@@ -16,6 +17,7 @@ b1ecdb0cf6c8a7f3ddb5285df2a46380f4c43316 assets/nrreborn/models/item/raw_magnesi
 3127f4c6d121adf78efac96df1e9f7f9b6d88fc2 assets/nrreborn/models/item/raw_tin.json
 3713016b61c844e8ad3d50cb3759284be9ce6acc assets/nrreborn/models/item/raw_uranium.json
 f850f58ae0ac71734b43f1ee446afe473e9429c4 assets/nrreborn/models/item/silver_ingot.json
+d46dd2b33a11f8e9cc2a531688e9989ee128c42c assets/nrreborn/models/item/speed_upgrade.json
 8206e9ac7da683052368d877e0589ad055ab8a8e assets/nrreborn/models/item/thorium_ingot.json
 14030ebb464d6c0467d921be259ec97a28da5cff assets/nrreborn/models/item/thorium_oxide_ingot.json
 fb60a4e4d0662f712cbdbdf27fca3f46d8040552 assets/nrreborn/models/item/tin_ingot.json

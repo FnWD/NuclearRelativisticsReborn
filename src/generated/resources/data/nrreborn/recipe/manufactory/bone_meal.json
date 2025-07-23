@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 200,
+  "input": {
+    "tag": "c:bones"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 6,
+    "id": "minecraft:bone_meal"
+  }
+}

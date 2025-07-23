@@ -1,10 +1,14 @@
 package com.fnwd.nrreborn.block;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
+import com.fnwd.nrreborn.block.custom.ManufactoryBlock;
 import com.fnwd.nrreborn.item.NRRItems;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -13,7 +17,9 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class NRRBlocks {
@@ -103,6 +109,19 @@ public class NRRBlocks {
                     .strength(4.5F, 3.0F)
                     .sound(SoundType.DEEPSLATE)
                     .mapColor(MapColor.DEEPSLATE)));
+    public static final DeferredBlock<Block> MANUFACTORY = registerBlock(
+            "manufactory", () -> new ManufactoryBlock(BlockBehaviour.Properties.of()
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F)
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.COLOR_GRAY)
+                    .lightLevel(state -> state.getValue(ManufactoryBlock.WORKING) ? 8 : 0)) {
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.manufactory").withColor(5636095));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> deferredBlock = BLOCKS.register(name, block);

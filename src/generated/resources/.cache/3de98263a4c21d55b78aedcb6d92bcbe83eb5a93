@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-26T13:14:53.5062639	Block States: nrreborn
+// 1.21.1	2025-07-18T14:30:49.7893666	Block States: nrreborn
 340288a8aab4390f9ff7393d5a5e4d38ef1bf460 assets/nrreborn/blockstates/boron_ore.json
 2ae9cd9a62e43f99b7cd7917ea1a7fe38a739b75 assets/nrreborn/blockstates/deepslate_boron_ore.json
 9ec01d65123a7c6ebc4a77c73f2a6aac82e029ea assets/nrreborn/blockstates/deepslate_lead_ore.json
@@ -10,6 +10,7 @@ ba87c8dc3a6eaa4060775d2596e7a4963cc3d85b assets/nrreborn/blockstates/deepslate_u
 1590ca421154f417a7874897f17b50a3d829d718 assets/nrreborn/blockstates/lead_ore.json
 9fbedde41c75ee29a344ba9dc6257d08aff3f606 assets/nrreborn/blockstates/lithium_ore.json
 577a8ac965aa47c3c613ca7689409485d5251c33 assets/nrreborn/blockstates/magnesium_ore.json
+38f23a675422efc275fb1299dc719fa384042d13 assets/nrreborn/blockstates/manufactory.json
 6091e899dc3ada0b0382f7bb38926c6d865ad98f assets/nrreborn/blockstates/thorium_ore.json
 ebfface761dcf2b4de8348780a40f692c19efb9f assets/nrreborn/blockstates/tin_ore.json
 6484177af337c924f0d914e63371fb784b389657 assets/nrreborn/blockstates/uranium_ore.json
@@ -24,6 +25,8 @@ dec7af3ac9802029e645e31ccdb6415c77d82a52 assets/nrreborn/models/block/deepslate_
 1ca1ca21029c8c46ebd281b18c25c4ecd92298a7 assets/nrreborn/models/block/lead_ore.json
 faf20a00e00da5c676667ac9bff9bf562117c010 assets/nrreborn/models/block/lithium_ore.json
 1da31ddf0a5ea8b79da90a8e96aa01f71606dd89 assets/nrreborn/models/block/magnesium_ore.json
+bf82e97f3752aba74fcd2fcebe299407cb5a3864 assets/nrreborn/models/block/manufactory_off.json
+d015f177a23ce10e755b62f86ccca34a6a2ac2fc assets/nrreborn/models/block/manufactory_on.json
 572069c9cc93582668ad602534f8b80a994a8048 assets/nrreborn/models/block/thorium_ore.json
 1bc77927a574b1532f734928762cea8946f95dd8 assets/nrreborn/models/block/tin_ore.json
 eb65816631ab83c24d96ecff1ab9648cdb549990 assets/nrreborn/models/block/uranium_ore.json
@@ -38,6 +41,7 @@ dc2bf6b3d21fc2224d7df3e1ab416f38582289f9 assets/nrreborn/models/item/deepslate_l
 18204f288aef33b1f6ae59162f654a823c774662 assets/nrreborn/models/item/lead_ore.json
 bb9c7dc85970a5ec9ddb8aa114f1a8ec68959ff0 assets/nrreborn/models/item/lithium_ore.json
 a38e2223ec6413a835d5cd34c6c0dff213a86bf5 assets/nrreborn/models/item/magnesium_ore.json
+fd98e7f1f775b6e6bafab66f0aab0ca958f4d222 assets/nrreborn/models/item/manufactory.json
 d4cdf4fda12de4a22acc94cbb615471e0b688cc2 assets/nrreborn/models/item/thorium_ore.json
 d24ceb777af9d39c20b92b074465bfeec72817c8 assets/nrreborn/models/item/tin_ore.json
 2c55434e2b7baafbede24ce4f2ed32cdd627a966 assets/nrreborn/models/item/uranium_ore.json

@@ -28,19 +28,19 @@ public class NRRPlacedFeatures {
 
         register(context, TIN_ORE_PLACED_KEY,
                 configuredFeatures.getOrThrow(NRRConfiguredFeatures.TIN_ORE_KEY),
-                NRROrePlacement.commonOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.absolute(32), VerticalAnchor.absolute(80))));
+                NRROrePlacement.commonOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.absolute(32), VerticalAnchor.absolute(112))));
         register(context, LEAD_ORE_PLACED_KEY,
                 configuredFeatures.getOrThrow(NRRConfiguredFeatures.LEAD_ORE_KEY),
-                NRROrePlacement.commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
+                NRROrePlacement.commonOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
         register(context, MAGNESIUM_ORE_PLACED_KEY,
                 configuredFeatures.getOrThrow(NRRConfiguredFeatures.MAGNESIUM_ORE_KEY),
-                NRROrePlacement.commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
+                NRROrePlacement.commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
         register(context, LITHIUM_ORE_PLACED_KEY,
                 configuredFeatures.getOrThrow(NRRConfiguredFeatures.LITHIUM_ORE_KEY),
-                NRROrePlacement.commonOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
+                NRROrePlacement.commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
         register(context, BORON_ORE_PLACED_KEY,
                 configuredFeatures.getOrThrow(NRRConfiguredFeatures.BORON_ORE_KEY),
-                NRROrePlacement.commonOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
+                NRROrePlacement.commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32))));
         register(context, THORIUM_ORE_PLACED_KEY,
                 configuredFeatures.getOrThrow(NRRConfiguredFeatures.THORIUM_ORE_KEY),
                 NRROrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));

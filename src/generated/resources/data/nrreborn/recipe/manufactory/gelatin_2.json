@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 10,
+  "base_process_time": 200,
+  "input": {
+    "tag": "c:foods/raw_fish"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 4,
+    "id": "nrreborn:gelatin"
+  }
+}

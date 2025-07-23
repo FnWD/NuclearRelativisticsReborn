@@ -26,9 +26,10 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(NRRBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
-
+        generator.addProvider(event.includeServer(), new NRRRecipeProvider(packOutput, lookupProvider));
         BlockTagsProvider blockTagsProvider = new NRRBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), new NRRItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new NRRDatapackProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeClient(), new NRRItemModelProvider(packOutput, existingFileHelper));

@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 800,
+  "input": {
+    "tag": "c:obsidians"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 4,
+    "id": "nrreborn:obsidian_dust"
+  }
+}

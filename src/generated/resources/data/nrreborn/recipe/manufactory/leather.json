@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 200,
+  "input": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "input_count": 4,
+  "output": {
+    "count": 1,
+    "id": "minecraft:leather"
+  }
+}

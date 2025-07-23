@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 10,
+  "base_process_time": 400,
+  "input": {
+    "item": "minecraft:sugar_cane"
+  },
+  "input_count": 2,
+  "output": {
+    "count": 1,
+    "id": "nrreborn:bioplastic"
+  }
+}

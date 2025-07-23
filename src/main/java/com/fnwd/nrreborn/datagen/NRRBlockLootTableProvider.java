@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -31,10 +32,11 @@ public class NRRBlockLootTableProvider extends BlockLootSubProvider {
         add(NRRBlocks.DEEPSLATE_THORIUM_ORE.get(), block -> createOreDrop(NRRBlocks.DEEPSLATE_THORIUM_ORE.get(), NRRItems.RAW_THORIUM.get()));
         add(NRRBlocks.URANIUM_ORE.get(), block -> createOreDrop(NRRBlocks.URANIUM_ORE.get(), NRRItems.RAW_URANIUM.get()));
         add(NRRBlocks.DEEPSLATE_URANIUM_ORE.get(), block -> createOreDrop(NRRBlocks.DEEPSLATE_URANIUM_ORE.get(), NRRItems.RAW_URANIUM.get()));
+        dropSelf(NRRBlocks.MANUFACTORY.get());
     }
 
     @Override
-    protected Iterable<Block> getKnownBlocks() {
+    protected @NotNull Iterable<Block> getKnownBlocks() {
         return NRRBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 }

@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 200,
+  "input": {
+    "tag": "minecraft:coals"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 1,
+    "id": "nrreborn:coal_dust"
+  }
+}
