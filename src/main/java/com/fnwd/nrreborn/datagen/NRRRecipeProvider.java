@@ -1,12 +1,12 @@
 package com.fnwd.nrreborn.datagen;
 
+import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.builder.ManufactoryRecipeBuilder;
 import com.fnwd.nrreborn.util.CTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -15,6 +15,7 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class NRRRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -24,6 +25,214 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.ENERGETIC_BLEND.get(), 2)
+                .requires(Items.REDSTONE)
+                .requires(Items.GLOWSTONE_DUST)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.DIMENSIONAL_BLEND.get(), 2)
+                .requires(CTags.Items.DUSTS_OBSIDIAN)
+                .requires(CTags.Items.DUSTS_OBSIDIAN)
+                .requires(CTags.Items.DUSTS_OBSIDIAN)
+                .requires(CTags.Items.DUSTS_OBSIDIAN)
+                .requires(CTags.Items.DUSTS_END_STONE)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.CARBON_MANGANESE_BLEND.get(), 2)
+                .requires(CTags.Items.DUSTS_GRAPHITE)
+                .requires(CTags.Items.DUSTS_MANGANESE)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.CRYSTAL_BINDER.get(), 2)
+                .requires(CTags.Items.DUSTS_RHODOCHROSITE)
+                .requires(CTags.Items.DUSTS_OBSIDIAN)
+                .requires(CTags.Items.DUSTS_MAGNESIUM)
+                .requires(NRRItems.CALCIUM_SULFATE.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.BASIC_PLATING.get(), 2)
+                .pattern("AB")
+                .pattern("BA")
+                .define('A', CTags.Items.INGOTS_LEAD)
+                .define('B', CTags.Items.DUSTS_GRAPHITE)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "basic_plating_1");
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.BASIC_PLATING.get(), 2)
+                .pattern("AB")
+                .pattern("BA")
+                .define('A', CTags.Items.DUSTS_GRAPHITE)
+                .define('B', CTags.Items.INGOTS_LEAD)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "basic_plating_2");
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.ADVANCED_PLATING.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', Items.REDSTONE)
+                .define('B', CTags.Items.INGOTS_TOUGH_ALLOY)
+                .define('C', NRRItems.BASIC_PLATING.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        /* This recipe will be enabled after isotopes
+        * ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.DEPLETED_URANIUM_PLATING.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', CTags.Items.DUSTS_SULFUR)
+                .define('B', CTags.Items.INGOTS_URANIUM_238)
+                .define('C', NRRItems.ADVANCED_PLATING.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        */
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.ELITE_PLATING.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', NRRItems.CRYSTAL_BINDER.get())
+                .define('B', CTags.Items.INGOTS_BORON)
+                .define('C', NRRItems.DEPLETED_URANIUM_PLATING.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.COPPER_SOLENOID.get(), 2)
+                .pattern("AA")
+                .pattern("BB")
+                .pattern("AA")
+                .define('A', Items.COPPER_INGOT)
+                .define('B', Items.IRON_INGOT)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.MAGNESIUM_DIBORIDE_SOLENOID.get(), 2)
+                .pattern("AA")
+                .pattern("BB")
+                .pattern("AA")
+                .define('A', CTags.Items.INGOTS_MAGNESIUM_DIBORIDE_ALLOY)
+                .define('B', CTags.Items.INGOTS_TOUGH_ALLOY)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.SERVOMECHANISM.get())
+                .pattern("A A")
+                .pattern("BCB")
+                .pattern("CDC")
+                .define('A', CTags.Items.INGOTS_FERROBORON_ALLOY)
+                .define('B', Items.REDSTONE)
+                .define('C', CTags.Items.INGOTS_STEEL)
+                .define('D', Items.COPPER_INGOT)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.ELECTRIC_MOTOR.get())
+                .pattern("AAB")
+                .pattern("CCD")
+                .pattern("AAB")
+                .define('A', CTags.Items.INGOTS_STEEL)
+                .define('B', Items.GOLD_NUGGET)
+                .define('C', NRRItems.COPPER_SOLENOID)
+                .define('D', Items.IRON_INGOT)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.LINEAR_ACTUATOR.get())
+                .pattern("  A")
+                .pattern("BC ")
+                .pattern("DB ")
+                .define('A', CTags.Items.INGOTS_STEEL)
+                .define('B', CTags.Items.INGOTS_FERROBORON_ALLOY)
+                .define('C', Items.PISTON)
+                .define('D', Items.COPPER_INGOT)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.SPEED_UPGRADE.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', Items.LAPIS_LAZULI)
+                .define('B', Items.REDSTONE)
+                .define('C', Items.HEAVY_WEIGHTED_PRESSURE_PLATE)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.ENERGY_UPGRADE.get())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', CTags.Items.DUSTS_OBSIDIAN)
+                .define('B', CTags.Items.DUSTS_QUARTZ)
+                .define('C', Items.LIGHT_WEIGHTED_PRESSURE_PLATE)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.MANUFACTORY.asItem())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("AEA")
+                .define('A', CTags.Items.INGOTS_LEAD)
+                .define('B', Items.REDSTONE)
+                .define('C', Items.FLINT)
+                .define('D', Items.PISTON)
+                .define('E', NRRItems.COPPER_SOLENOID.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        oreSmelting(recipeOutput, List.of(NRRBlocks.TIN_ORE, NRRBlocks.DEEPSLATE_TIN_ORE), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 200, "tin_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.TIN_ORE, NRRBlocks.DEEPSLATE_TIN_ORE), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 100, "tin_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.TIN_DUST.get()), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 200, "tin_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.TIN_DUST.get()), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 100, "tin_ingot");
+        oreSmelting(recipeOutput, List.of(NRRBlocks.LEAD_ORE, NRRBlocks.DEEPSLATE_LEAD_ORE), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 200, "lead_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.LEAD_ORE, NRRBlocks.DEEPSLATE_LEAD_ORE), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 100, "lead_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.LEAD_DUST.get()), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 200, "lead_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.LEAD_DUST.get()), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 100, "lead_ingot");
+        oreSmelting(recipeOutput, List.of(NRRBlocks.MAGNESIUM_ORE, NRRBlocks.DEEPSLATE_MAGNESIUM_ORE), RecipeCategory.MISC, NRRItems.MAGNESIUM_INGOT.get(), 0.7F, 200, "magnesium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.MAGNESIUM_ORE, NRRBlocks.DEEPSLATE_MAGNESIUM_ORE), RecipeCategory.MISC, NRRItems.MAGNESIUM_INGOT.get(), 0.7F, 100, "magnesium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.MAGNESIUM_DUST.get()), RecipeCategory.MISC, NRRItems.MAGNESIUM_INGOT.get(), 0.7F, 200, "magnesium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.MAGNESIUM_DUST.get()), RecipeCategory.MISC, NRRItems.MAGNESIUM_INGOT.get(), 0.7F, 100, "magnesium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRBlocks.LITHIUM_ORE, NRRBlocks.DEEPSLATE_LITHIUM_ORE), RecipeCategory.MISC, NRRItems.LITHIUM_INGOT.get(), 0.7F, 200, "lithium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.LITHIUM_ORE, NRRBlocks.DEEPSLATE_LITHIUM_ORE), RecipeCategory.MISC, NRRItems.LITHIUM_INGOT.get(), 0.7F, 100, "lithium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.LITHIUM_DUST.get()), RecipeCategory.MISC, NRRItems.LITHIUM_INGOT.get(), 0.7F, 200, "lithium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.LITHIUM_DUST.get()), RecipeCategory.MISC, NRRItems.LITHIUM_INGOT.get(), 0.7F, 100, "lithium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRBlocks.BORON_ORE, NRRBlocks.DEEPSLATE_BORON_ORE), RecipeCategory.MISC, NRRItems.BORON_INGOT.get(), 0.7F, 200, "boron_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.BORON_ORE, NRRBlocks.DEEPSLATE_BORON_ORE), RecipeCategory.MISC, NRRItems.BORON_INGOT.get(), 0.7F, 100, "boron_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.BORON_DUST.get()), RecipeCategory.MISC, NRRItems.BORON_INGOT.get(), 0.7F, 200, "boron_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.BORON_DUST.get()), RecipeCategory.MISC, NRRItems.BORON_INGOT.get(), 0.7F, 100, "boron_ingot");
+        oreSmelting(recipeOutput, List.of(NRRBlocks.THORIUM_ORE, NRRBlocks.DEEPSLATE_THORIUM_ORE), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 200, "thorium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.THORIUM_ORE, NRRBlocks.DEEPSLATE_THORIUM_ORE), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 100, "thorium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.THORIUM_DUST.get()), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 200, "thorium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.THORIUM_DUST.get()), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 100, "thorium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRBlocks.URANIUM_ORE, NRRBlocks.DEEPSLATE_URANIUM_ORE), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 200, "uranium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRBlocks.URANIUM_ORE, NRRBlocks.DEEPSLATE_URANIUM_ORE), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 100, "uranium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.URANIUM_DUST.get()), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 200, "uranium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.URANIUM_DUST.get()), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 100, "uranium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.ALUMINUM_DUST.get()), RecipeCategory.MISC, NRRItems.ALUMINUM_INGOT.get(), 0.7F, 200, "aluminum_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.ALUMINUM_DUST.get()), RecipeCategory.MISC, NRRItems.ALUMINUM_INGOT.get(), 0.7F, 100, "aluminum_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.SILVER_DUST.get()), RecipeCategory.MISC, NRRItems.SILVER_INGOT.get(), 0.7F, 200, "silver_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.SILVER_DUST.get()), RecipeCategory.MISC, NRRItems.SILVER_INGOT.get(), 0.7F, 100, "silver_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.BERYLLIUM_DUST.get()), RecipeCategory.MISC, NRRItems.BERYLLIUM_INGOT.get(), 0.7F, 200, "beryllium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.BERYLLIUM_DUST.get()), RecipeCategory.MISC, NRRItems.BERYLLIUM_INGOT.get(), 0.7F, 100, "beryllium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.ZIRCONIUM_DUST.get()), RecipeCategory.MISC, NRRItems.ZIRCONIUM_INGOT.get(), 0.7F, 200, "zirconium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.ZIRCONIUM_DUST.get()), RecipeCategory.MISC, NRRItems.ZIRCONIUM_INGOT.get(), 0.7F, 100, "zirconium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.THORIUM_OXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.THORIUM_OXIDE_INGOT.get(), 0.7F, 200, "thorium_oxide_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.THORIUM_OXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.THORIUM_OXIDE_INGOT.get(), 0.7F, 100, "thorium_oxide_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.URANIUM_OXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.URANIUM_OXIDE_INGOT.get(), 0.7F, 200, "uranium_oxide_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.URANIUM_OXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.URANIUM_OXIDE_INGOT.get(), 0.7F, 100, "uranium_oxide_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.MANGANESE_DUST.get()), RecipeCategory.MISC, NRRItems.MANGANESE_INGOT.get(), 0.7F, 200, "manganese_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.MANGANESE_DUST.get()), RecipeCategory.MISC, NRRItems.MANGANESE_INGOT.get(), 0.7F, 100, "manganese_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.MANGANESE_OXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_INGOT.get(), 0.7F, 200, "manganese_oxide_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.MANGANESE_OXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_INGOT.get(), 0.7F, 100, "manganese_oxide_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.MANGANESE_DIOXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.MANGANESE_DIOXIDE_INGOT.get(), 0.7F, 200, "manganese_dioxide_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.MANGANESE_DIOXIDE_DUST.get()), RecipeCategory.MISC, NRRItems.MANGANESE_DIOXIDE_INGOT.get(), 0.7F, 100, "manganese_dioxide_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.GRAPHITE_DUST.get()), RecipeCategory.MISC, NRRItems.GRAPHITE_INGOT.get(), 0.7F, 200, "graphite_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.GRAPHITE_DUST.get()), RecipeCategory.MISC, NRRItems.GRAPHITE_INGOT.get(), 0.7F, 100, "graphite_ingot");
         ManufactoryRecipeBuilder.builder()
                 .input(Ingredient.of(ItemTags.PLANKS), 1)
                 .baseProcessPower(10)

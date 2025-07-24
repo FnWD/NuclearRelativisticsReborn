@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nrreborn:crystal_binder"
+    },
+    "B": {
+      "tag": "c:ingots/boron"
+    },
+    "C": {
+      "item": "nrreborn:depleted_uranium_plating"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:elite_plating"
+  }
+}

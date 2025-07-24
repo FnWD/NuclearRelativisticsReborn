@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "zirconium_ingot",
+  "ingredient": {
+    "item": "nrreborn:zirconium_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:zirconium_ingot"
+  }
+}

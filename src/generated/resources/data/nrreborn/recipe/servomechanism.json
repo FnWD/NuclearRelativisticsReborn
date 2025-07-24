@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:ingots/ferroboron_alloy"
+    },
+    "B": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "tag": "c:ingots/steel"
+    },
+    "D": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "A A",
+    "BCB",
+    "CDC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:servomechanism"
+  }
+}

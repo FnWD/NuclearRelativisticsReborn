@@ -16,11 +16,14 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.StreamSupport;
@@ -39,9 +42,7 @@ public class JEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        /*RecipeManager manager = Minecraft.getInstance().getSingleplayerServer().getRecipeManager();
-        List<ManufactoryRecipe> manufactoryRecipesFromCode = new ArrayList<>();
-        *//*List<TagKey<Item>> manufactoryAvailableIngots = BuiltInRegistries.ITEM.getTagNames()
+        List<TagKey<Item>> manufactoryAvailableIngots = BuiltInRegistries.ITEM.getTagNames()
                 .filter(tag -> tag.location().toString().startsWith("c:ingots/"))
                 .toList();
         List<TagKey<Item>> manufactoryAvailableOres = BuiltInRegistries.ITEM.getTagNames()
@@ -50,66 +51,35 @@ public class JEIPlugin implements IModPlugin {
         List<TagKey<Item>> manufactoryAvailableRawMaterials = BuiltInRegistries.ITEM.getTagNames()
                 .filter(tag -> tag.location().toString().startsWith("c:raw_materials/"))
                 .toList();
-        for (TagKey<Item> ingot : manufactoryAvailableIngots) {
-            if (lookForDustOf(ingot.location().toString().substring("c:ingots/".length()), 1).isEmpty()) {
+        List<TagKey<Item>> manufactoryAvailableGems = BuiltInRegistries.ITEM.getTagNames()
+                .filter(tag -> tag.location().toString().startsWith("c:gems/"))
+                .toList();
+        List<ManufactoryRecipe> manufactoryRecipesComplement = new ArrayList<>();
+        for (var tag : manufactoryAvailableIngots) {
+            if (lookForDustOf(tag.location().toString().substring("c:ingots/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipes.add(new ManufactoryRecipe(
-                    Ingredient.of(ingot),
-                    1,
-                    20,
-                    400,
-                    lookForDustOf(ingot.location().toString().substring("c:ingots/".length()), 1)));
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 400, lookForDustOf(tag.location().toString().substring("c:ingots/".length()), 1)));
         }
-        for (TagKey<Item> ore : manufactoryAvailableOres) {
-            if (lookForDustOf(ore.location().toString().substring("c:ores/".length()), 1).isEmpty()) {
+        for (var tag : manufactoryAvailableOres) {
+            if (lookForDustOf(tag.location().toString().substring("c:ores/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipes.add(new ManufactoryRecipe(
-                    Ingredient.of(ore),
-                    1,
-                    20,
-                    500,
-                    lookForDustOf(ore.location().toString().substring("c:ores/".length()), 2)));
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, lookForDustOf(tag.location().toString().substring("c:ores/".length()), 2)));
         }
-        for (TagKey<Item> rawMaterial : manufactoryAvailableRawMaterials) {
-            if (lookForDustOf(rawMaterial.location().toString().substring("c:raw_materials/".length()), 1).isEmpty()) {
+        for (var tag : manufactoryAvailableRawMaterials) {
+            if (lookForDustOf(tag.location().toString().substring("c:raw_materials/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipes.add(new ManufactoryRecipe(
-                    Ingredient.of(rawMaterial),
-                    1,
-                    20,
-                    500,
-                    lookForDustOf(rawMaterial.location().toString().substring("c:raw_materials/".length()), 2)));
-        }*//*
-        Stream.of("c:ingots/", "c:ores/", "c:raw_materials/", "c:gems/")
-                        .forEach(form -> BuiltInRegistries.ITEM.getTagNames()
-                                .filter(tag -> tag.location().toString().startsWith(form))
-                                .forEach(tag -> {
-                                    String type = tag.location().toString().substring(form.length());
-                                    int outputCount = switch (form) {
-                                        case "c:ingots/", "c:gems/" -> 1;
-                                        case "c:ores/", "c:raw_materials/" -> 2;
-                                        default -> 0;
-                                    };
-                                    int processTime = switch (form) {
-                                        case "c:ingots/" -> 400;
-                                        case "c:ores/", "c:raw_materials/" -> 500;
-                                        case "c:gems/" -> 600;
-                                        default -> 0;
-                                    };
-                                    int processPower = form.equals("c:gems/") ? 30 : 20;
-                                    ItemStack result = lookForDustOf(type, outputCount);
-                                    if (!result.isEmpty()) {
-                                        manufactoryRecipesFromCode.add(new ManufactoryRecipe(
-                                                Ingredient.of(tag),
-                                                1,
-                                                processPower,
-                                                processTime,
-                                                result));
-                                    }
-                                }));*/
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, lookForDustOf(tag.location().toString().substring("c:raw_materials/".length()), 2)));
+        }
+        for (var tag : manufactoryAvailableGems) {
+            if (lookForDustOf(tag.location().toString().substring("c:gems/".length()), 1).isEmpty()) {
+                continue;
+            }
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 30, 600, lookForDustOf(tag.location().toString().substring("c:gems/".length()), 1)));
+        }
+        registration.addRecipes(ManufactoryRecipeCategory.MANUFACTORY_RECIPE_TYPE, manufactoryRecipesComplement);
         RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
         List<ManufactoryRecipe> manufactoryRecipes = manager.getAllRecipesFor(NRRRecipes.MANUFACTORY_TYPE.get()).stream()
                 .map(RecipeHolder::value)

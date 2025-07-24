@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "manganese_ingot",
+  "ingredient": {
+    "item": "nrreborn:manganese_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:manganese_ingot"
+  }
+}

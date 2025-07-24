@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:ingots/magnesium_diboride_alloy"
+    },
+    "B": {
+      "tag": "c:ingots/tough_alloy"
+    }
+  },
+  "pattern": [
+    "AA",
+    "BB",
+    "AA"
+  ],
+  "result": {
+    "count": 2,
+    "id": "nrreborn:magnesium_diboride_solenoid"
+  }
+}

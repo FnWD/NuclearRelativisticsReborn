@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:ingots/steel"
+    },
+    "B": {
+      "item": "minecraft:gold_nugget"
+    },
+    "C": {
+      "item": "nrreborn:copper_solenoid"
+    },
+    "D": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "AAB",
+    "CCD",
+    "AAB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:electric_motor"
+  }
+}

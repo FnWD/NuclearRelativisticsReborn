@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "magnesium_ingot",
+  "ingredient": {
+    "item": "nrreborn:magnesium_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:magnesium_ingot"
+  }
+}

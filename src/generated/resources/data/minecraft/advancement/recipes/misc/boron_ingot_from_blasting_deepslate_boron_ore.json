@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_boron_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "nrreborn:deepslate_boron_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:boron_ingot_from_blasting_deepslate_boron_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_boron_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:boron_ingot_from_blasting_deepslate_boron_ore"
+    ]
+  }
+}

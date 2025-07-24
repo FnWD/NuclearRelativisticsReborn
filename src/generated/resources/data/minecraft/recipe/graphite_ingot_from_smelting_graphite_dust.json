@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "graphite_ingot",
+  "ingredient": {
+    "item": "nrreborn:graphite_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:graphite_ingot"
+  }
+}
