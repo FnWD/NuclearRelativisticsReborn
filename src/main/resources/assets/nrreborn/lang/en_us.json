@@ -142,7 +142,10 @@
   "tooltip.nrreborn.speed_upgrade": "Increases the processing speed of machines at the cost of additional processing power. These upgrades can be stacked - the speed will increase linearly with each additional upgrade while the power use will increase quadratically.",
   "tooltip.nrreborn.energy_upgrade": "Decreases the processing power of machines. These upgrades can be stacked, but the maximum number that will have an effect is equal to the number of installed Speed Upgrades. The power use will decrease linearly with each additional upgrade.",
   "tooltip.nrreborn.manufactory": "A handy machine that has many uses.",
+  "tooltip.nrreborn.energy_stored": "Energy Stored: ",
+  "tooltip.nrreborn.speed_multiplier": "Speed Multiplier: ",
+  "tooltip.nrreborn.power_multiplier": "Power Multiplier: ",
 
-  "jei.nrreborn.base_process_power": "Base process power: ",
-  "jei.nrreborn.base_process_time": "Base process time: "
+  "jei.nrreborn.base_process_power": "Base Process Power: ",
+  "jei.nrreborn.base_process_time": "Base Process Time: "
 }

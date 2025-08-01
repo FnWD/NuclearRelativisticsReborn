@@ -7,6 +7,7 @@ import com.fnwd.nrreborn.recipe.ManufactoryRecipeInput;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
 import com.fnwd.nrreborn.screen.custom.ManufactoryMenu;
 import com.fnwd.nrreborn.util.CTags;
+import com.fnwd.nrreborn.util.NRREnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -33,10 +34,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.energy.IEnergyStorage;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -70,10 +74,17 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
             };
         }
     };
+    public final NRREnergyStorage energy = new NRREnergyStorage(24000, Integer.MAX_VALUE, Integer.MAX_VALUE) {
+        @Override
+        public void onEnergyChanged() {
+            setChanged();
+        }
+    };
 
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 4000;
+    public int currentMaxEnergy = 24000;
 
     public ManufactoryBlockEntity(BlockPos pos, BlockState blockState) {
         super(NRRBlockEntities.MANUFACTORY_BLOCK_ENTITY.get(), pos, blockState);
@@ -123,6 +134,8 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         tag.put("inventory", inventory.serializeNBT(registries));
         tag.putInt("manufactory.progress", progress);
         tag.putInt("manufactory.max_progress", maxProgress);
+        tag.putInt("manufactory.energy", energy.getEnergyStored());
+        tag.putInt("manufactory.capacity", energy.getMaxEnergyStored());
     }
 
     @Override
@@ -131,6 +144,16 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         inventory.deserializeNBT(registries, tag.getCompound("inventory"));
         progress = tag.getInt("manufactory.progress");
         maxProgress = tag.getInt("manufactory.max_progress");
+        energy.setEnergy(tag.getInt("manufactory.energy"));
+        energy.setMaxEnergy(tag.getInt("manufactory.capacity"));
+    }
+
+    public IItemHandler getInventory() {
+        return inventory;
+    }
+
+    public IEnergyStorage getEnergyStorage() {
+        return energy;
     }
 
     // Explanation of recipeSource
@@ -140,6 +163,11 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
     // 3 -> Hardcoded all (raw_materials to double dusts) recipes (for...)
     // 4 -> Hardcoded all (gems to dusts) recipes (for...)
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
+        currentMaxEnergy = 24000 * (inventory.getStackInSlot(0).getCount() + 1) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1);
+        energy.setMaxEnergy(currentMaxEnergy);
+        if (energy.getEnergyStored() > currentMaxEnergy) {
+            energy.setEnergy(currentMaxEnergy);
+        }
         if (hasRecipe(0)) {
             setWorkingState(true);
             progress(0);
@@ -212,28 +240,28 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         assert level != null;
         Optional<RecipeHolder<ManufactoryRecipe>> recipe = level.getRecipeManager().getRecipeFor(NRRRecipes.MANUFACTORY_TYPE.get(), new ManufactoryRecipeInput(inventory.getStackInSlot(2)), level);
         if (recipeSource == 0) {
-            if (recipe.isEmpty()) {
+            if (recipe.isEmpty() || energy.getEnergyStored() < recipe.get().value().baseProcessPower() * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
             ItemStack output = recipe.get().value().output();
             return canDoRecipe(output, output.getCount(), 0);
         } else if (recipeSource == 1) {
-            if (!inventory.getStackInSlot(2).is(CTags.Items.INGOTS)) {
+            if (!inventory.getStackInSlot(2).is(CTags.Items.INGOTS) || energy.getEnergyStored() < 20 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
             return canDoRecipe(lookForDustOf(getIngotType(inventory.getStackInSlot(2)), 1), 1, 1);
         } else if (recipeSource == 2) {
-            if (!inventory.getStackInSlot(2).is(CTags.Items.ORES)) {
+            if (!inventory.getStackInSlot(2).is(CTags.Items.ORES) || energy.getEnergyStored() < 20 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
             return canDoRecipe(lookForDustOf(getOreType(inventory.getStackInSlot(2)), 2), 2, 2);
         } else if (recipeSource == 3) {
-            if (!inventory.getStackInSlot(2).is(CTags.Items.RAW_MATERIALS)) {
+            if (!inventory.getStackInSlot(2).is(CTags.Items.RAW_MATERIALS) || energy.getEnergyStored() < 20 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
             return canDoRecipe(lookForDustOf(getRawMaterialType(inventory.getStackInSlot(2)), 2), 2, 3);
         } else if (recipeSource == 4) {
-            if (!inventory.getStackInSlot(2).is(CTags.Items.GEMS)) {
+            if (!inventory.getStackInSlot(2).is(CTags.Items.GEMS) || energy.getEnergyStored() < 30 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
             return canDoRecipe(lookForDustOf(getGemType(inventory.getStackInSlot(2)), 1), 1, 4);
@@ -272,15 +300,19 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         Optional<RecipeHolder<ManufactoryRecipe>> recipe = level.getRecipeManager().getRecipeFor(NRRRecipes.MANUFACTORY_TYPE.get(), new ManufactoryRecipeInput(inventory.getStackInSlot(2)), level);
         switch (recipeSource) {
             case 0:
+                energy.extractEnergy(recipe.get().value().baseProcessPower() * (inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1) / (inventory.getStackInSlot(1).getCount() + 1), false);
                 progress += (maxProgress / recipe.get().value().baseProcessTime()) * (inventory.getStackInSlot(0).getCount() + 1);
                 break;
             case 1:
+                energy.extractEnergy(20 * (inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1) / (inventory.getStackInSlot(1).getCount() + 1), false);
                 progress += (maxProgress / 400) * (inventory.getStackInSlot(0).getCount() + 1);
                 break;
             case 2, 3:
+                energy.extractEnergy(20 * (inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1) / (inventory.getStackInSlot(1).getCount() + 1), false);
                 progress += (maxProgress / 500) * (inventory.getStackInSlot(0).getCount() + 1);
                 break;
             case 4:
+                energy.extractEnergy(30 * (inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1) / (inventory.getStackInSlot(1).getCount() + 1), false);
                 progress += (maxProgress / 600) * (inventory.getStackInSlot(0).getCount() + 1);
                 break;
             default:

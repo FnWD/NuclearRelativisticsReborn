@@ -10,6 +10,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ManufactoryScreen extends AbstractContainerScreen<ManufactoryMenu> {
     private static final ResourceLocation GUI_TEXTURE = ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "textures/gui/manufactory_gui.png");
 
@@ -27,12 +32,20 @@ public class ManufactoryScreen extends AbstractContainerScreen<ManufactoryMenu> 
         int y = (height - imageHeight) / 2;
         guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
         renderArrow(guiGraphics, x, y);
+        renderEnergyBar(guiGraphics, x, y);
     }
 
     @Override
     public void render(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         this.renderTooltip(guiGraphics, mouseX, mouseY);
+        if (mouseX >= leftPos + 12 && mouseX <= leftPos + 24 && mouseY >= topPos + 12 && mouseY <= topPos + 75) {
+            List<Component> energyBarTooltip = new ArrayList<>();
+            energyBarTooltip.add(Component.translatable("tooltip.nrreborn.energy_stored").withColor(16733695).append(Component.literal(menu.getEnergy() + " / " + menu.getCapacity() + " FE").withColor(16777215)));
+            energyBarTooltip.add(Component.translatable("tooltip.nrreborn.speed_multiplier").withColor(5636095).append(Component.literal("x" + (menu.blockEntity.inventory.getStackInSlot(0).getCount() + 1)).withColor(16777215)));
+            energyBarTooltip.add(Component.translatable("tooltip.nrreborn.power_multiplier").withColor(5636095).append(Component.literal("x" + BigDecimal.valueOf((double) ((menu.blockEntity.inventory.getStackInSlot(0).getCount() + 1) * (menu.blockEntity.inventory.getStackInSlot(0).getCount() + 1)) / Math.min(menu.blockEntity.inventory.getStackInSlot(0).getCount() + 1, menu.blockEntity.inventory.getStackInSlot(1).getCount() + 1)).setScale(2, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString()).withColor(16777215)));
+            guiGraphics.renderComponentTooltip(this.font, energyBarTooltip, mouseX, mouseY);
+        }
     }
 
     @Override
@@ -48,5 +61,9 @@ public class ManufactoryScreen extends AbstractContainerScreen<ManufactoryMenu> 
         if (menu.isCrafting()) {
             guiGraphics.blit(GUI_TEXTURE, x + 77, y + 36, 189, 0, menu.getScaledArrowProgress(), 17);
         }
+    }
+
+    private void renderEnergyBar(GuiGraphics guiGraphics, int x, int y) {
+        guiGraphics.blit(GUI_TEXTURE, x + 12, y + 76 - menu.getScaledEnergyBar(), 176, 64 - menu.getScaledEnergyBar(), 13, menu.getScaledEnergyBar());
     }
 }

@@ -7,11 +7,7 @@ import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
 import com.fnwd.nrreborn.screen.NRRMenuTypes;
 import com.fnwd.nrreborn.screen.custom.ManufactoryScreen;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -20,9 +16,12 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import org.slf4j.Logger;
 
 @Mod(NuclearRelativisticsReborn.MODID)
 public class NuclearRelativisticsReborn {
@@ -38,16 +37,18 @@ public class NuclearRelativisticsReborn {
         NRRBlockEntities.register(modEventBus);
         NRRMenuTypes.register(modEventBus);
         NRRRecipes.register(modEventBus);
-
-        modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::registerCapabilities);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
 
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+    private void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, NRRBlockEntities.MANUFACTORY_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getInventory());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.MANUFACTORY_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
     }
 
     @SubscribeEvent

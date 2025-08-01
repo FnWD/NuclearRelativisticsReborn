@@ -17,6 +17,8 @@ public class ManufactoryMenu extends AbstractContainerMenu {
     public final ManufactoryBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+    private int energy;
+    private int capacity;
 
     public ManufactoryMenu(int containerId, Inventory inventory, FriendlyByteBuf extraData) {
         this(containerId, inventory, inventory.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
@@ -29,11 +31,63 @@ public class ManufactoryMenu extends AbstractContainerMenu {
         this.data = data;
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 29, 60));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 49, 60));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 52, 36));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 3, 108, 36));
+        addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 29, 60));
+        addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 49, 60));
+        addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 52, 36));
+        addSlot(new SlotItemHandler(this.blockEntity.inventory, 3, 108, 36));
+        addDataSlot(new DataSlot() {
+            @Override
+            public int get() {
+                return ((ManufactoryBlockEntity) blockEntity).energy.getEnergyStored() & 0xFFFF;
+            }
+
+            @Override
+            public void set(int i) {
+                ManufactoryMenu.this.energy = (ManufactoryMenu.this.energy & 0xFFFF0000) | (i & 0xFFFF);
+            }
+        });
+        addDataSlot(new DataSlot() {
+            @Override
+            public int get() {
+                return (((ManufactoryBlockEntity) blockEntity).energy.getEnergyStored() >> 16) & 0xFFFF;
+            }
+
+            @Override
+            public void set(int i) {
+                ManufactoryMenu.this.energy = (ManufactoryMenu.this.energy & 0xFFFF) | ((i & 0xFFFF) << 16);
+            }
+        });
+        addDataSlot(new DataSlot() {
+            @Override
+            public int get() {
+                return ((ManufactoryBlockEntity) blockEntity).energy.getMaxEnergyStored() & 0xFFFF;
+            }
+
+            @Override
+            public void set(int i) {
+                ManufactoryMenu.this.capacity = (ManufactoryMenu.this.capacity & 0xFFFF0000) | (i & 0xFFFF);
+            }
+        });
+        addDataSlot(new DataSlot() {
+            @Override
+            public int get() {
+                return (((ManufactoryBlockEntity) blockEntity).energy.getMaxEnergyStored() >> 16) & 0xFFFF;
+            }
+
+            @Override
+            public void set(int i) {
+                ManufactoryMenu.this.capacity = (ManufactoryMenu.this.capacity & 0xFFFF) | ((i & 0xFFFF) << 16);
+            }
+        });
         addDataSlots(data);
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
     @Override
@@ -92,5 +146,10 @@ public class ManufactoryMenu extends AbstractContainerMenu {
         int maxProgress = data.get(1);
         int arrowPixelSize = 22;
         return progress != 0 && maxProgress != 0 ? progress * arrowPixelSize / maxProgress : 0;
+    }
+
+    public int getScaledEnergyBar() {
+        int energyBarPixelSize = 64;
+        return energy != 0 ? energy * energyBarPixelSize / capacity : 0;
     }
 }

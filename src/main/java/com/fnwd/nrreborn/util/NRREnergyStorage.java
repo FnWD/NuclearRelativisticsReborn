@@ -26,7 +26,12 @@ public abstract class NRREnergyStorage extends EnergyStorage {
     }
 
     public int setEnergy(int toSet) {
-        this.energy = toSet;
+        energy = toSet;
+        return toSet;
+    }
+
+    public int setMaxEnergy(int toSet) {
+        capacity = toSet;
         return toSet;
     }
 
