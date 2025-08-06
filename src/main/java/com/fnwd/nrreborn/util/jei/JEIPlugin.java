@@ -56,28 +56,28 @@ public class JEIPlugin implements IModPlugin {
                 .toList();
         List<ManufactoryRecipe> manufactoryRecipesComplement = new ArrayList<>();
         for (var tag : manufactoryAvailableIngots) {
-            if (lookForDustOf(tag.location().toString().substring("c:ingots/".length()), 1).isEmpty()) {
+            if (getDustOf(tag.location().toString().substring("c:ingots/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 400, lookForDustOf(tag.location().toString().substring("c:ingots/".length()), 1)));
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 400, getDustOf(tag.location().toString().substring("c:ingots/".length()), 1)));
         }
         for (var tag : manufactoryAvailableOres) {
-            if (lookForDustOf(tag.location().toString().substring("c:ores/".length()), 1).isEmpty()) {
+            if (getDustOf(tag.location().toString().substring("c:ores/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, lookForDustOf(tag.location().toString().substring("c:ores/".length()), 2)));
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, getDustOf(tag.location().toString().substring("c:ores/".length()), 2)));
         }
         for (var tag : manufactoryAvailableRawMaterials) {
-            if (lookForDustOf(tag.location().toString().substring("c:raw_materials/".length()), 1).isEmpty()) {
+            if (getDustOf(tag.location().toString().substring("c:raw_materials/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, lookForDustOf(tag.location().toString().substring("c:raw_materials/".length()), 2)));
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, getDustOf(tag.location().toString().substring("c:raw_materials/".length()), 2)));
         }
         for (var tag : manufactoryAvailableGems) {
-            if (lookForDustOf(tag.location().toString().substring("c:gems/".length()), 1).isEmpty()) {
+            if (getDustOf(tag.location().toString().substring("c:gems/".length()), 1).isEmpty()) {
                 continue;
             }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 30, 600, lookForDustOf(tag.location().toString().substring("c:gems/".length()), 1)));
+            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 30, 600, getDustOf(tag.location().toString().substring("c:gems/".length()), 1)));
         }
         registration.addRecipes(ManufactoryRecipeCategory.MANUFACTORY_RECIPE_TYPE, manufactoryRecipesComplement);
         RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
@@ -97,10 +97,11 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(NRRBlocks.MANUFACTORY.asItem()), ManufactoryRecipeCategory.MANUFACTORY_RECIPE_TYPE);
     }
 
-    private ItemStack lookForDustOf(String type, int count) {
+    private ItemStack getDustOf(String type, int count) {
         Iterable<Holder<Item>> holder = BuiltInRegistries.ITEM.getTagOrEmpty(ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "dusts/" + type)));
         List<Item> list = StreamSupport.stream(holder.spliterator(), false)
                 .map(Holder::value)
+                .filter(item -> !item.getDefaultInstance().is(ItemTags.create(ResourceLocation.fromNamespaceAndPath("almostunified", "hide"))))
                 .toList();
         if (list.isEmpty()) {
             return ItemStack.EMPTY;

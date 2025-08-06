@@ -249,22 +249,22 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
             if (!inventory.getStackInSlot(2).is(CTags.Items.INGOTS) || energy.getEnergyStored() < 20 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
-            return canDoRecipe(lookForDustOf(getIngotType(inventory.getStackInSlot(2)), 1), 1, 1);
+            return canDoRecipe(getDustOf(getIngotType(inventory.getStackInSlot(2)), 1), 1, 1);
         } else if (recipeSource == 2) {
             if (!inventory.getStackInSlot(2).is(CTags.Items.ORES) || energy.getEnergyStored() < 20 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
-            return canDoRecipe(lookForDustOf(getOreType(inventory.getStackInSlot(2)), 2), 2, 2);
+            return canDoRecipe(getDustOf(getOreType(inventory.getStackInSlot(2)), 2), 2, 2);
         } else if (recipeSource == 3) {
             if (!inventory.getStackInSlot(2).is(CTags.Items.RAW_MATERIALS) || energy.getEnergyStored() < 20 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
-            return canDoRecipe(lookForDustOf(getRawMaterialType(inventory.getStackInSlot(2)), 2), 2, 3);
+            return canDoRecipe(getDustOf(getRawMaterialType(inventory.getStackInSlot(2)), 2), 2, 3);
         } else if (recipeSource == 4) {
             if (!inventory.getStackInSlot(2).is(CTags.Items.GEMS) || energy.getEnergyStored() < 30 * BigDecimal.valueOf((double) ((inventory.getStackInSlot(0).getCount() + 1) * (inventory.getStackInSlot(0).getCount() + 1)) / Math.min(inventory.getStackInSlot(0).getCount() + 1, inventory.getStackInSlot(1).getCount() + 1)).doubleValue()) {
                 return false;
             }
-            return canDoRecipe(lookForDustOf(getGemType(inventory.getStackInSlot(2)), 1), 1, 4);
+            return canDoRecipe(getDustOf(getGemType(inventory.getStackInSlot(2)), 1), 1, 4);
         } else {
             return false;
         }
@@ -283,10 +283,10 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         int currentInputCount = inventory.getStackInSlot(2).getCount();
         boolean hasRecipePair = switch (recipeSource) {
             case 0 -> true;
-            case 1 -> !lookForDustOf(getIngotType(inventory.getStackInSlot(2)), 1).isEmpty();
-            case 2 -> !lookForDustOf(getOreType(inventory.getStackInSlot(2)), 1).isEmpty();
-            case 3 -> !lookForDustOf(getRawMaterialType(inventory.getStackInSlot(2)), 1).isEmpty();
-            case 4 -> !lookForDustOf(getGemType(inventory.getStackInSlot(2)), 1).isEmpty();
+            case 1 -> !getDustOf(getIngotType(inventory.getStackInSlot(2)), 1).isEmpty();
+            case 2 -> !getDustOf(getOreType(inventory.getStackInSlot(2)), 1).isEmpty();
+            case 3 -> !getDustOf(getRawMaterialType(inventory.getStackInSlot(2)), 1).isEmpty();
+            case 4 -> !getDustOf(getGemType(inventory.getStackInSlot(2)), 1).isEmpty();
             default -> false;
         };
         boolean canOutput1 = inventory.getStackInSlot(3).isEmpty() || inventory.getStackInSlot(3).getItem() == outputItemStack.getItem();
@@ -334,19 +334,19 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
                 inventory.extractItem(2, recipe.get().value().inputCount(), false);
                 break;
             case 1:
-                inventory.setStackInSlot(3, lookForDustOf(getIngotType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 1));
+                inventory.setStackInSlot(3, getDustOf(getIngotType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 1));
                 inventory.extractItem(2, 1, false);
                 break;
             case 2:
-                inventory.setStackInSlot(3, lookForDustOf(getOreType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 2));
+                inventory.setStackInSlot(3, getDustOf(getOreType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 2));
                 inventory.extractItem(2, 1, false);
                 break;
             case 3:
-                inventory.setStackInSlot(3, lookForDustOf(getRawMaterialType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 2));
+                inventory.setStackInSlot(3, getDustOf(getRawMaterialType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 2));
                 inventory.extractItem(2, 1, false);
                 break;
             case 4:
-                inventory.setStackInSlot(3, lookForDustOf(getGemType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 1));
+                inventory.setStackInSlot(3, getDustOf(getGemType(inventory.getStackInSlot(2)), inventory.getStackInSlot(3).getCount() + 1));
                 inventory.extractItem(2, 1, false);
                 break;
             default:
@@ -432,10 +432,11 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         return result.getFirst().location().toString().substring("c:gems/".length());
     }
 
-    private ItemStack lookForDustOf(String type, int count) {
+    private ItemStack getDustOf(String type, int count) {
         Iterable<Holder<Item>> holder = BuiltInRegistries.ITEM.getTagOrEmpty(ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "dusts/" + type)));
         List<Item> list = StreamSupport.stream(holder.spliterator(), false)
                 .map(Holder::value)
+                .filter(item -> !item.getDefaultInstance().is(ItemTags.create(ResourceLocation.fromNamespaceAndPath("almostunified", "hide"))))
                 .toList();
         if (list.isEmpty()) {
             return ItemStack.EMPTY;
