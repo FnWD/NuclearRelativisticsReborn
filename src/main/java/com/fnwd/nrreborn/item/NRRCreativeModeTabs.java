@@ -108,6 +108,56 @@ public class NRRCreativeModeTabs {
                         output.accept(NRRItems.RAW_BORON);
                         output.accept(NRRItems.RAW_THORIUM);
                         output.accept(NRRItems.RAW_URANIUM);
+                        output.accept(NRRItems.LITHIUM_6);
+                        output.accept(NRRItems.LITHIUM_7);
+                        output.accept(NRRItems.BERYLLIUM_7);
+                        output.accept(NRRItems.BORON_10);
+                        output.accept(NRRItems.BORON_11);
+                        output.accept(NRRItems.SODIUM_22);
+                        output.accept(NRRItems.MAGNESIUM_24);
+                        output.accept(NRRItems.MAGNESIUM_26);
+                        output.accept(NRRItems.CALCIUM_48);
+                        output.accept(NRRItems.COBALT_60);
+                        output.accept(NRRItems.STRONTIUM_90);
+                        output.accept(NRRItems.RUTHENIUM_106);
+                        output.accept(NRRItems.CAESIUM_137);
+                        output.accept(NRRItems.PROMETHIUM_147);
+                        output.accept(NRRItems.EUROPIUM_155);
+                        output.accept(NRRItems.IRIDIUM_192);
+                        output.accept(NRRItems.THORIUM_230);
+                        output.accept(NRRItems.THORIUM_232);
+                        output.accept(NRRItems.PROTACTINIUM_231);
+                        output.accept(NRRItems.PROTACTINIUM_233);
+                        output.accept(NRRItems.URANIUM_233);
+                        output.accept(NRRItems.URANIUM_234);
+                        output.accept(NRRItems.URANIUM_235);
+                        output.accept(NRRItems.URANIUM_238);
+                        output.accept(NRRItems.NEPTUNIUM_236);
+                        output.accept(NRRItems.NEPTUNIUM_237);
+                        output.accept(NRRItems.PLUTONIUM_238);
+                        output.accept(NRRItems.PLUTONIUM_239);
+                        output.accept(NRRItems.PLUTONIUM_241);
+                        output.accept(NRRItems.PLUTONIUM_242);
+                        output.accept(NRRItems.AMERICIUM_241);
+                        output.accept(NRRItems.AMERICIUM_242);
+                        output.accept(NRRItems.AMERICIUM_243);
+                        output.accept(NRRItems.CURIUM_243);
+                        output.accept(NRRItems.CURIUM_245);
+                        output.accept(NRRItems.CURIUM_246);
+                        output.accept(NRRItems.CURIUM_247);
+                        output.accept(NRRItems.BERKELIUM_247);
+                        output.accept(NRRItems.BERKELIUM_248);
+                        output.accept(NRRItems.CALIFORNIUM_249);
+                        output.accept(NRRItems.CALIFORNIUM_250);
+                        output.accept(NRRItems.CALIFORNIUM_251);
+                        output.accept(NRRItems.CALIFORNIUM_252);
+                        output.accept(NRRItems.EINSTEINIUM_252);
+                        output.accept(NRRItems.EINSTEINIUM_253);
+                        output.accept(NRRItems.EINSTEINIUM_254);
+                        output.accept(NRRItems.EINSTEINIUM_255);
+                        output.accept(NRRItems.FERMIUM_253);
+                        output.accept(NRRItems.FERMIUM_257);
+                        output.accept(NRRItems.COPERNICIUM_291);
                         output.accept(NRRItems.BASIC_PLATING);
                         output.accept(NRRItems.ADVANCED_PLATING);
                         output.accept(NRRItems.DEPLETED_URANIUM_PLATING);
@@ -136,10 +186,30 @@ public class NRRCreativeModeTabs {
                         output.accept(NRRBlocks.URANIUM_ORE);
                         output.accept(NRRBlocks.DEEPSLATE_URANIUM_ORE);
                     }).build());
+    public static final Supplier<CreativeModeTab> NRR_FOODS = CREATIVE_MODE_TAB.register(
+            "nrr_foods", () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(NRRItems.SMORE.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "nrr_ingredients"))
+                    .title(Component.translatable("creativemodetab.nrreborn.nrr_foods"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(NRRItems.MARSHMALLOW);
+                        output.accept(NRRItems.GRAHAM_CRACKER);
+                        output.accept(NRRItems.GROUND_COCOA_NIBS);
+                        output.accept(NRRItems.SOLIDIFIED_COCOA_BUTTER);
+                        output.accept(NRRItems.UNSWEETENED_CHOCOLATE);
+                        output.accept(NRRItems.DARK_CHOCOLATE);
+                        output.accept(NRRItems.MILK_CHOCOLATE);
+                        output.accept(NRRItems.SMORE);
+                        output.accept(NRRItems.SMORE_DOUBLE);
+                        output.accept(NRRItems.SMORE_QUADRUPLE);
+                        output.accept(NRRItems.SMORE_OCTUPLE);
+                        output.accept(NRRItems.SMORE_SEXDECUPLE);
+                        output.accept(NRRItems.SMORE_DUOTRIGINTUPLE);
+                    }).build());
     public static final Supplier<CreativeModeTab> NRR_MACHINES = CREATIVE_MODE_TAB.register(
             "nrr_machines", () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(NRRBlocks.MANUFACTORY))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "nrr_ingredients"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "nrr_foods"))
                     .title(Component.translatable("creativemodetab.nrreborn.nrr_machines"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(NRRBlocks.MANUFACTORY);
@@ -151,6 +221,7 @@ public class NRRCreativeModeTabs {
                     .title(Component.translatable("creativemodetab.nrreborn.nrr_tools_and_weapons"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(NRRItems.IO_CONFIGURATOR);
+                        output.accept(NRRItems.PORTABLE_COBBLESTONE_GENERATOR);
                     }).build());
 
     public static void register(IEventBus eventBus) {

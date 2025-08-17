@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:dusts/sulfur"
+    },
+    "B": {
+      "tag": "c:ingots/uranium_238"
+    },
+    "C": {
+      "item": "nrreborn:advanced_plating"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:depleted_uranium_plating"
+  }
+}

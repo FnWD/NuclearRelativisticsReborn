@@ -3,7 +3,7 @@
   "base_process_power": 20,
   "base_process_time": 200,
   "input": {
-    "tag": "minecraft:coals"
+    "item": "minecraft:coal"
   },
   "input_count": 1,
   "output": {

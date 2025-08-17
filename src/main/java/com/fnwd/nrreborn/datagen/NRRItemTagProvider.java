@@ -54,7 +54,57 @@ public class NRRItemTagProvider extends ItemTagsProvider {
                 .add(NRRItems.MAGNESIUM_DIBORIDE_ALLOY_INGOT.get())
                 .add(NRRItems.LITHIUM_MANGANESE_DIOXIDE_ALLOY_INGOT.get())
                 .add(NRRItems.SILICON_CARBIDE_INGOT.get())
-                .add(NRRItems.SIC_SIC_CERAMIC_MATRIX_COMPOSITE.get());
+                .add(NRRItems.SIC_SIC_CERAMIC_MATRIX_COMPOSITE.get())
+                .add(NRRItems.LITHIUM_6.get())
+                .add(NRRItems.LITHIUM_7.get())
+                .add(NRRItems.BERYLLIUM_7.get())
+                .add(NRRItems.BORON_10.get())
+                .add(NRRItems.BORON_11.get())
+                .add(NRRItems.SODIUM_22.get())
+                .add(NRRItems.MAGNESIUM_24.get())
+                .add(NRRItems.MAGNESIUM_26.get())
+                .add(NRRItems.CALCIUM_48.get())
+                .add(NRRItems.COBALT_60.get())
+                .add(NRRItems.STRONTIUM_90.get())
+                .add(NRRItems.RUTHENIUM_106.get())
+                .add(NRRItems.CAESIUM_137.get())
+                .add(NRRItems.PROMETHIUM_147.get())
+                .add(NRRItems.EUROPIUM_155.get())
+                .add(NRRItems.IRIDIUM_192.get())
+                .add(NRRItems.THORIUM_230.get())
+                .add(NRRItems.THORIUM_232.get())
+                .add(NRRItems.PROTACTINIUM_231.get())
+                .add(NRRItems.PROTACTINIUM_233.get())
+                .add(NRRItems.URANIUM_233.get())
+                .add(NRRItems.URANIUM_234.get())
+                .add(NRRItems.URANIUM_235.get())
+                .add(NRRItems.URANIUM_238.get())
+                .add(NRRItems.NEPTUNIUM_236.get())
+                .add(NRRItems.NEPTUNIUM_237.get())
+                .add(NRRItems.PLUTONIUM_238.get())
+                .add(NRRItems.PLUTONIUM_239.get())
+                .add(NRRItems.PLUTONIUM_241.get())
+                .add(NRRItems.PLUTONIUM_242.get())
+                .add(NRRItems.AMERICIUM_241.get())
+                .add(NRRItems.AMERICIUM_242.get())
+                .add(NRRItems.AMERICIUM_243.get())
+                .add(NRRItems.CURIUM_243.get())
+                .add(NRRItems.CURIUM_245.get())
+                .add(NRRItems.CURIUM_246.get())
+                .add(NRRItems.CURIUM_247.get())
+                .add(NRRItems.BERKELIUM_247.get())
+                .add(NRRItems.BERKELIUM_248.get())
+                .add(NRRItems.CALIFORNIUM_249.get())
+                .add(NRRItems.CALIFORNIUM_250.get())
+                .add(NRRItems.CALIFORNIUM_251.get())
+                .add(NRRItems.CALIFORNIUM_252.get())
+                .add(NRRItems.EINSTEINIUM_252.get())
+                .add(NRRItems.EINSTEINIUM_253.get())
+                .add(NRRItems.EINSTEINIUM_254.get())
+                .add(NRRItems.EINSTEINIUM_255.get())
+                .add(NRRItems.FERMIUM_253.get())
+                .add(NRRItems.FERMIUM_257.get())
+                .add(NRRItems.COPERNICIUM_291.get());
         tag(CTags.Items.GEMS)
                 .add(NRRItems.RHODOCHROSITE.get())
                 .add(NRRItems.CUBIC_BORON_NITRIDE.get())
@@ -155,6 +205,56 @@ public class NRRItemTagProvider extends ItemTagsProvider {
         tag(CTags.Items.INGOTS_LITHIUM_MANGANESE_DIOXIDE_ALLOY).add(NRRItems.LITHIUM_MANGANESE_DIOXIDE_ALLOY_INGOT.get());
         tag(CTags.Items.INGOTS_SILICON_CARBIDE).add(NRRItems.SILICON_CARBIDE_INGOT.get());
         tag(CTags.Items.INGOTS_SIC_SIC_CERAMIC_MATRIX_COMPOSITE).add(NRRItems.SIC_SIC_CERAMIC_MATRIX_COMPOSITE.get());
+        tag(CTags.Items.INGOTS_LITHIUM_6).add(NRRItems.LITHIUM_6.get());
+        tag(CTags.Items.INGOTS_LITHIUM_7).add(NRRItems.LITHIUM_7.get());
+        tag(CTags.Items.INGOTS_BERYLLIUM_7).add(NRRItems.BERYLLIUM_7.get());
+        tag(CTags.Items.INGOTS_BORON_10).add(NRRItems.BORON_10.get());
+        tag(CTags.Items.INGOTS_BORON_11).add(NRRItems.BORON_11.get());
+        tag(CTags.Items.INGOTS_SODIUM_22).add(NRRItems.SODIUM_22.get());
+        tag(CTags.Items.INGOTS_MAGNESIUM_24).add(NRRItems.MAGNESIUM_24.get());
+        tag(CTags.Items.INGOTS_MAGNESIUM_26).add(NRRItems.MAGNESIUM_26.get());
+        tag(CTags.Items.INGOTS_CALCIUM_48).add(NRRItems.CALCIUM_48.get());
+        tag(CTags.Items.INGOTS_COBALT_60).add(NRRItems.COBALT_60.get());
+        tag(CTags.Items.INGOTS_STRONTIUM_90).add(NRRItems.STRONTIUM_90.get());
+        tag(CTags.Items.INGOTS_RUTHENIUM_106).add(NRRItems.RUTHENIUM_106.get());
+        tag(CTags.Items.INGOTS_CAESIUM_137).add(NRRItems.CAESIUM_137.get());
+        tag(CTags.Items.INGOTS_PROMETHIUM_147).add(NRRItems.PROMETHIUM_147.get());
+        tag(CTags.Items.INGOTS_EUROPIUM_155).add(NRRItems.EUROPIUM_155.get());
+        tag(CTags.Items.INGOTS_IRIDIUM_192).add(NRRItems.IRIDIUM_192.get());
+        tag(CTags.Items.INGOTS_THORIUM_230).add(NRRItems.THORIUM_230.get());
+        tag(CTags.Items.INGOTS_THORIUM_232).add(NRRItems.THORIUM_232.get());
+        tag(CTags.Items.INGOTS_PROTACTINIUM_231).add(NRRItems.PROTACTINIUM_231.get());
+        tag(CTags.Items.INGOTS_PROTACTINIUM_233).add(NRRItems.PROTACTINIUM_233.get());
+        tag(CTags.Items.INGOTS_URANIUM_233).add(NRRItems.URANIUM_233.get());
+        tag(CTags.Items.INGOTS_URANIUM_234).add(NRRItems.URANIUM_234.get());
+        tag(CTags.Items.INGOTS_URANIUM_235).add(NRRItems.URANIUM_235.get());
+        tag(CTags.Items.INGOTS_URANIUM_238).add(NRRItems.URANIUM_238.get());
+        tag(CTags.Items.INGOTS_NEPTUNIUM_236).add(NRRItems.NEPTUNIUM_236.get());
+        tag(CTags.Items.INGOTS_NEPTUNIUM_237).add(NRRItems.NEPTUNIUM_237.get());
+        tag(CTags.Items.INGOTS_PLUTONIUM_238).add(NRRItems.PLUTONIUM_238.get());
+        tag(CTags.Items.INGOTS_PLUTONIUM_239).add(NRRItems.PLUTONIUM_239.get());
+        tag(CTags.Items.INGOTS_PLUTONIUM_241).add(NRRItems.PLUTONIUM_241.get());
+        tag(CTags.Items.INGOTS_PLUTONIUM_242).add(NRRItems.PLUTONIUM_242.get());
+        tag(CTags.Items.INGOTS_AMERICIUM_241).add(NRRItems.AMERICIUM_241.get());
+        tag(CTags.Items.INGOTS_AMERICIUM_242).add(NRRItems.AMERICIUM_242.get());
+        tag(CTags.Items.INGOTS_AMERICIUM_243).add(NRRItems.AMERICIUM_243.get());
+        tag(CTags.Items.INGOTS_CURIUM_243).add(NRRItems.CURIUM_243.get());
+        tag(CTags.Items.INGOTS_CURIUM_245).add(NRRItems.CURIUM_245.get());
+        tag(CTags.Items.INGOTS_CURIUM_246).add(NRRItems.CURIUM_246.get());
+        tag(CTags.Items.INGOTS_CURIUM_247).add(NRRItems.CURIUM_247.get());
+        tag(CTags.Items.INGOTS_BERKELIUM_247).add(NRRItems.BERKELIUM_247.get());
+        tag(CTags.Items.INGOTS_BERKELIUM_248).add(NRRItems.BERKELIUM_248.get());
+        tag(CTags.Items.INGOTS_CALIFORNIUM_249).add(NRRItems.CALIFORNIUM_249.get());
+        tag(CTags.Items.INGOTS_CALIFORNIUM_250).add(NRRItems.CALIFORNIUM_250.get());
+        tag(CTags.Items.INGOTS_CALIFORNIUM_251).add(NRRItems.CALIFORNIUM_251.get());
+        tag(CTags.Items.INGOTS_CALIFORNIUM_252).add(NRRItems.CALIFORNIUM_252.get());
+        tag(CTags.Items.INGOTS_EINSTEINIUM_252).add(NRRItems.EINSTEINIUM_252.get());
+        tag(CTags.Items.INGOTS_EINSTEINIUM_253).add(NRRItems.EINSTEINIUM_253.get());
+        tag(CTags.Items.INGOTS_EINSTEINIUM_254).add(NRRItems.EINSTEINIUM_254.get());
+        tag(CTags.Items.INGOTS_EINSTEINIUM_255).add(NRRItems.EINSTEINIUM_255.get());
+        tag(CTags.Items.INGOTS_FERMIUM_253).add(NRRItems.FERMIUM_253.get());
+        tag(CTags.Items.INGOTS_FERMIUM_257).add(NRRItems.FERMIUM_257.get());
+        tag(CTags.Items.INGOTS_COPERNICIUM_291).add(NRRItems.COPERNICIUM_291.get());
         tag(CTags.Items.GEMS_RHODOCHROSITE).add(NRRItems.RHODOCHROSITE.get());
         tag(CTags.Items.GEMS_CUBIC_BORON_NITRIDE).add(NRRItems.CUBIC_BORON_NITRIDE.get());
         tag(CTags.Items.GEMS_FLUORITE).add(NRRItems.FLUORITE.get());

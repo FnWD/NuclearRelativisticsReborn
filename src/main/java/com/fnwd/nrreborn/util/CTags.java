@@ -87,6 +87,106 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/silicon_carbide"));
         public static final TagKey<Item> INGOTS_SIC_SIC_CERAMIC_MATRIX_COMPOSITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/sic_sic_ceramic_matrix_composite"));
+        public static final TagKey<Item> INGOTS_LITHIUM_6 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/lithium_6"));
+        public static final TagKey<Item> INGOTS_LITHIUM_7 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/lithium_7"));
+        public static final TagKey<Item> INGOTS_BERYLLIUM_7 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/beryllium_7"));
+        public static final TagKey<Item> INGOTS_BORON_10 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/boron_10"));
+        public static final TagKey<Item> INGOTS_BORON_11 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/boron_11"));
+        public static final TagKey<Item> INGOTS_SODIUM_22 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/sodium_22"));
+        public static final TagKey<Item> INGOTS_MAGNESIUM_24 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/magnesium_24"));
+        public static final TagKey<Item> INGOTS_MAGNESIUM_26 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/magnesium_26"));
+        public static final TagKey<Item> INGOTS_CALCIUM_48 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/calcium_48"));
+        public static final TagKey<Item> INGOTS_COBALT_60 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/cobalt_60"));
+        public static final TagKey<Item> INGOTS_STRONTIUM_90 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/strontium_90"));
+        public static final TagKey<Item> INGOTS_RUTHENIUM_106 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/ruthenium_106"));
+        public static final TagKey<Item> INGOTS_CAESIUM_137 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/caesium_137"));
+        public static final TagKey<Item> INGOTS_PROMETHIUM_147 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/promethium_147"));
+        public static final TagKey<Item> INGOTS_EUROPIUM_155 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/europium_155"));
+        public static final TagKey<Item> INGOTS_IRIDIUM_192 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/iridium_192"));
+        public static final TagKey<Item> INGOTS_THORIUM_230 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/thorium_230"));
+        public static final TagKey<Item> INGOTS_THORIUM_232 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/thorium_232"));
+        public static final TagKey<Item> INGOTS_PROTACTINIUM_231 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/protactinium_231"));
+        public static final TagKey<Item> INGOTS_PROTACTINIUM_233 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/protactinium_233"));
+        public static final TagKey<Item> INGOTS_URANIUM_233 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/uranium_233"));
+        public static final TagKey<Item> INGOTS_URANIUM_234 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/uranium_234"));
+        public static final TagKey<Item> INGOTS_URANIUM_235 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/uranium_235"));
+        public static final TagKey<Item> INGOTS_URANIUM_238 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/uranium_238"));
+        public static final TagKey<Item> INGOTS_NEPTUNIUM_236 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/neptunium_236"));
+        public static final TagKey<Item> INGOTS_NEPTUNIUM_237 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/neptunium_237"));
+        public static final TagKey<Item> INGOTS_PLUTONIUM_238 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/plutonium_238"));
+        public static final TagKey<Item> INGOTS_PLUTONIUM_239 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/plutonium_239"));
+        public static final TagKey<Item> INGOTS_PLUTONIUM_241 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/plutonium_241"));
+        public static final TagKey<Item> INGOTS_PLUTONIUM_242 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/plutonium_242"));
+        public static final TagKey<Item> INGOTS_AMERICIUM_241 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/americium_241"));
+        public static final TagKey<Item> INGOTS_AMERICIUM_242 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/americium_242"));
+        public static final TagKey<Item> INGOTS_AMERICIUM_243 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/americium_243"));
+        public static final TagKey<Item> INGOTS_CURIUM_243 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/curium_243"));
+        public static final TagKey<Item> INGOTS_CURIUM_245 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/curium_245"));
+        public static final TagKey<Item> INGOTS_CURIUM_246 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/curium_246"));
+        public static final TagKey<Item> INGOTS_CURIUM_247 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/curium_247"));
+        public static final TagKey<Item> INGOTS_BERKELIUM_247 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/berkelium_247"));
+        public static final TagKey<Item> INGOTS_BERKELIUM_248 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/berkelium_248"));
+        public static final TagKey<Item> INGOTS_CALIFORNIUM_249 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/californium_249"));
+        public static final TagKey<Item> INGOTS_CALIFORNIUM_250 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/californium_250"));
+        public static final TagKey<Item> INGOTS_CALIFORNIUM_251 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/californium_251"));
+        public static final TagKey<Item> INGOTS_CALIFORNIUM_252 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/californium_252"));
+        public static final TagKey<Item> INGOTS_EINSTEINIUM_252 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/einsteinium_252"));
+        public static final TagKey<Item> INGOTS_EINSTEINIUM_253 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/einsteinium_253"));
+        public static final TagKey<Item> INGOTS_EINSTEINIUM_254 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/einsteinium_254"));
+        public static final TagKey<Item> INGOTS_EINSTEINIUM_255 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/einsteinium_255"));
+        public static final TagKey<Item> INGOTS_FERMIUM_253 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/fermium_253"));
+        public static final TagKey<Item> INGOTS_FERMIUM_257 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/fermium_257"));
+        public static final TagKey<Item> INGOTS_COPERNICIUM_291 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/copernicium_291"));
         public static final TagKey<Item> GEMS_RHODOCHROSITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "gems/rhodochrosite"));
         public static final TagKey<Item> GEMS_CUBIC_BORON_NITRIDE = ItemTags.create(

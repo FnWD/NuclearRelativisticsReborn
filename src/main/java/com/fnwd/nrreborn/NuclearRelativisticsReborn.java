@@ -27,10 +27,10 @@ import org.slf4j.Logger;
 public class NuclearRelativisticsReborn {
     public static final String MODID = "nrreborn";
     public static final Logger LOGGER = LogUtils.getLogger();
+
     public NuclearRelativisticsReborn(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
-
         NRRCreativeModeTabs.register(modEventBus);
         NRRItems.register(modEventBus);
         NRRBlocks.register(modEventBus);
@@ -38,6 +38,7 @@ public class NuclearRelativisticsReborn {
         NRRMenuTypes.register(modEventBus);
         NRRRecipes.register(modEventBus);
         modEventBus.addListener(this::registerCapabilities);
+        LOGGER.info("Loaded NRR mod successfully");
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

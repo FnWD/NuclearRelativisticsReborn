@@ -2,6 +2,9 @@ package com.fnwd.nrreborn.item;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -285,6 +288,106 @@ public class NRRItems {
             "raw_thorium", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.register(
             "raw_uranium", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LITHIUM_6 = ITEMS.register(
+            "lithium_6", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LITHIUM_7 = ITEMS.register(
+            "lithium_7", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BERYLLIUM_7 = ITEMS.register(
+            "beryllium_7", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BORON_10 = ITEMS.register(
+            "boron_10", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BORON_11 = ITEMS.register(
+            "boron_11", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SODIUM_22 = ITEMS.register(
+            "sodium_22", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MAGNESIUM_24 = ITEMS.register(
+            "magnesium_24", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MAGNESIUM_26 = ITEMS.register(
+            "magnesium_26", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CALCIUM_48 = ITEMS.register(
+            "calcium_48", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> COBALT_60 = ITEMS.register(
+            "cobalt_60", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> STRONTIUM_90 = ITEMS.register(
+            "strontium_90", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RUTHENIUM_106 = ITEMS.register(
+            "ruthenium_106", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CAESIUM_137 = ITEMS.register(
+            "caesium_137", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PROMETHIUM_147 = ITEMS.register(
+            "promethium_147", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> EUROPIUM_155 = ITEMS.register(
+            "europium_155", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> IRIDIUM_192 = ITEMS.register(
+            "iridium_192", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> THORIUM_230 = ITEMS.register(
+            "thorium_230", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> THORIUM_232 = ITEMS.register(
+            "thorium_232", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PROTACTINIUM_231 = ITEMS.register(
+            "protactinium_231", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PROTACTINIUM_233 = ITEMS.register(
+            "protactinium_233", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> URANIUM_233 = ITEMS.register(
+            "uranium_233", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> URANIUM_234 = ITEMS.register(
+            "uranium_234", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> URANIUM_235 = ITEMS.register(
+            "uranium_235", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> URANIUM_238 = ITEMS.register(
+            "uranium_238", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> NEPTUNIUM_236 = ITEMS.register(
+            "neptunium_236", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> NEPTUNIUM_237 = ITEMS.register(
+            "neptunium_237", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLUTONIUM_238 = ITEMS.register(
+            "plutonium_238", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLUTONIUM_239 = ITEMS.register(
+            "plutonium_239", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLUTONIUM_241 = ITEMS.register(
+            "plutonium_241", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PLUTONIUM_242 = ITEMS.register(
+            "plutonium_242", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> AMERICIUM_241 = ITEMS.register(
+            "americium_241", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> AMERICIUM_242 = ITEMS.register(
+            "americium_242", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> AMERICIUM_243 = ITEMS.register(
+            "americium_243", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CURIUM_243 = ITEMS.register(
+            "curium_243", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CURIUM_245 = ITEMS.register(
+            "curium_245", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CURIUM_246 = ITEMS.register(
+            "curium_246", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CURIUM_247 = ITEMS.register(
+            "curium_247", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BERKELIUM_247 = ITEMS.register(
+            "berkelium_247", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BERKELIUM_248 = ITEMS.register(
+            "berkelium_248", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CALIFORNIUM_249 = ITEMS.register(
+            "californium_249", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CALIFORNIUM_250 = ITEMS.register(
+            "californium_250", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CALIFORNIUM_251 = ITEMS.register(
+            "californium_251", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CALIFORNIUM_252 = ITEMS.register(
+            "californium_252", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> EINSTEINIUM_252 = ITEMS.register(
+            "einsteinium_252", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> EINSTEINIUM_253 = ITEMS.register(
+            "einsteinium_253", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> EINSTEINIUM_254 = ITEMS.register(
+            "einsteinium_254", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> EINSTEINIUM_255 = ITEMS.register(
+            "einsteinium_255", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FERMIUM_253 = ITEMS.register(
+            "fermium_253", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FERMIUM_257 = ITEMS.register(
+            "fermium_257", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> COPERNICIUM_291 = ITEMS.register(
+            "copernicium_291", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BASIC_PLATING = ITEMS.register(
             "basic_plating", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ADVANCED_PLATING = ITEMS.register(
@@ -323,8 +426,106 @@ public class NRRItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    public static final DeferredItem<Item> MARSHMALLOW = ITEMS.register(
+            "marshmallow", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationModifier(0.4F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> GRAHAM_CRACKER = ITEMS.register(
+            "graham_cracker", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationModifier(0.2F)
+                    .build())));
+    public static final DeferredItem<Item> GROUND_COCOA_NIBS = ITEMS.register(
+            "ground_cocoa_nibs", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationModifier(0.2F)
+                    .build())));
+    public static final DeferredItem<Item> SOLIDIFIED_COCOA_BUTTER = ITEMS.register(
+            "solidified_cocoa_butter", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.1F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 300, 0), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> UNSWEETENED_CHOCOLATE = ITEMS.register(
+            "unsweetened_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.1F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 300, 0), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> DARK_CHOCOLATE = ITEMS.register(
+            "dark_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationModifier(0.8F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 300, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> MILK_CHOCOLATE = ITEMS.register(
+            "milk_chocolate", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationModifier(0.8F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 300, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 300, 0), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> SMORE = ITEMS.register(
+            "smore", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(8)
+                    .saturationModifier(1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 300, 1), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> SMORE_DOUBLE = ITEMS.register(
+            "smore_double", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(20)
+                    .saturationModifier(4.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 600, 1), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> SMORE_QUADRUPLE = ITEMS.register(
+            "smore_quadruple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(44)
+                    .saturationModifier(16.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 1), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> SMORE_OCTUPLE = ITEMS.register(
+            "smore_octuple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(92)
+                    .saturationModifier(64.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 2), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> SMORE_SEXDECUPLE = ITEMS.register(
+            "smore_sexdecuple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(188)
+                    .saturationModifier(256.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 2400, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 2400, 2), 1.0F)
+                    .build())));
+    public static final DeferredItem<Item> SMORE_DUOTRIGINTUPLE = ITEMS.register(
+            "smore_duotrigintuple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(380)
+                    .saturationModifier(1024.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 4800, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 4800, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 4800, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 4800, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 4800, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 4800, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.LUCK, 4800, 2), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.SATURATION, Integer.MAX_VALUE, 0), 1.0F)
+                    .build())));
     public static final DeferredItem<Item> IO_CONFIGURATOR = ITEMS.register(
             "io_configurator", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> PORTABLE_COBBLESTONE_GENERATOR = ITEMS.register(
+            "portable_cobblestone_generator", () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
