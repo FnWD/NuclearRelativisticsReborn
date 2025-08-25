@@ -33,6 +33,14 @@ public class NRRBlockLootTableProvider extends BlockLootSubProvider {
         add(NRRBlocks.URANIUM_ORE.get(), block -> createOreDrop(NRRBlocks.URANIUM_ORE.get(), NRRItems.RAW_URANIUM.get()));
         add(NRRBlocks.DEEPSLATE_URANIUM_ORE.get(), block -> createOreDrop(NRRBlocks.DEEPSLATE_URANIUM_ORE.get(), NRRItems.RAW_URANIUM.get()));
         dropSelf(NRRBlocks.MANUFACTORY.get());
+        dropSelf(NRRBlocks.BASIC_SOLAR_PANEL.get());
+        dropSelf(NRRBlocks.ADVANCED_SOLAR_PANEL.get());
+        dropSelf(NRRBlocks.DEPLETED_URANIUM_SOLAR_PANEL.get());
+        dropSelf(NRRBlocks.ELITE_SOLAR_PANEL.get());
+        dropSelf(NRRBlocks.URANIUM_RTG.get());
+        dropSelf(NRRBlocks.PLUTONIUM_RTG.get());
+        dropSelf(NRRBlocks.AMERICIUM_RTG.get());
+        dropSelf(NRRBlocks.CALIFORNIUM_RTG.get());
     }
 
     @Override

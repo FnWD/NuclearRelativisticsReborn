@@ -2,7 +2,7 @@ package com.fnwd.nrreborn.datagen;
 
 import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.item.NRRItems;
-import com.fnwd.nrreborn.recipe.builder.ManufactoryRecipeBuilder;
+import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipeBuilder;
 import com.fnwd.nrreborn.util.CTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -183,6 +183,81 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('E', NRRItems.COPPER_SOLENOID.get())
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.BASIC_SOLAR_PANEL.asItem())
+                .pattern("ABA")
+                .pattern("CDC")
+                .pattern("ECE")
+                .define('A', CTags.Items.DUSTS_GRAPHITE)
+                .define('B', CTags.Items.DUSTS_QUARTZ)
+                .define('C', Items.HEAVY_WEIGHTED_PRESSURE_PLATE)
+                .define('D', Items.LAPIS_LAZULI)
+                .define('E', NRRItems.COPPER_SOLENOID.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.ADVANCED_SOLAR_PANEL.asItem())
+                .pattern("ABA")
+                .pattern("CCC")
+                .pattern("ADA")
+                .define('A', NRRItems.ADVANCED_PLATING.get())
+                .define('B', CTags.Items.DUSTS_GRAPHITE)
+                .define('C', NRRBlocks.BASIC_SOLAR_PANEL.asItem())
+                .define('D', NRRItems.COPPER_SOLENOID.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.DEPLETED_URANIUM_SOLAR_PANEL.asItem())
+                .pattern("ABA")
+                .pattern("CCC")
+                .pattern("ADA")
+                .define('A', NRRItems.DEPLETED_URANIUM_PLATING.get())
+                .define('B', CTags.Items.DUSTS_GRAPHITE)
+                .define('C', NRRBlocks.ADVANCED_SOLAR_PANEL.asItem())
+                .define('D', NRRItems.MAGNESIUM_DIBORIDE_SOLENOID.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.ELITE_SOLAR_PANEL.asItem())
+                .pattern("ABA")
+                .pattern("CCC")
+                .pattern("ADA")
+                .define('A', NRRItems.ELITE_PLATING.get())
+                .define('B', CTags.Items.GEMS_BORON_ARSENIDE)
+                .define('C', NRRBlocks.DEPLETED_URANIUM_SOLAR_PANEL.asItem())
+                .define('D', NRRItems.MAGNESIUM_DIBORIDE_SOLENOID.get())
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.PLUTONIUM_RTG.asItem())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', NRRItems.ADVANCED_PLATING.get())
+                .define('B', CTags.Items.INGOTS_GRAPHITE)
+                .define('C', CTags.Items.INGOTS_PLUTONIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.AMERICIUM_RTG.asItem())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', NRRItems.ADVANCED_PLATING.get())
+                .define('B', CTags.Items.INGOTS_GRAPHITE)
+                .define('C', CTags.Items.INGOTS_AMERICIUM_241)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRBlocks.CALIFORNIUM_RTG.asItem())
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .define('A', NRRItems.ADVANCED_PLATING.get())
+                .define('B', CTags.Items.INGOTS_GRAPHITE)
+                .define('C', CTags.Items.INGOTS_CALIFORNIUM_250)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
         oreSmelting(recipeOutput, List.of(NRRBlocks.TIN_ORE, NRRBlocks.DEEPSLATE_TIN_ORE), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 200, "tin_ingot");
         oreBlasting(recipeOutput, List.of(NRRBlocks.TIN_ORE, NRRBlocks.DEEPSLATE_TIN_ORE), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 100, "tin_ingot");
         oreSmelting(recipeOutput, List.of(NRRBlocks.LEAD_ORE, NRRBlocks.DEEPSLATE_LEAD_ORE), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 200, "lead_ingot");
@@ -197,6 +272,20 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(recipeOutput, List.of(NRRBlocks.THORIUM_ORE, NRRBlocks.DEEPSLATE_THORIUM_ORE), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 100, "thorium_ingot");
         oreSmelting(recipeOutput, List.of(NRRBlocks.URANIUM_ORE, NRRBlocks.DEEPSLATE_URANIUM_ORE), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 200, "uranium_ingot");
         oreBlasting(recipeOutput, List.of(NRRBlocks.URANIUM_ORE, NRRBlocks.DEEPSLATE_URANIUM_ORE), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 100, "uranium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_TIN), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 200, "tin_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_TIN), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.7F, 100, "tin_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_LEAD), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 200, "lead_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_LEAD), RecipeCategory.MISC, NRRItems.LEAD_INGOT.get(), 0.7F, 100, "lead_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_MAGNESIUM), RecipeCategory.MISC, NRRItems.MAGNESIUM_INGOT.get(), 0.7F, 200, "magnesium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_MAGNESIUM), RecipeCategory.MISC, NRRItems.MAGNESIUM_INGOT.get(), 0.7F, 100, "magnesium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_LITHIUM), RecipeCategory.MISC, NRRItems.LITHIUM_INGOT.get(), 0.7F, 200, "lithium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_LITHIUM), RecipeCategory.MISC, NRRItems.LITHIUM_INGOT.get(), 0.7F, 100, "lithium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_BORON), RecipeCategory.MISC, NRRItems.BORON_INGOT.get(), 0.7F, 200, "boron_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_BORON), RecipeCategory.MISC, NRRItems.BORON_INGOT.get(), 0.7F, 100, "boron_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_THORIUM), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 200, "thorium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_THORIUM), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.7F, 100, "thorium_ingot");
+        oreSmelting(recipeOutput, List.of(NRRItems.RAW_URANIUM), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 200, "uranium_ingot");
+        oreBlasting(recipeOutput, List.of(NRRItems.RAW_URANIUM), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.7F, 100, "uranium_ingot");
         SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_TIN), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))

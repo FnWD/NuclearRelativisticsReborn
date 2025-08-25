@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-17T23:05:17.6762458	Tags for minecraft:block mod id nrreborn
+// 1.21.1	2025-08-25T12:03:54.7625729	Tags for minecraft:block mod id nrreborn
 e4848f48e1a654ba594538ae672fc3dbade6a989 data/c/tags/block/ores.json
 33321b8033da8383d2b824d132b8bb6c85995e31 data/c/tags/block/ores/boron.json
 68477e23a2ab9466835bc3f5ebca12ac848497ae data/c/tags/block/ores/lead.json
@@ -7,6 +7,6 @@ e4848f48e1a654ba594538ae672fc3dbade6a989 data/c/tags/block/ores.json
 34cc0bcdef0756476079951a069e9075f8beb306 data/c/tags/block/ores/thorium.json
 5105073483dd0d2f14492a89025208e9223d7663 data/c/tags/block/ores/tin.json
 d7395f493a5474db9f1ae2370b7f3193f2435128 data/c/tags/block/ores/uranium.json
-f00970354e57ec7358a571377297e47c2167a793 data/minecraft/tags/block/mineable/pickaxe.json
+64180eb3ac0e58f71668556e2af3f7e36f167811 data/minecraft/tags/block/mineable/pickaxe.json
 e34b68322de2e84e8f43e84db6c35819ad491541 data/minecraft/tags/block/needs_iron_tool.json
 71af82de79acdff3816818291d005efc0d7f551b data/minecraft/tags/block/needs_stone_tool.json

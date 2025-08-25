@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "lithium_ingot",
+  "ingredient": {
+    "item": "nrreborn:raw_lithium"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:lithium_ingot"
+  }
+}

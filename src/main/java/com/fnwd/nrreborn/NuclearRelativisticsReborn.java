@@ -1,13 +1,19 @@
 package com.fnwd.nrreborn;
 
 import com.fnwd.nrreborn.block.NRRBlocks;
-import com.fnwd.nrreborn.block.entity.NRRBlockEntities;
+import com.fnwd.nrreborn.block_entity.NRRBlockEntities;
+import com.fnwd.nrreborn.block_entity.manufactory.ManufactoryBlockEntity;
 import com.fnwd.nrreborn.item.NRRCreativeModeTabs;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
 import com.fnwd.nrreborn.screen.NRRMenuTypes;
-import com.fnwd.nrreborn.screen.custom.ManufactoryScreen;
+import com.fnwd.nrreborn.screen.manufactory.ManufactoryScreen;
+import com.fnwd.nrreborn.util.CTags;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,6 +27,7 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import org.slf4j.Logger;
 
 @Mod(NuclearRelativisticsReborn.MODID)
@@ -47,8 +54,24 @@ public class NuclearRelativisticsReborn {
 
     private void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, NRRBlockEntities.MANUFACTORY_BLOCK_ENTITY.get(),
-                (blockEntity, direction) -> blockEntity.getInventory());
+                ManufactoryBlockEntity::getInventory);
         event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.MANUFACTORY_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.BASIC_SOLAR_PANEL_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.ADVANCED_SOLAR_PANEL_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.DEPLETED_URANIUM_SOLAR_PANEL_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.ELITE_SOLAR_PANEL_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.URANIUM_RTG_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.PLUTONIUM_RTG_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.AMERICIUM_RTG_BLOCK_ENTITY.get(),
+                (blockEntity, direction) -> blockEntity.getEnergyStorage());
+        event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, NRRBlockEntities.CALIFORNIUM_RTG_BLOCK_ENTITY.get(),
                 (blockEntity, direction) -> blockEntity.getEnergyStorage());
     }
 
@@ -67,6 +90,29 @@ public class NuclearRelativisticsReborn {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(NRRMenuTypes.MANUFACTORY_MENU.get(), ManufactoryScreen::new);
+        }
+    }
+
+    @SubscribeEvent
+    public void onItemEntityTick(EntityTickEvent.Post event) {
+        Entity entity = event.getEntity();
+        if (entity instanceof ItemEntity itemEntity) {
+            ItemStack stack = itemEntity.getItem();
+            if (stack.is(CTags.Items.INGOTS_LITHIUM) || stack.is(CTags.Items.DUSTS_LITHIUM)) {
+                if (itemEntity.isInWaterRainOrBubble()) {
+                    Level level = itemEntity.level();
+                    if (!level.isClientSide()) {
+                        level.explode(
+                                null,
+                                itemEntity.getX(),
+                                itemEntity.getY(),
+                                itemEntity.getZ(),
+                                5.0F,
+                                Level.ExplosionInteraction.TNT);
+                        itemEntity.discard();
+                    }
+                }
+            }
         }
     }
 }

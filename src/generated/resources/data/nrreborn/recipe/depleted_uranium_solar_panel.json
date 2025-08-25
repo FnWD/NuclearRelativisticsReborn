@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nrreborn:depleted_uranium_plating"
+    },
+    "B": {
+      "tag": "c:dusts/graphite"
+    },
+    "C": {
+      "item": "nrreborn:advanced_solar_panel"
+    },
+    "D": {
+      "item": "nrreborn:magnesium_diboride_solenoid"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "CCC",
+    "ADA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:depleted_uranium_solar_panel"
+  }
+}

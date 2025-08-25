@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-15T18:21:20.6477502	Tags for minecraft:item mod id nrreborn
+// 1.21.1	2025-08-23T17:01:15.9645118	Tags for minecraft:item mod id nrreborn
 bff0aa9f4b6ae8d099de82da0718df1c38eea489 data/c/tags/item/dusts.json
 6a5aa9fc2d3ace4eca3eab07604309bcc16fce23 data/c/tags/item/dusts/alugentum.json
 7a75cb802287ed43469e01e4d4f6ebd99d3a2b5f data/c/tags/item/dusts/aluminum.json
@@ -6,6 +6,7 @@ bff0aa9f4b6ae8d099de82da0718df1c38eea489 data/c/tags/item/dusts.json
 a164ec852394ecd90b60af927c749246f60a818f data/c/tags/item/dusts/beryllium.json
 6a4fb3520f5f8d58db503db3a1a0084d80ba5a8e data/c/tags/item/dusts/borax.json
 28e063a992b75679c78ac7bbad78ddf567864cab data/c/tags/item/dusts/boron.json
+d13a7ef32755b2ba307a925413c6c8b6c2c27db2 data/c/tags/item/dusts/boron_nitride.json
 6699e6fae93a40f6ba4cee500f9aaebfe04e54dd data/c/tags/item/dusts/calcium_sulfate.json
 458a9fdaa26b8fbc07296e57a0ab4ed55f56c84d data/c/tags/item/dusts/carobbiite.json
 7300e683dd51c8d9423e09c8c61904b86b818575 data/c/tags/item/dusts/coal.json
@@ -13,7 +14,6 @@ aec6a8bb115482c7184843b7524c2a1d1bbfda3a data/c/tags/item/dusts/diamond.json
 83a776e2cc5d4a9801b5816c80c744f2ca54a822 data/c/tags/item/dusts/end_stone.json
 82abd8dc171683dc99acc2c1dd3507a16883e381 data/c/tags/item/dusts/fluorite.json
 4af22d9a6c83a29e316492b95b76110c602d7a80 data/c/tags/item/dusts/graphite.json
-d13a7ef32755b2ba307a925413c6c8b6c2c27db2 data/c/tags/item/dusts/hexagonal_boron_nitride.json
 954e716c86be56476e8009c4eb6f4da980e5c6d6 data/c/tags/item/dusts/lead.json
 7c694586c7fdc14ebda077af396b4619bf7b4e51 data/c/tags/item/dusts/lithium.json
 c4a25e4b2de07a08d81306098021f5214ef73ec2 data/c/tags/item/dusts/magnesium.json
@@ -38,8 +38,8 @@ fe8d0087bd9897b54eb84687e7bf9a676f717099 data/c/tags/item/dusts/uranium_oxide.js
 e8cdf8ff0b898c0e18dce3b0ffaa7fda39143332 data/c/tags/item/dusts/zirconium.json
 0f9b0fd47da823118c9e5d84b7b0d2aa10b42481 data/c/tags/item/gems.json
 e7a4ab366a5dc67e02fa93ff1dde8d5d9c8465ae data/c/tags/item/gems/boron_arsenide.json
+ab8fc098971a056e99409b95e5e81dca446dc340 data/c/tags/item/gems/boron_nitride.json
 570f707918e2b9623ebe3cb81c0b170e58f31bf2 data/c/tags/item/gems/carobbiite.json
-ab8fc098971a056e99409b95e5e81dca446dc340 data/c/tags/item/gems/cubic_boron_nitride.json
 68ed829d1a29af891667a6dabfa4ff6657b83dc1 data/c/tags/item/gems/fluorite.json
 38e4d1e58154b904889348fd3e7b1b7190dd1f53 data/c/tags/item/gems/rhodochrosite.json
 5f92ec39af913c05e58f9ff645e2677437857edf data/c/tags/item/gems/villiaumite.json

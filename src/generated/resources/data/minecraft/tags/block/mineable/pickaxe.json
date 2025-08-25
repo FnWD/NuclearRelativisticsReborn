@@ -14,6 +14,14 @@
     "nrreborn:deepslate_thorium_ore",
     "nrreborn:uranium_ore",
     "nrreborn:deepslate_uranium_ore",
-    "nrreborn:manufactory"
+    "nrreborn:manufactory",
+    "nrreborn:basic_solar_panel",
+    "nrreborn:advanced_solar_panel",
+    "nrreborn:depleted_uranium_solar_panel",
+    "nrreborn:elite_solar_panel",
+    "nrreborn:uranium_rtg",
+    "nrreborn:plutonium_rtg",
+    "nrreborn:americium_rtg",
+    "nrreborn:californium_rtg"
   ]
 }

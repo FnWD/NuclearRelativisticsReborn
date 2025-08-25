@@ -29,7 +29,7 @@ public class NRRItemModelProvider extends ItemModelProvider {
         basicItem(NRRItems.MANGANESE_INGOT.get());
         basicItem(NRRItems.MANGANESE_OXIDE_INGOT.get());
         basicItem(NRRItems.MANGANESE_DIOXIDE_INGOT.get());
-        /*basicItem(NRRItems.GRAPHITE_INGOT.get());
+        basicItem(NRRItems.GRAPHITE_INGOT.get());
         basicItem(NRRItems.BRONZE_INGOT.get());
         basicItem(NRRItems.STEEL_INGOT.get());
         basicItem(NRRItems.FERROBORON_ALLOY_INGOT.get());
@@ -92,7 +92,7 @@ public class NRRItemModelProvider extends ItemModelProvider {
         basicItem(NRRItems.SODIUM_FLUORIDE.get());
         basicItem(NRRItems.POTASSIUM_FLUORIDE.get());
         basicItem(NRRItems.SODIUM_HYDROXIDE.get());
-        basicItem(NRRItems.POTASSIUM_HYDROXIDE.get());*/
+        basicItem(NRRItems.POTASSIUM_HYDROXIDE.get());
         basicItem(NRRItems.RAW_TIN.get());
         basicItem(NRRItems.RAW_LEAD.get());
         basicItem(NRRItems.RAW_MAGNESIUM.get());

@@ -213,6 +213,14 @@ public class NRRCreativeModeTabs {
                     .title(Component.translatable("creativemodetab.nrreborn.nrr_machines"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(NRRBlocks.MANUFACTORY);
+                        output.accept(NRRBlocks.BASIC_SOLAR_PANEL);
+                        output.accept(NRRBlocks.ADVANCED_SOLAR_PANEL);
+                        output.accept(NRRBlocks.DEPLETED_URANIUM_SOLAR_PANEL);
+                        output.accept(NRRBlocks.ELITE_SOLAR_PANEL);
+                        output.accept(NRRBlocks.URANIUM_RTG);
+                        output.accept(NRRBlocks.PLUTONIUM_RTG);
+                        output.accept(NRRBlocks.AMERICIUM_RTG);
+                        output.accept(NRRBlocks.CALIFORNIUM_RTG);
                     }).build());
     public static final Supplier<CreativeModeTab> NRR_TOOLS_AND_WEAPONS = CREATIVE_MODE_TAB.register(
             "nrr_tools_and_weapons", () -> CreativeModeTab.builder()

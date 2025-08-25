@@ -1,5 +1,9 @@
-// 1.21.1	2025-07-17T16:48:28.3813283	Loot Tables
+// 1.21.1	2025-08-25T12:03:54.7573808	Loot Tables
+d33d3716cd953182716ec01bc0ffdb8515c80993 data/nrreborn/loot_table/blocks/advanced_solar_panel.json
+8a3bb968cf205ad291fc99bf64569a6476f70957 data/nrreborn/loot_table/blocks/americium_rtg.json
+801bc4f8e01648b2a8f960125ccbbbc6c2001af1 data/nrreborn/loot_table/blocks/basic_solar_panel.json
 9c18662bb962dd919d5ef3a4378fd770b95ffc4b data/nrreborn/loot_table/blocks/boron_ore.json
+aea7b2b6f554e353b5f8f378b67a0ebd4364ff90 data/nrreborn/loot_table/blocks/californium_rtg.json
 a9db98e4f5d38c11952bbb2f445a7e534aa4d0f9 data/nrreborn/loot_table/blocks/deepslate_boron_ore.json
 5191da6dc62868ad5d0ebd106801cca8dd58caaa data/nrreborn/loot_table/blocks/deepslate_lead_ore.json
 430408eef7de54218e0ac4dd3349ef8ba6b09523 data/nrreborn/loot_table/blocks/deepslate_lithium_ore.json
@@ -7,10 +11,14 @@ ec641162ed47bfd98e65df72f53596e5157a0987 data/nrreborn/loot_table/blocks/deepsla
 0b373989f6c2f4d09ecda9c7cb308a565d135648 data/nrreborn/loot_table/blocks/deepslate_thorium_ore.json
 d21a83daf7ef0266c84718e88c5dc334d3ec1b9c data/nrreborn/loot_table/blocks/deepslate_tin_ore.json
 1f0a2f5c76e7cc1eddd093d2c7227e2df84083ec data/nrreborn/loot_table/blocks/deepslate_uranium_ore.json
+974c08b142d7a85620fad6d5aeb835f6a1a58aa3 data/nrreborn/loot_table/blocks/depleted_uranium_solar_panel.json
+a653c5432e2bf14cbaa8c0d4b73bdfd84d1ae952 data/nrreborn/loot_table/blocks/elite_solar_panel.json
 8fbaffac00c045ae5439bec0bdc77c2b08a4e715 data/nrreborn/loot_table/blocks/lead_ore.json
 4143a17d3884aec22ee8079e8b152756100244b8 data/nrreborn/loot_table/blocks/lithium_ore.json
 4a6ec0d5d29e696b9a5a5b8821e9b59fc5ebe975 data/nrreborn/loot_table/blocks/magnesium_ore.json
 14a2522cfd47ac07622e80d803db59dbb38a6dc3 data/nrreborn/loot_table/blocks/manufactory.json
+8cc41b597522b942f0efee21593565f964c77450 data/nrreborn/loot_table/blocks/plutonium_rtg.json
 2e277d8750d110bd87f7aaba5c08f595c80d4d77 data/nrreborn/loot_table/blocks/thorium_ore.json
 5497dd1a629bb3bb47f79d2fe30df28f61debd25 data/nrreborn/loot_table/blocks/tin_ore.json
 50c700d74975c4228341f7db94bc6735c7bec9d1 data/nrreborn/loot_table/blocks/uranium_ore.json
+605d4f6e5aa6520dcb2bd978c2d2bcae8032ded3 data/nrreborn/loot_table/blocks/uranium_rtg.json

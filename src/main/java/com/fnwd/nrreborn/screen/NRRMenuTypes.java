@@ -1,7 +1,7 @@
 package com.fnwd.nrreborn.screen;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
-import com.fnwd.nrreborn.screen.custom.ManufactoryMenu;
+import com.fnwd.nrreborn.screen.manufactory.ManufactoryMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;

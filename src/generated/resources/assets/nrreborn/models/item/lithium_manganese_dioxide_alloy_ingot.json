@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nrreborn:item/lithium_manganese_dioxide_alloy_ingot"
+  }
+}

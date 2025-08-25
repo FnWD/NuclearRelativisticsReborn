@@ -187,10 +187,12 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/fermium_257"));
         public static final TagKey<Item> INGOTS_COPERNICIUM_291 = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/copernicium_291"));
+        public static final TagKey<Item> INGOTS_BIOSTEEL = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/biosteel"));
         public static final TagKey<Item> GEMS_RHODOCHROSITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "gems/rhodochrosite"));
-        public static final TagKey<Item> GEMS_CUBIC_BORON_NITRIDE = ItemTags.create(
-                ResourceLocation.fromNamespaceAndPath("c", "gems/cubic_boron_nitride"));
+        public static final TagKey<Item> GEMS_BORON_NITRIDE = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "gems/boron_nitride"));
         public static final TagKey<Item> GEMS_FLUORITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "gems/fluorite"));
         public static final TagKey<Item> GEMS_VILLIAUMITE = ItemTags.create(
@@ -249,8 +251,8 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "dusts/graphite"));
         public static final TagKey<Item> DUSTS_RHODOCHROSITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "dusts/rhodochrosite"));
-        public static final TagKey<Item> DUSTS_HEXAGONAL_BORON_NITRIDE = ItemTags.create(
-                ResourceLocation.fromNamespaceAndPath("c", "dusts/hexagonal_boron_nitride"));
+        public static final TagKey<Item> DUSTS_BORON_NITRIDE = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "dusts/boron_nitride"));
         public static final TagKey<Item> DUSTS_FLUORITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "dusts/fluorite"));
         public static final TagKey<Item> DUSTS_VILLIAUMITE = ItemTags.create(

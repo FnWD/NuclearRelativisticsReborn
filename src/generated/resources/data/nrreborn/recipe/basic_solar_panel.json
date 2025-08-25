@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:dusts/graphite"
+    },
+    "B": {
+      "tag": "c:dusts/quartz"
+    },
+    "C": {
+      "item": "minecraft:heavy_weighted_pressure_plate"
+    },
+    "D": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "E": {
+      "item": "nrreborn:copper_solenoid"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "CDC",
+    "ECE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:basic_solar_panel"
+  }
+}

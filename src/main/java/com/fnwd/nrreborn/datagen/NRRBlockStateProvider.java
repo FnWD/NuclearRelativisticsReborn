@@ -2,7 +2,7 @@ package com.fnwd.nrreborn.datagen;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
 import com.fnwd.nrreborn.block.NRRBlocks;
-import com.fnwd.nrreborn.block.custom.ManufactoryBlock;
+import com.fnwd.nrreborn.block.manufactory.ManufactoryBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -32,6 +32,14 @@ public class NRRBlockStateProvider extends BlockStateProvider {
         simple(NRRBlocks.DEEPSLATE_THORIUM_ORE);
         simple(NRRBlocks.URANIUM_ORE);
         simple(NRRBlocks.DEEPSLATE_URANIUM_ORE);
+        /*simple(NRRBlocks.BASIC_SOLAR_PANEL);
+        simple(NRRBlocks.ADVANCED_SOLAR_PANEL);
+        simple(NRRBlocks.DEPLETED_URANIUM_SOLAR_PANEL);
+        simple(NRRBlocks.ELITE_SOLAR_PANEL);
+        simple(NRRBlocks.URANIUM_RTG);
+        simple(NRRBlocks.PLUTONIUM_RTG);
+        simple(NRRBlocks.AMERICIUM_RTG);
+        simple(NRRBlocks.CALIFORNIUM_RTG);*/
         getVariantBuilder(NRRBlocks.MANUFACTORY.get()).forAllStates(state -> {
             Direction facing = state.getValue(ManufactoryBlock.FACING);
             boolean working = state.getValue(ManufactoryBlock.WORKING);

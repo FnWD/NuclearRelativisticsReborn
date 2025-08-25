@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nrreborn:elite_plating"
+    },
+    "B": {
+      "tag": "c:gems/boron_arsenide"
+    },
+    "C": {
+      "item": "nrreborn:depleted_uranium_solar_panel"
+    },
+    "D": {
+      "item": "nrreborn:magnesium_diboride_solenoid"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "CCC",
+    "ADA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:elite_solar_panel"
+  }
+}

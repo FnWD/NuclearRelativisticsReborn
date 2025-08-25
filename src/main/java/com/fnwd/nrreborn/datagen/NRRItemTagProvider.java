@@ -256,7 +256,7 @@ public class NRRItemTagProvider extends ItemTagsProvider {
         tag(CTags.Items.INGOTS_FERMIUM_257).add(NRRItems.FERMIUM_257.get());
         tag(CTags.Items.INGOTS_COPERNICIUM_291).add(NRRItems.COPERNICIUM_291.get());
         tag(CTags.Items.GEMS_RHODOCHROSITE).add(NRRItems.RHODOCHROSITE.get());
-        tag(CTags.Items.GEMS_CUBIC_BORON_NITRIDE).add(NRRItems.CUBIC_BORON_NITRIDE.get());
+        tag(CTags.Items.GEMS_BORON_NITRIDE).add(NRRItems.CUBIC_BORON_NITRIDE.get());
         tag(CTags.Items.GEMS_FLUORITE).add(NRRItems.FLUORITE.get());
         tag(CTags.Items.GEMS_VILLIAUMITE).add(NRRItems.VILLIAUMITE.get());
         tag(CTags.Items.GEMS_CAROBBIITE).add(NRRItems.CAROBBIITE.get());
@@ -286,7 +286,7 @@ public class NRRItemTagProvider extends ItemTagsProvider {
         tag(CTags.Items.DUSTS_END_STONE).add(NRRItems.END_STONE_DUST.get());
         tag(CTags.Items.DUSTS_SULFUR).add(NRRItems.SULFUR_DUST.get());
         tag(CTags.Items.DUSTS_RHODOCHROSITE).add(NRRItems.RHODOCHROSITE_DUST.get());
-        tag(CTags.Items.DUSTS_HEXAGONAL_BORON_NITRIDE).add(NRRItems.HEXAGONAL_BORON_NITRIDE.get());
+        tag(CTags.Items.DUSTS_BORON_NITRIDE).add(NRRItems.HEXAGONAL_BORON_NITRIDE.get());
         tag(CTags.Items.DUSTS_FLUORITE).add(NRRItems.FLUORITE_DUST.get());
         tag(CTags.Items.DUSTS_VILLIAUMITE).add(NRRItems.VILLIAUMITE_DUST.get());
         tag(CTags.Items.DUSTS_CAROBBIITE).add(NRRItems.CAROBBIITE_DUST.get());

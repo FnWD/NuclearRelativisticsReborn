@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nrreborn:advanced_plating"
+    },
+    "B": {
+      "tag": "c:ingots/graphite"
+    },
+    "C": {
+      "tag": "c:ingots/californium_250"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:californium_rtg"
+  }
+}

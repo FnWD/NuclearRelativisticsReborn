@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nrreborn:advanced_plating"
+    },
+    "B": {
+      "tag": "c:dusts/graphite"
+    },
+    "C": {
+      "item": "nrreborn:basic_solar_panel"
+    },
+    "D": {
+      "item": "nrreborn:copper_solenoid"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "CCC",
+    "ADA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:advanced_solar_panel"
+  }
+}

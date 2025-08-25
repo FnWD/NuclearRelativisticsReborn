@@ -1,6 +1,7 @@
 package com.fnwd.nrreborn.recipe;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
+import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;

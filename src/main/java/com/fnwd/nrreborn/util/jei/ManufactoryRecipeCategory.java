@@ -2,7 +2,7 @@ package com.fnwd.nrreborn.util.jei;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
 import com.fnwd.nrreborn.block.NRRBlocks;
-import com.fnwd.nrreborn.recipe.ManufactoryRecipe;
+import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;

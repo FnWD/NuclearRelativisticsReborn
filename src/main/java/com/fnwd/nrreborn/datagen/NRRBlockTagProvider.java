@@ -35,7 +35,15 @@ public class NRRBlockTagProvider extends BlockTagsProvider {
                 .add(NRRBlocks.DEEPSLATE_THORIUM_ORE.get())
                 .add(NRRBlocks.URANIUM_ORE.get())
                 .add(NRRBlocks.DEEPSLATE_URANIUM_ORE.get())
-                .add(NRRBlocks.MANUFACTORY.get());
+                .add(NRRBlocks.MANUFACTORY.get())
+                .add(NRRBlocks.BASIC_SOLAR_PANEL.get())
+                .add(NRRBlocks.ADVANCED_SOLAR_PANEL.get())
+                .add(NRRBlocks.DEPLETED_URANIUM_SOLAR_PANEL.get())
+                .add(NRRBlocks.ELITE_SOLAR_PANEL.get())
+                .add(NRRBlocks.URANIUM_RTG.get())
+                .add(NRRBlocks.PLUTONIUM_RTG.get())
+                .add(NRRBlocks.AMERICIUM_RTG.get())
+                .add(NRRBlocks.CALIFORNIUM_RTG.get());
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(NRRBlocks.TIN_ORE.get())
                 .add(NRRBlocks.DEEPSLATE_TIN_ORE.get())
