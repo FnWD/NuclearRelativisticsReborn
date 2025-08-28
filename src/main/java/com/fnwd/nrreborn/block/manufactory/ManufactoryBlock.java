@@ -2,6 +2,9 @@ package com.fnwd.nrreborn.block.manufactory;
 
 import com.fnwd.nrreborn.block_entity.manufactory.ManufactoryBlockEntity;
 import com.fnwd.nrreborn.block_entity.NRRBlockEntities;
+import com.fnwd.nrreborn.data_component.NRRDataComponents;
+import com.fnwd.nrreborn.item.NRRItems;
+import com.fnwd.nrreborn.util.ConfigurationTypes;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,6 +30,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
 
 public class ManufactoryBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
@@ -77,7 +82,47 @@ public class ManufactoryBlock extends BaseEntityBlock {
     protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof ManufactoryBlockEntity manufactoryBlockEntity) {
             if (!level.isClientSide()) {
-                player.openMenu(new SimpleMenuProvider(manufactoryBlockEntity, Component.translatable("title.nrreborn.manufactory")), pos);
+                if (!stack.is(NRRItems.IO_CONFIGURATOR.get())) {
+                    player.openMenu(new SimpleMenuProvider(manufactoryBlockEntity, Component.translatable("title.nrreborn.manufactory")), pos);
+                } else {
+                    level.invalidateCapabilities(pos);
+                    manufactoryBlockEntity.setChanged();
+                    if (!player.isCrouching()) {
+                        if (stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) == ConfigurationTypes.DISABLE_ALL) {
+                            for (int i = 0; i < manufactoryBlockEntity.inputSideConfiguration.length; i++) {
+                                Arrays.fill(manufactoryBlockEntity.inputSideConfiguration[i], false);
+                            }
+                            for (int i = 0; i < manufactoryBlockEntity.outputSideConfiguration.length; i++) {
+                                Arrays.fill(manufactoryBlockEntity.outputSideConfiguration[i], false);
+                            }
+                            player.sendSystemMessage(Component.translatable("message.nrreborn.block_disable_all_sides"));
+                        } else if (stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) >= ConfigurationTypes.INPUT_ITEM_SLOT_1 &&
+                                stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) <= ConfigurationTypes.INPUT_ITEM_SLOT_4) {
+                            manufactoryBlockEntity.inputSideConfiguration[hitResult.getDirection().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1] =
+                                    !manufactoryBlockEntity.inputSideConfiguration[hitResult.getDirection().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1];
+                        } else {
+                            manufactoryBlockEntity.outputSideConfiguration[hitResult.getDirection().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5] =
+                                    !manufactoryBlockEntity.outputSideConfiguration[hitResult.getDirection().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5];
+                        }
+                    } else {
+                        if (stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) == ConfigurationTypes.DISABLE_ALL) {
+                            for (int i = 0; i < manufactoryBlockEntity.inputSideConfiguration.length; i++) {
+                                Arrays.fill(manufactoryBlockEntity.inputSideConfiguration[i], false);
+                            }
+                            for (int i = 0; i < manufactoryBlockEntity.outputSideConfiguration.length; i++) {
+                                Arrays.fill(manufactoryBlockEntity.outputSideConfiguration[i], false);
+                            }
+                            player.sendSystemMessage(Component.translatable("message.nrreborn.block_disable_all_sides"));
+                        } else if (stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) >= ConfigurationTypes.INPUT_ITEM_SLOT_1 &&
+                                stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) <= ConfigurationTypes.INPUT_ITEM_SLOT_4) {
+                            manufactoryBlockEntity.inputSideConfiguration[hitResult.getDirection().getOpposite().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1] =
+                                    !manufactoryBlockEntity.inputSideConfiguration[hitResult.getDirection().getOpposite().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1];
+                        } else {
+                            manufactoryBlockEntity.outputSideConfiguration[hitResult.getDirection().getOpposite().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5] =
+                                    !manufactoryBlockEntity.outputSideConfiguration[hitResult.getDirection().getOpposite().get3DDataValue()][stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5];
+                        }
+                    }
+                }
             }
         }
         return ItemInteractionResult.sidedSuccess(level.isClientSide());

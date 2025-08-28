@@ -1,18 +1,31 @@
 package com.fnwd.nrreborn.item;
 
+import com.fnwd.nrreborn.NRRConfig;
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
+import com.fnwd.nrreborn.block_entity.NRRWrappedMachineBlockEntity;
+import com.fnwd.nrreborn.data_component.NRRDataComponents;
+import com.fnwd.nrreborn.util.ConfigurationTypes;
+import com.fnwd.nrreborn.util.GUIUtils;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.HitResult;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class NRRItems {
@@ -426,6 +439,1139 @@ public class NRRItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    public static final DeferredItem<Item> TBU_FUEL = ITEMS.register(
+            "tbu_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time").withColor(11184810)
+                            .append("144000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate").withColor(11184810)
+                            .append(GUIUtils.formatNumber(NRRConfig.CONFIG.TBU_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation").withColor(11184810)
+                            .append("18 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> TBU_OXIDE_FUEL = ITEMS.register(
+            "tbu_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("144000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.TBU_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("22.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> TBU_TRISO_FUEL = ITEMS.register(
+            "tbu_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("144000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.TBU_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("18 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEN_236_FUEL = ITEMS.register(
+            "len_236_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("102000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEN_236_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("36 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEN_236_OXIDE_FUEL = ITEMS.register(
+            "len_236_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("102000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEN_236_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("45 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEN_236_TRISO_FUEL = ITEMS.register(
+            "len_236_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("102000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEN_236_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("36 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEP_239_FUEL = ITEMS.register(
+            "lep_239_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEP_239_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("40 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEP_239_OXIDE_FUEL = ITEMS.register(
+            "lep_239_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEP_239_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("50 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEP_239_TRISO_FUEL = ITEMS.register(
+            "lep_239_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEP_239_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("40 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEU_235_FUEL = ITEMS.register(
+            "leu_235_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("72000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEU_235_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("50 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEU_235_OXIDE_FUEL = ITEMS.register(
+            "leu_235_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("72000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEU_235_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("62.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEU_235_TRISO_FUEL = ITEMS.register(
+            "leu_235_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("72000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEU_235_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("50 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEU_233_FUEL = ITEMS.register(
+            "leu_233_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("63960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEU_233_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("60 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEU_233_OXIDE_FUEL = ITEMS.register(
+            "leu_233_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("63960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEU_233_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("75 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEU_233_TRISO_FUEL = ITEMS.register(
+            "leu_233_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("63960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEU_233_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("60 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEP_241_FUEL = ITEMS.register(
+            "lep_241_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEP_241_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("70 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEP_241_OXIDE_FUEL = ITEMS.register(
+            "lep_241_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEP_241_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("87.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEP_241_TRISO_FUEL = ITEMS.register(
+            "lep_241_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEP_241_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("70 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEB_248_FUEL = ITEMS.register(
+            "leb_248_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("86040 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEB_248_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("52 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEB_248_OXIDE_FUEL = ITEMS.register(
+            "leb_248_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("86040 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEB_248_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("65 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEB_248_TRISO_FUEL = ITEMS.register(
+            "leb_248_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("86040 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEB_248_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("52 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_247_FUEL = ITEMS.register(
+            "lecm_247_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("78000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_247_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("54 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_247_OXIDE_FUEL = ITEMS.register(
+            "lecm_247_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("78000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_247_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("67.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_247_TRISO_FUEL = ITEMS.register(
+            "lecm_247_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("78000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_247_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("54 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_245_FUEL = ITEMS.register(
+            "lecm_245_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("67920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_245_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("68 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_245_OXIDE_FUEL = ITEMS.register(
+            "lecm_245_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("67920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_245_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("85 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_245_TRISO_FUEL = ITEMS.register(
+            "lecm_245_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("67920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_245_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("68 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_243_FUEL = ITEMS.register(
+            "lecm_243_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("51960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_243_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("112 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_243_OXIDE_FUEL = ITEMS.register(
+            "lecm_243_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("51960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_243_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("140 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECM_243_TRISO_FUEL = ITEMS.register(
+            "lecm_243_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("51960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECM_243_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("112 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEA_242_FUEL = ITEMS.register(
+            "lea_242_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("54000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEA_242_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("94 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEA_242_OXIDE_FUEL = ITEMS.register(
+            "lea_242_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("54000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEA_242_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("117.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LEA_242_TRISO_FUEL = ITEMS.register(
+            "lea_242_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("54000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LEA_242_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("94 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECF_249_FUEL = ITEMS.register(
+            "lecf_249_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("60000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECF_249_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("116 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECF_249_OXIDE_FUEL = ITEMS.register(
+            "lecf_249_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("60000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECF_249_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("145 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECF_249_TRISO_FUEL = ITEMS.register(
+            "lecf_249_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("60000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECF_249_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("116 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECF_251_FUEL = ITEMS.register(
+            "lecf_251_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("57960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECF_251_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("120 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECF_251_OXIDE_FUEL = ITEMS.register(
+            "lecf_251_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("57960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECF_251_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("150 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> LECF_251_TRISO_FUEL = ITEMS.register(
+            "lecf_251_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("57960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.LECF_251_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("120 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> MOX_239_FUEL = ITEMS.register(
+            "mox_239_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("84000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.MOX_239_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("57.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> MOX_239_OXIDE_FUEL = ITEMS.register(
+            "mox_239_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("84000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.MOX_239_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("71.9 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> MOX_239_TRISO_FUEL = ITEMS.register(
+            "mox_239_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("84000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.MOX_239_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("57.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> MOX_241_FUEL = ITEMS.register(
+            "mox_241_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("55920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.MOX_241_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("97.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> MOX_241_OXIDE_FUEL = ITEMS.register(
+            "mox_241_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("55920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.MOX_241_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("121.9 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> MOX_241_TRISO_FUEL = ITEMS.register(
+            "mox_241_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("55920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.MOX_241_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("97.5 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEN_236_FUEL = ITEMS.register(
+            "hen_236_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("102000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEN_236_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("216 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEN_236_OXIDE_FUEL = ITEMS.register(
+            "hen_236_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("102000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEN_236_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("270 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEN_236_TRISO_FUEL = ITEMS.register(
+            "hen_236_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("102000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEN_236_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("216 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEP_239_FUEL = ITEMS.register(
+            "hep_239_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEP_239_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("240 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEP_239_OXIDE_FUEL = ITEMS.register(
+            "hep_239_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEP_239_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("300 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEP_239_TRISO_FUEL = ITEMS.register(
+            "hep_239_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEP_239_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("240 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEU_235_FUEL = ITEMS.register(
+            "heu_235_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("72000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEU_235_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("300 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEU_235_OXIDE_FUEL = ITEMS.register(
+            "heu_235_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("72000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEU_235_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("375 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEU_235_TRISO_FUEL = ITEMS.register(
+            "heu_235_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("72000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEU_235_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("300 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEU_233_FUEL = ITEMS.register(
+            "heu_233_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("63960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEU_233_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("360 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEU_233_OXIDE_FUEL = ITEMS.register(
+            "heu_233_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("63960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEU_233_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("450 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEU_233_TRISO_FUEL = ITEMS.register(
+            "heu_233_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("63960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEU_233_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("360 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEP_241_FUEL = ITEMS.register(
+            "hep_241_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEP_241_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("420 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEP_241_OXIDE_FUEL = ITEMS.register(
+            "hep_241_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEP_241_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("525 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEP_241_TRISO_FUEL = ITEMS.register(
+            "hep_241_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("91920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEP_241_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("420 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEA_242_FUEL = ITEMS.register(
+            "hea_242_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("54000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEA_242_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("564 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEA_242_OXIDE_FUEL = ITEMS.register(
+            "hea_242_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("54000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEA_242_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("705 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEA_242_TRISO_FUEL = ITEMS.register(
+            "hea_242_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("54000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEA_242_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("564 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_247_FUEL = ITEMS.register(
+            "hecm_247_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("78000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_247_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("324 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_247_OXIDE_FUEL = ITEMS.register(
+            "hecm_247_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("78000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_247_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("405 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_247_TRISO_FUEL = ITEMS.register(
+            "hecm_247_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("78000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_247_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("324 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_245_FUEL = ITEMS.register(
+            "hecm_245_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("67920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_245_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("408 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_245_OXIDE_FUEL = ITEMS.register(
+            "hecm_245_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("67920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_245_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("510 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_245_TRISO_FUEL = ITEMS.register(
+            "hecm_245_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("67920 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_245_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("408 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_243_FUEL = ITEMS.register(
+            "hecm_243_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("51960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_243_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("672 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_243_OXIDE_FUEL = ITEMS.register(
+            "hecm_243_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("51960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_243_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("840 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECM_243_TRISO_FUEL = ITEMS.register(
+            "hecm_243_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("51960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECM_243_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("672 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEB_248_FUEL = ITEMS.register(
+            "heb_248_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("86040 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEB_248_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("312 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEB_248_OXIDE_FUEL = ITEMS.register(
+            "heb_248_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("86040 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEB_248_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("398 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HEB_248_TRISO_FUEL = ITEMS.register(
+            "heb_248_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("86040 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HEB_248_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("312 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECF_249_FUEL = ITEMS.register(
+            "hecf_249_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("60000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECF_249_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("696 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECF_249_OXIDE_FUEL = ITEMS.register(
+            "hecf_249_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("60000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECF_249_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("870 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECF_249_TRISO_FUEL = ITEMS.register(
+            "hecf_249_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("60000 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECF_249_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("696 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECF_251_FUEL = ITEMS.register(
+            "hecf_251_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("57960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECF_251_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("720 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECF_251_OXIDE_FUEL = ITEMS.register(
+            "hecf_251_oxide_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("57960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECF_251_OXIDE_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("900 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> HECF_251_TRISO_FUEL = ITEMS.register(
+            "hecf_251_triso_fuel", () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context,
+                                            List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time")
+                            .withColor(11184810).append("57960 t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate")
+                            .withColor(11184810).append(GUIUtils.formatNumber(NRRConfig.CONFIG.HECF_251_TRISO_GENERATION_RATE.get(), 1) + " FE/t"));
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation")
+                            .withColor(11184810).append("720 H/t"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
     public static final DeferredItem<Item> MARSHMALLOW = ITEMS.register(
             "marshmallow", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(1)
@@ -523,7 +1669,91 @@ public class NRRItems {
                     .effect(() -> new MobEffectInstance(MobEffects.SATURATION, Integer.MAX_VALUE, 0), 1.0F)
                     .build())));
     public static final DeferredItem<Item> IO_CONFIGURATOR = ITEMS.register(
-            "io_configurator", () -> new Item(new Item.Properties().stacksTo(1)));
+            "io_configurator", () -> new Item(new Item.Properties().stacksTo(1).component(NRRDataComponents.CONFIGURATION_TYPE, ConfigurationTypes.DISABLE_ALL)) {
+                @Override
+                public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+                    var stack = player.getItemInHand(usedHand);
+                    if (!level.isClientSide()) {
+                        if (player.isCrouching() && player.pick(5.0D, 1.0F, false).getType() == HitResult.Type.MISS) {
+                            stack.set(NRRDataComponents.CONFIGURATION_TYPE, ConfigurationTypes.getNext(stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get())));
+                            player.sendSystemMessage(Component.translatable("message.nrreborn.io_configurator_switch_configuration_mode").append(switch (stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get())) {
+                                case ConfigurationTypes.INPUT_ITEM_SLOT_1 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_1").withColor(5636095);
+                                case ConfigurationTypes.INPUT_ITEM_SLOT_2 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_2").withColor(5636095);
+                                case ConfigurationTypes.INPUT_ITEM_SLOT_3 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_3").withColor(5636095);
+                                case ConfigurationTypes.INPUT_ITEM_SLOT_4 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_4").withColor(5636095);
+                                case ConfigurationTypes.OUTPUT_ITEM_SLOT_1 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_1").withColor(16755200);
+                                case ConfigurationTypes.OUTPUT_ITEM_SLOT_2 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_2").withColor(16755200);
+                                case ConfigurationTypes.OUTPUT_ITEM_SLOT_3 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_3").withColor(16755200);
+                                case ConfigurationTypes.OUTPUT_ITEM_SLOT_4 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_4").withColor(16755200);
+                                default -> Component.translatable("tooltip.nrreborn.io_configurator_disable_all").withColor(16733525);
+                            }));
+                        }
+                    }
+                    return InteractionResultHolder.success(stack);
+                }
+
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nrreborn.io_configurator_current_mode").withColor(11184810).append(switch (stack.getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get())) {
+                        case ConfigurationTypes.INPUT_ITEM_SLOT_1 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_1").withColor(5636095);
+                        case ConfigurationTypes.INPUT_ITEM_SLOT_2 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_2").withColor(5636095);
+                        case ConfigurationTypes.INPUT_ITEM_SLOT_3 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_3").withColor(5636095);
+                        case ConfigurationTypes.INPUT_ITEM_SLOT_4 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_input_item_slot_4").withColor(5636095);
+                        case ConfigurationTypes.OUTPUT_ITEM_SLOT_1 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_1").withColor(16755200);
+                        case ConfigurationTypes.OUTPUT_ITEM_SLOT_2 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_2").withColor(16755200);
+                        case ConfigurationTypes.OUTPUT_ITEM_SLOT_3 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_3").withColor(16755200);
+                        case ConfigurationTypes.OUTPUT_ITEM_SLOT_4 -> Component.translatable("tooltip.nrreborn.io_configurator_configure_output_item_slot_4").withColor(16755200);
+                        default -> Component.translatable("tooltip.nrreborn.io_configurator_disable_all").withColor(16733525);
+                    }));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+
+                @Override
+                public InteractionResult useOn(UseOnContext context) {
+                    if (!context.getLevel().isClientSide()) {
+                        if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof NRRWrappedMachineBlockEntity blockEntity) {
+                            context.getLevel().invalidateCapabilities(context.getClickedPos());
+                            blockEntity.setChanged();
+                            if (!context.getPlayer().isCrouching()) {
+                                if (context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) == ConfigurationTypes.DISABLE_ALL) {
+                                    for (int i = 0; i < blockEntity.inputSideConfiguration.length; i++) {
+                                        Arrays.fill(blockEntity.inputSideConfiguration[i], false);
+                                    }
+                                    for (int i = 0; i < blockEntity.outputSideConfiguration.length; i++) {
+                                        Arrays.fill(blockEntity.outputSideConfiguration[i], false);
+                                    }
+                                    context.getPlayer().sendSystemMessage(Component.translatable("message.nrreborn.block_disable_all_sides"));
+                                } else if (context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) >= ConfigurationTypes.INPUT_ITEM_SLOT_1 &&
+                                        context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) <= ConfigurationTypes.INPUT_ITEM_SLOT_4) {
+                                    blockEntity.inputSideConfiguration[context.getClickedFace().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1] =
+                                            !blockEntity.inputSideConfiguration[context.getClickedFace().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1];
+                                } else {
+                                    blockEntity.outputSideConfiguration[context.getClickedFace().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5] =
+                                            !blockEntity.outputSideConfiguration[context.getClickedFace().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5];
+                                }
+                            } else {
+                                if (context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) == ConfigurationTypes.DISABLE_ALL) {
+                                    for (int i = 0; i < blockEntity.inputSideConfiguration.length; i++) {
+                                        Arrays.fill(blockEntity.inputSideConfiguration[i], false);
+                                    }
+                                    for (int i = 0; i < blockEntity.outputSideConfiguration.length; i++) {
+                                        Arrays.fill(blockEntity.outputSideConfiguration[i], false);
+                                    }
+                                    context.getPlayer().sendSystemMessage(Component.translatable("message.nrreborn.block_disable_all_sides"));
+                                } else if (context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) >= ConfigurationTypes.INPUT_ITEM_SLOT_1 &&
+                                        context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) <= ConfigurationTypes.INPUT_ITEM_SLOT_4) {
+                                    blockEntity.inputSideConfiguration[context.getClickedFace().getOpposite().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1] =
+                                            !blockEntity.inputSideConfiguration[context.getClickedFace().getOpposite().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 1];
+                                } else {
+                                    blockEntity.outputSideConfiguration[context.getClickedFace().getOpposite().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5] =
+                                            !blockEntity.outputSideConfiguration[context.getClickedFace().getOpposite().get3DDataValue()][context.getItemInHand().getComponents().get(NRRDataComponents.CONFIGURATION_TYPE.get()) - 5];
+                                }
+                            }
+                        }
+                    }
+                    return InteractionResult.SUCCESS;
+                }
+            });
     public static final DeferredItem<Item> PORTABLE_COBBLESTONE_GENERATOR = ITEMS.register(
             "portable_cobblestone_generator", () -> new Item(new Item.Properties().stacksTo(1)));
 

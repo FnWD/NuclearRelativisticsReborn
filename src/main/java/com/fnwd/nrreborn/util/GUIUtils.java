@@ -25,4 +25,11 @@ public final class GUIUtils {
                 .stripTrailingZeros()
                 .toPlainString() + " GFE";
     }
+
+    public static String formatNumber(double value, int scale) {
+        return BigDecimal.valueOf(value)
+                .setScale(scale, RoundingMode.HALF_UP)
+                .stripTrailingZeros()
+                .toPlainString();
+    }
 }

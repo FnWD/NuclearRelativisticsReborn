@@ -2,6 +2,7 @@ package com.fnwd.nrreborn.block_entity.manufactory;
 
 import com.fnwd.nrreborn.block.manufactory.ManufactoryBlock;
 import com.fnwd.nrreborn.block_entity.NRRBlockEntities;
+import com.fnwd.nrreborn.block_entity.NRRWrappedMachineBlockEntity;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
 import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipe;
@@ -9,6 +10,7 @@ import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipeInput;
 import com.fnwd.nrreborn.screen.manufactory.ManufactoryMenu;
 import com.fnwd.nrreborn.util.CTags;
 import com.fnwd.nrreborn.util.NRREnergyStorage;
+import com.fnwd.nrreborn.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -28,10 +30,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +45,7 @@ import java.util.Optional;
 import static com.fnwd.nrreborn.util.RecipeOutputSupplier.Manufactory.getDustOf;
 import static com.fnwd.nrreborn.util.RecipeOutputSupplier.*;
 
-public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider {
+public class ManufactoryBlockEntity extends NRRWrappedMachineBlockEntity implements MenuProvider {
     public final ItemStackHandler inventory = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -75,6 +78,18 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
             setChanged();
         }
     };
+    public final WrappedHandler disabled = new WrappedHandler(inventory,
+            slot -> false,
+            (slot, stack) -> false);
+    public final WrappedHandler input1 = new WrappedHandler(inventory,
+            slot -> false,
+            (slot, stack) -> slot != 0 && slot != 1);
+    public final WrappedHandler output1 = new WrappedHandler(inventory,
+            slot -> slot != 0 && slot != 1 && slot != 2,
+            (slot, stack) -> false);
+    public final WrappedHandler input1_output1 = new WrappedHandler(inventory,
+            slot -> slot != 0 && slot != 1 && slot != 2,
+            (slot, stack) -> slot != 0 && slot != 1);
 
     protected final ContainerData data;
     private int progress = 0;
@@ -115,7 +130,7 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     public void drops() {
-        SimpleContainer inventory = new SimpleContainer(this.inventory.getSlots());
+        var inventory = new SimpleContainer(this.inventory.getSlots());
         for (int i = 0; i < this.inventory.getSlots(); i++) {
             inventory.setItem(i, this.inventory.getStackInSlot(i));
         }
@@ -131,6 +146,16 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         tag.putInt("manufactory.max_progress", maxProgress);
         tag.putInt("manufactory.energy", energy.getEnergyStored());
         tag.putInt("manufactory.capacity", energy.getMaxEnergyStored());
+        for (int i = 0; i < inputSideConfiguration.length; i++) {
+            for (int j = 0; j < inputSideConfiguration[i].length; j++) {
+                tag.putBoolean("manufactory.input_side_configuration_" + i + j, inputSideConfiguration[i][j]);
+            }
+        }
+        for (int i = 0; i < outputSideConfiguration.length; i++) {
+            for (int j = 0; j < outputSideConfiguration[i].length; j++) {
+                tag.putBoolean("manufactory.output_side_configuration_" + i + j, outputSideConfiguration[i][j]);
+            }
+        }
     }
 
     @Override
@@ -141,13 +166,75 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         maxProgress = tag.getInt("manufactory.max_progress");
         energy.setEnergy(tag.getInt("manufactory.energy"));
         energy.setMaxEnergy(tag.getInt("manufactory.capacity"));
+        for (int i = 0; i < inputSideConfiguration.length; i++) {
+            for (int j = 0; j < inputSideConfiguration[i].length; j++) {
+                inputSideConfiguration[i][j] = tag.getBoolean("manufactory.input_side_configuration_" + i + j);
+            }
+        }
+        for (int i = 0; i < outputSideConfiguration.length; i++) {
+            for (int j = 0; j < outputSideConfiguration[i].length; j++) {
+                outputSideConfiguration[i][j] = tag.getBoolean("manufactory.output_side_configuration_" + i + j);
+            }
+        }
     }
 
     public IItemHandler getInventory(Direction side) {
-        if (side == null) {
-            return inventory;
+        if (side == null) return inventory;
+        if (side == Direction.UP) {
+            if (inputSideConfiguration[Direction.UP.get3DDataValue()][0]) {
+                if (outputSideConfiguration[Direction.UP.get3DDataValue()][0]) return input1_output1;
+                else return input1;
+            } else {
+                if (outputSideConfiguration[Direction.UP.get3DDataValue()][0]) return output1;
+                else return disabled;
+            }
         }
-        return inventory;
+        if (side == Direction.DOWN) {
+            if (inputSideConfiguration[Direction.DOWN.get3DDataValue()][0]) {
+                if (outputSideConfiguration[Direction.DOWN.get3DDataValue()][0]) return input1_output1;
+                else return input1;
+            } else {
+                if (outputSideConfiguration[Direction.DOWN.get3DDataValue()][0]) return output1;
+                else return disabled;
+            }
+        }
+        if (side == Direction.EAST) {
+            if (inputSideConfiguration[Direction.EAST.get3DDataValue()][0]) {
+                if (outputSideConfiguration[Direction.EAST.get3DDataValue()][0]) return input1_output1;
+                else return input1;
+            } else {
+                if (outputSideConfiguration[Direction.EAST.get3DDataValue()][0]) return output1;
+                else return disabled;
+            }
+        }
+        if (side == Direction.SOUTH) {
+            if (inputSideConfiguration[Direction.SOUTH.get3DDataValue()][0]) {
+                if (outputSideConfiguration[Direction.SOUTH.get3DDataValue()][0]) return input1_output1;
+                else return input1;
+            } else {
+                if (outputSideConfiguration[Direction.SOUTH.get3DDataValue()][0]) return output1;
+                else return disabled;
+            }
+        }
+        if (side == Direction.WEST) {
+            if (inputSideConfiguration[Direction.WEST.get3DDataValue()][0]) {
+                if (outputSideConfiguration[Direction.WEST.get3DDataValue()][0]) return input1_output1;
+                else return input1;
+            } else {
+                if (outputSideConfiguration[Direction.WEST.get3DDataValue()][0]) return output1;
+                else return disabled;
+            }
+        }
+        if (side == Direction.NORTH) {
+            if (inputSideConfiguration[Direction.NORTH.get3DDataValue()][0]) {
+                if (outputSideConfiguration[Direction.NORTH.get3DDataValue()][0]) return input1_output1;
+                else return input1;
+            } else {
+                if (outputSideConfiguration[Direction.NORTH.get3DDataValue()][0]) return output1;
+                else return disabled;
+            }
+        }
+        return disabled;
     }
 
     public IEnergyStorage getEnergyStorage() {
@@ -211,6 +298,9 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
         } else {
             setWorkingState(false);
             reset();
+        }
+        for (var side : Direction.values()) {
+            if (outputSideConfiguration[side.get3DDataValue()][0]) push(side);
         }
     }
 
@@ -362,5 +452,18 @@ public class ManufactoryBlockEntity extends BlockEntity implements MenuProvider 
     private void setWorkingState(boolean state) {
         assert level != null;
         level.setBlock(worldPosition, getBlockState().setValue(ManufactoryBlock.WORKING, state), Block.UPDATE_CLIENTS);
+    }
+
+    private void push(Direction side) {
+        IItemHandler targetItemHandler = level.getCapability(Capabilities.ItemHandler.BLOCK,
+                getBlockPos().relative(side), null);
+        if (targetItemHandler != null) {
+            var extraction = inventory.extractItem(3, 1, true);
+            if (extraction.isEmpty()) return;
+            var remainder = ItemHandlerHelper.insertItem(targetItemHandler, extraction, true);
+            if (remainder.getCount() < extraction.getCount()) {
+                ItemHandlerHelper.insertItem(targetItemHandler, inventory.extractItem(3, 1, false), false);
+            }
+        }
     }
 }

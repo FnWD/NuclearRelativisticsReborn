@@ -186,10 +186,98 @@ public class NRRCreativeModeTabs {
                         output.accept(NRRBlocks.URANIUM_ORE);
                         output.accept(NRRBlocks.DEEPSLATE_URANIUM_ORE);
                     }).build());
+    public static final Supplier<CreativeModeTab> NRR_FISSION_FUELS = CREATIVE_MODE_TAB.register(
+            "nrr_fission_fuels", () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(NRRItems.TBU_FUEL.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "nrr_ingredients"))
+                    .title(Component.translatable("creativemodetab.nrreborn.nrr_fission_fuels"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(NRRItems.TBU_FUEL);
+                        output.accept(NRRItems.LEU_233_FUEL);
+                        output.accept(NRRItems.LEU_235_FUEL);
+                        output.accept(NRRItems.LEN_236_FUEL);
+                        output.accept(NRRItems.LEP_239_FUEL);
+                        output.accept(NRRItems.LEP_241_FUEL);
+                        output.accept(NRRItems.MOX_239_FUEL);
+                        output.accept(NRRItems.MOX_241_FUEL);
+                        output.accept(NRRItems.LEA_242_FUEL);
+                        output.accept(NRRItems.LECM_243_FUEL);
+                        output.accept(NRRItems.LECM_245_FUEL);
+                        output.accept(NRRItems.LECM_247_FUEL);
+                        output.accept(NRRItems.LEB_248_FUEL);
+                        output.accept(NRRItems.LECF_249_FUEL);
+                        output.accept(NRRItems.LECF_251_FUEL);
+                        output.accept(NRRItems.HEU_233_FUEL);
+                        output.accept(NRRItems.HEU_235_FUEL);
+                        output.accept(NRRItems.HEN_236_FUEL);
+                        output.accept(NRRItems.HEP_239_FUEL);
+                        output.accept(NRRItems.HEP_241_FUEL);
+                        output.accept(NRRItems.HEA_242_FUEL);
+                        output.accept(NRRItems.HECM_243_FUEL);
+                        output.accept(NRRItems.HECM_245_FUEL);
+                        output.accept(NRRItems.HECM_247_FUEL);
+                        output.accept(NRRItems.HEB_248_FUEL);
+                        output.accept(NRRItems.HECF_249_FUEL);
+                        output.accept(NRRItems.HECF_251_FUEL);
+                        output.accept(NRRItems.TBU_OXIDE_FUEL);
+                        output.accept(NRRItems.LEU_233_OXIDE_FUEL);
+                        output.accept(NRRItems.LEU_235_OXIDE_FUEL);
+                        output.accept(NRRItems.LEN_236_OXIDE_FUEL);
+                        output.accept(NRRItems.LEP_239_OXIDE_FUEL);
+                        output.accept(NRRItems.LEP_241_OXIDE_FUEL);
+                        output.accept(NRRItems.MOX_239_OXIDE_FUEL);
+                        output.accept(NRRItems.MOX_241_OXIDE_FUEL);
+                        output.accept(NRRItems.LEA_242_OXIDE_FUEL);
+                        output.accept(NRRItems.LECM_243_OXIDE_FUEL);
+                        output.accept(NRRItems.LECM_245_OXIDE_FUEL);
+                        output.accept(NRRItems.LECM_247_OXIDE_FUEL);
+                        output.accept(NRRItems.LEB_248_OXIDE_FUEL);
+                        output.accept(NRRItems.LECF_249_OXIDE_FUEL);
+                        output.accept(NRRItems.LECF_251_OXIDE_FUEL);
+                        output.accept(NRRItems.HEU_233_OXIDE_FUEL);
+                        output.accept(NRRItems.HEU_235_OXIDE_FUEL);
+                        output.accept(NRRItems.HEN_236_OXIDE_FUEL);
+                        output.accept(NRRItems.HEP_239_OXIDE_FUEL);
+                        output.accept(NRRItems.HEP_241_OXIDE_FUEL);
+                        output.accept(NRRItems.HEA_242_OXIDE_FUEL);
+                        output.accept(NRRItems.HECM_243_OXIDE_FUEL);
+                        output.accept(NRRItems.HECM_245_OXIDE_FUEL);
+                        output.accept(NRRItems.HECM_247_OXIDE_FUEL);
+                        output.accept(NRRItems.HEB_248_OXIDE_FUEL);
+                        output.accept(NRRItems.HECF_249_OXIDE_FUEL);
+                        output.accept(NRRItems.HECF_251_OXIDE_FUEL);
+                        output.accept(NRRItems.TBU_TRISO_FUEL);
+                        output.accept(NRRItems.LEU_233_TRISO_FUEL);
+                        output.accept(NRRItems.LEU_235_TRISO_FUEL);
+                        output.accept(NRRItems.LEN_236_TRISO_FUEL);
+                        output.accept(NRRItems.LEP_239_TRISO_FUEL);
+                        output.accept(NRRItems.LEP_241_TRISO_FUEL);
+                        output.accept(NRRItems.MOX_239_TRISO_FUEL);
+                        output.accept(NRRItems.MOX_241_TRISO_FUEL);
+                        output.accept(NRRItems.LEA_242_TRISO_FUEL);
+                        output.accept(NRRItems.LECM_243_TRISO_FUEL);
+                        output.accept(NRRItems.LECM_245_TRISO_FUEL);
+                        output.accept(NRRItems.LECM_247_TRISO_FUEL);
+                        output.accept(NRRItems.LEB_248_TRISO_FUEL);
+                        output.accept(NRRItems.LECF_249_TRISO_FUEL);
+                        output.accept(NRRItems.LECF_251_TRISO_FUEL);
+                        output.accept(NRRItems.HEU_233_TRISO_FUEL);
+                        output.accept(NRRItems.HEU_235_TRISO_FUEL);
+                        output.accept(NRRItems.HEN_236_TRISO_FUEL);
+                        output.accept(NRRItems.HEP_239_TRISO_FUEL);
+                        output.accept(NRRItems.HEP_241_TRISO_FUEL);
+                        output.accept(NRRItems.HEA_242_TRISO_FUEL);
+                        output.accept(NRRItems.HECM_243_TRISO_FUEL);
+                        output.accept(NRRItems.HECM_245_TRISO_FUEL);
+                        output.accept(NRRItems.HECM_247_TRISO_FUEL);
+                        output.accept(NRRItems.HEB_248_TRISO_FUEL);
+                        output.accept(NRRItems.HECF_249_TRISO_FUEL);
+                        output.accept(NRRItems.HECF_251_TRISO_FUEL);
+                    }).build());
     public static final Supplier<CreativeModeTab> NRR_FOODS = CREATIVE_MODE_TAB.register(
             "nrr_foods", () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(NRRItems.SMORE.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "nrr_ingredients"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(NuclearRelativisticsReborn.MODID, "nrr_fission_fuels"))
                     .title(Component.translatable("creativemodetab.nrreborn.nrr_foods"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(NRRItems.MARSHMALLOW);

@@ -3,6 +3,7 @@ package com.fnwd.nrreborn;
 import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.block_entity.NRRBlockEntities;
 import com.fnwd.nrreborn.block_entity.manufactory.ManufactoryBlockEntity;
+import com.fnwd.nrreborn.data_component.NRRDataComponents;
 import com.fnwd.nrreborn.item.NRRCreativeModeTabs;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
@@ -44,6 +45,7 @@ public class NuclearRelativisticsReborn {
         NRRBlockEntities.register(modEventBus);
         NRRMenuTypes.register(modEventBus);
         NRRRecipes.register(modEventBus);
+        NRRDataComponents.register(modEventBus);
         modEventBus.addListener(this::registerCapabilities);
         LOGGER.info("Loaded NRR mod successfully");
     }
