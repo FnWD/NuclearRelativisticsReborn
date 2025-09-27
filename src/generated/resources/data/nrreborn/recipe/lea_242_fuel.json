@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/americium_242"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    },
+    {
+      "tag": "c:ingots/americium_243"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:lea_242_fuel"
+  }
+}

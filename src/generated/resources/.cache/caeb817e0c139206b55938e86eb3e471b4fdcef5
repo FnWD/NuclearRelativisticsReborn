@@ -1,4 +1,13 @@
-// 1.21.1	2025-08-23T17:01:15.9645118	Tags for minecraft:item mod id nrreborn
+// 1.21.1	2025-09-27T16:52:21.5078037	Tags for minecraft:item mod id nrreborn
+a498a373074b254988d35ed423545e48ac544971 data/c/tags/item/buckets.json
+0b41adeb0ea0ec6ca9acc7e4bd075855ff778bcf data/c/tags/item/buckets/deuterium.json
+d71c3e0ce5d416e8f7a01d7dbe684168b1232180 data/c/tags/item/buckets/fluorine.json
+1fa5c16f35bc460d93a0a429458205903e7422fa data/c/tags/item/buckets/helium.json
+777e126cf714455331604f29cc346b3681c0ad13 data/c/tags/item/buckets/helium_3.json
+59c42f7025187116321627df28676e81d4f7bf3a data/c/tags/item/buckets/hydrogen.json
+b2371b0200b46123a384cb23f5e12ec1da4aaca3 data/c/tags/item/buckets/nitrogen.json
+3f2c1a833e673920d5ee275aa56ed3281f417a40 data/c/tags/item/buckets/oxygen.json
+a64430c6f0c3ae48d74b1dae0674af1ee48b7bfb data/c/tags/item/buckets/tritium.json
 bff0aa9f4b6ae8d099de82da0718df1c38eea489 data/c/tags/item/dusts.json
 6a5aa9fc2d3ace4eca3eab07604309bcc16fce23 data/c/tags/item/dusts/alugentum.json
 7a75cb802287ed43469e01e4d4f6ebd99d3a2b5f data/c/tags/item/dusts/aluminum.json
@@ -144,3 +153,4 @@ ecae92e0e092c8af3972de2563ebf01607c2ea0b data/c/tags/item/raw_materials/magnesiu
 41e0cae005ac05192cd0a77c597a4948772bfcf1 data/c/tags/item/raw_materials/tin.json
 ba5bd52e3da82b7d1fdd780ea09f2900356d7e3f data/c/tags/item/raw_materials/uranium.json
 f9b079b837e00a11a0aed3ced96f328b9712b2ae data/c/tags/item/silicon.json
+18a2fb563af709f7aee16ae6530e1ec26165595f data/nrreborn/tags/item/explosive_ingredients.json

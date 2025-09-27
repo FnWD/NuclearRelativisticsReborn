@@ -54,6 +54,357 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(NRRItems.CALCIUM_SULFATE.get())
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.TBU_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .requires(CTags.Items.INGOTS_THORIUM_232)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEU_233_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_URANIUM_233)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEU_235_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_URANIUM_235)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEN_236_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_236)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEP_239_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_239)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEP_241_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_241)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.MOX_239_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_239)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.MOX_241_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_241)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEA_242_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_AMERICIUM_242)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LECM_243_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CURIUM_243)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LECM_245_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CURIUM_245)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LECM_247_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CURIUM_247)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LEB_248_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_BERKELIUM_248)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LECF_249_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_249)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.LECF_251_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_251)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEU_233_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_URANIUM_233)
+                .requires(CTags.Items.INGOTS_URANIUM_233)
+                .requires(CTags.Items.INGOTS_URANIUM_233)
+                .requires(CTags.Items.INGOTS_URANIUM_233)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEU_235_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_URANIUM_235)
+                .requires(CTags.Items.INGOTS_URANIUM_235)
+                .requires(CTags.Items.INGOTS_URANIUM_235)
+                .requires(CTags.Items.INGOTS_URANIUM_235)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .requires(CTags.Items.INGOTS_URANIUM_238)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEN_236_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_236)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_236)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_236)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_236)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .requires(CTags.Items.INGOTS_NEPTUNIUM_237)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEP_239_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_239)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_239)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_239)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_239)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEP_241_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_241)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_241)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_241)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_241)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .requires(CTags.Items.INGOTS_PLUTONIUM_242)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEA_242_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_AMERICIUM_242)
+                .requires(CTags.Items.INGOTS_AMERICIUM_242)
+                .requires(CTags.Items.INGOTS_AMERICIUM_242)
+                .requires(CTags.Items.INGOTS_AMERICIUM_242)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .requires(CTags.Items.INGOTS_AMERICIUM_243)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HECM_243_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CURIUM_243)
+                .requires(CTags.Items.INGOTS_CURIUM_243)
+                .requires(CTags.Items.INGOTS_CURIUM_243)
+                .requires(CTags.Items.INGOTS_CURIUM_243)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HECM_245_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CURIUM_245)
+                .requires(CTags.Items.INGOTS_CURIUM_245)
+                .requires(CTags.Items.INGOTS_CURIUM_245)
+                .requires(CTags.Items.INGOTS_CURIUM_245)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HECM_247_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CURIUM_247)
+                .requires(CTags.Items.INGOTS_CURIUM_247)
+                .requires(CTags.Items.INGOTS_CURIUM_247)
+                .requires(CTags.Items.INGOTS_CURIUM_247)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .requires(CTags.Items.INGOTS_CURIUM_246)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HEB_248_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_BERKELIUM_248)
+                .requires(CTags.Items.INGOTS_BERKELIUM_248)
+                .requires(CTags.Items.INGOTS_BERKELIUM_248)
+                .requires(CTags.Items.INGOTS_BERKELIUM_248)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .requires(CTags.Items.INGOTS_BERKELIUM_247)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HECF_249_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_249)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_249)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_249)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_249)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder
+                .shapeless(RecipeCategory.MISC, NRRItems.HECF_251_FUEL.get(), 1)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_251)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_251)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_251)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_251)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .requires(CTags.Items.INGOTS_CALIFORNIUM_252)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput);
         ShapedRecipeBuilder
                 .shaped(RecipeCategory.MISC, NRRItems.BASIC_PLATING.get(), 2)
                 .pattern("AB")
@@ -171,6 +522,28 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', Items.LIGHT_WEIGHTED_PRESSURE_PLATE)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput);
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.PORTABLE_ENDER_CHEST.get())
+                .pattern(" A ")
+                .pattern("BCB")
+                .pattern("DBD")
+                .define('A', Tags.Items.STRINGS)
+                .define('B', Items.PURPLE_WOOL)
+                .define('C', Items.ENDER_CHEST)
+                .define('D', CTags.Items.INGOTS_TOUGH_ALLOY)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "portable_ender_chest_1");
+        ShapedRecipeBuilder
+                .shaped(RecipeCategory.MISC, NRRItems.PORTABLE_ENDER_CHEST.get())
+                .pattern(" A ")
+                .pattern("BCB")
+                .pattern("DBD")
+                .define('A', Tags.Items.STRINGS)
+                .define('B', Items.BLACK_WOOL)
+                .define('C', Items.ENDER_CHEST)
+                .define('D', CTags.Items.INGOTS_TOUGH_ALLOY)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "portable_ender_chest_2");
         ShapedRecipeBuilder
                 .shaped(RecipeCategory.MISC, NRRBlocks.MANUFACTORY.asItem())
                 .pattern("ABA")
@@ -367,6 +740,14 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "thorium_ingot_2");
         SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_THORIUM_OXIDE), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "thorium_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_THORIUM_OXIDE), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "thorium_ingot_4");
+        SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_URANIUM), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "uranium_ingot_1");
@@ -374,6 +755,14 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .blasting(Ingredient.of(CTags.Items.DUSTS_URANIUM), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.3F, 100)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "uranium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_URANIUM_OXIDE), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "uranium_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_URANIUM_OXIDE), RecipeCategory.MISC, NRRItems.URANIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "uranium_ingot_4");
         SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_THORIUM_OXIDE), RecipeCategory.MISC, NRRItems.THORIUM_OXIDE_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
@@ -399,6 +788,14 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "manganese_ingot_2");
         SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_MANGANESE_OXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "manganese_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_MANGANESE_OXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "manganese_ingot_4");
+        SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_MANGANESE_OXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "manganese_oxide_ingot_1");
@@ -406,6 +803,14 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .blasting(Ingredient.of(CTags.Items.DUSTS_MANGANESE_OXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_INGOT.get(), 0.3F, 100)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "manganese_oxide_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_MANGANESE_DIOXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "manganese_oxide_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_MANGANESE_DIOXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "manganese_oxide_ingot_4");
         SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_MANGANESE_DIOXIDE), RecipeCategory.MISC, NRRItems.MANGANESE_DIOXIDE_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
@@ -422,6 +827,14 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .blasting(Ingredient.of(CTags.Items.DUSTS_GRAPHITE), RecipeCategory.MISC, NRRItems.GRAPHITE_INGOT.get(), 0.3F, 100)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "graphite_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_RHODOCHROSITE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_DUST.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "manganese_oxide_dust_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_RHODOCHROSITE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_DUST.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "manganese_oxide_dust_2");
         ManufactoryRecipeBuilder.builder()
                 .input(Ingredient.of(ItemTags.PLANKS), 1)
                 .baseProcessPower(10)
@@ -452,6 +865,36 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .baseProcessTime(400)
                 .output(new ItemStack(Items.BLAZE_POWDER, 4))
                 .save(recipeOutput, "blaze_powder");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Tags.Items.RODS_BREEZE), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(400)
+                .output(new ItemStack(Items.WIND_CHARGE, 8))
+                .save(recipeOutput, "wind_charge");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.HONEYCOMB_BLOCK), 1)
+                .baseProcessPower(10)
+                .baseProcessTime(200)
+                .output(new ItemStack(Items.HONEYCOMB, 4))
+                .save(recipeOutput, "honeycomb");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.NETHER_WART_BLOCK), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(200)
+                .output(new ItemStack(Items.NETHER_WART, 9))
+                .save(recipeOutput, "nether_wart");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.WARPED_WART_BLOCK), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(200)
+                .output(new ItemStack(Items.WARPED_FUNGUS, 9))
+                .save(recipeOutput, "warped_fungus");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.AMETHYST_BLOCK), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(400)
+                .output(new ItemStack(Items.AMETHYST_SHARD, 4))
+                .save(recipeOutput, "amethyst_shard");
         ManufactoryRecipeBuilder.builder()
                 .input(Ingredient.of(Items.ROTTEN_FLESH), 4)
                 .baseProcessPower(20)

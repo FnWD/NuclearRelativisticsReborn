@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:strings"
+    },
+    "B": {
+      "item": "minecraft:purple_wool"
+    },
+    "C": {
+      "item": "minecraft:ender_chest"
+    },
+    "D": {
+      "tag": "c:ingots/tough_alloy"
+    }
+  },
+  "pattern": [
+    " A ",
+    "BCB",
+    "DBD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:portable_ender_chest"
+  }
+}

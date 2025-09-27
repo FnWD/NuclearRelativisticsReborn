@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    },
+    {
+      "tag": "c:ingots/thorium_232"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:tbu_fuel"
+  }
+}

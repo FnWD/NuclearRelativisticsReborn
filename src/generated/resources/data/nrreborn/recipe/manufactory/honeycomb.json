@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 10,
+  "base_process_time": 200,
+  "input": {
+    "item": "minecraft:honeycomb_block"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 4,
+    "id": "minecraft:honeycomb"
+  }
+}

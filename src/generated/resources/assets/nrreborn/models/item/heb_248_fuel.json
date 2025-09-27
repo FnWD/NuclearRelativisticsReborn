@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nrreborn:item/heb_248_fuel"
+  }
+}

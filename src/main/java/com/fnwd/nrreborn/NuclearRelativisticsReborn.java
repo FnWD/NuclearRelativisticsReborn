@@ -4,13 +4,16 @@ import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.block_entity.NRRBlockEntities;
 import com.fnwd.nrreborn.block_entity.manufactory.ManufactoryBlockEntity;
 import com.fnwd.nrreborn.data_component.NRRDataComponents;
+import com.fnwd.nrreborn.fluid.NRRFluids;
 import com.fnwd.nrreborn.item.NRRCreativeModeTabs;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
 import com.fnwd.nrreborn.screen.NRRMenuTypes;
 import com.fnwd.nrreborn.screen.manufactory.ManufactoryScreen;
-import com.fnwd.nrreborn.util.CTags;
+import com.fnwd.nrreborn.util.NRRTags;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
@@ -21,11 +24,14 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
@@ -39,10 +45,13 @@ public class NuclearRelativisticsReborn {
     public NuclearRelativisticsReborn(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        modContainer.registerConfig(ModConfig.Type.COMMON, NRRConfig.SPEC);
         NRRCreativeModeTabs.register(modEventBus);
         NRRItems.register(modEventBus);
         NRRBlocks.register(modEventBus);
         NRRBlockEntities.register(modEventBus);
+        NRRFluids.register(modEventBus);
         NRRMenuTypes.register(modEventBus);
         NRRRecipes.register(modEventBus);
         NRRDataComponents.register(modEventBus);
@@ -86,7 +95,22 @@ public class NuclearRelativisticsReborn {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.NITROGEN_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.NITROGEN_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.OXYGEN_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.OXYGEN_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.FLUORINE_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.FLUORINE_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.HYDROGEN_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.HYDROGEN_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.DEUTERIUM_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.DEUTERIUM_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.TRITIUM_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.TRITIUM_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.HELIUM_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.HELIUM_FLOWING.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.HELIUM_3_SOURCE.get(), RenderType.TRANSLUCENT);
+            ItemBlockRenderTypes.setRenderLayer(NRRFluids.HELIUM_3_FLOWING.get(), RenderType.TRANSLUCENT);
         }
 
         @SubscribeEvent
@@ -100,7 +124,7 @@ public class NuclearRelativisticsReborn {
         Entity entity = event.getEntity();
         if (entity instanceof ItemEntity itemEntity) {
             ItemStack stack = itemEntity.getItem();
-            if (stack.is(CTags.Items.INGOTS_LITHIUM) || stack.is(CTags.Items.DUSTS_LITHIUM)) {
+            if (stack.is(NRRTags.Items.EXPLOSIVE_INGREDIENTS)) {
                 if (itemEntity.isInWaterRainOrBubble()) {
                     Level level = itemEntity.level();
                     if (!level.isClientSide()) {

@@ -30,6 +30,7 @@ public class DataGenerators {
         BlockTagsProvider blockTagsProvider = new NRRBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new NRRItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new NRRFluidTagProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new NRRDatapackProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeClient(), new NRRItemModelProvider(packOutput, existingFileHelper));

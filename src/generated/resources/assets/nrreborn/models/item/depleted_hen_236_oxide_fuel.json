@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nrreborn:item/depleted_hen_236_oxide_fuel"
+  }
+}

@@ -2,10 +2,12 @@ package com.fnwd.nrreborn.util;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 
 public final class CTags {
     private CTags() {}
@@ -21,6 +23,8 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "raw_materials"));
         public static final TagKey<Item> ORES = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ores"));
+        public static final TagKey<Item> BUCKETS = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets"));
         public static final TagKey<Item> INGOTS_TIN = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/tin"));
         public static final TagKey<Item> INGOTS_ALUMINUM = ItemTags.create(
@@ -189,6 +193,14 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/copernicium_291"));
         public static final TagKey<Item> INGOTS_BIOSTEEL = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ingots/biosteel"));
+        public static final TagKey<Item> INGOTS_SODIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/sodium"));
+        public static final TagKey<Item> INGOTS_POTASSIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/potassium"));
+        public static final TagKey<Item> INGOTS_RUBIDIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/rubidium"));
+        public static final TagKey<Item> INGOTS_CAESIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/caesium"));
         public static final TagKey<Item> GEMS_RHODOCHROSITE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "gems/rhodochrosite"));
         public static final TagKey<Item> GEMS_BORON_NITRIDE = ItemTags.create(
@@ -275,6 +287,14 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "dusts/sodium_hydroxide"));
         public static final TagKey<Item> DUSTS_POTASSIUM_HYDROXIDE = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "dusts/potassium_hydroxide"));
+        public static final TagKey<Item> DUSTS_SODIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "dusts/sodium"));
+        public static final TagKey<Item> DUSTS_POTASSIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "dusts/potassium"));
+        public static final TagKey<Item> DUSTS_RUBIDIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "dusts/rubidium"));
+        public static final TagKey<Item> DUSTS_CAESIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "dusts/caesium"));
         public static final TagKey<Item> RAW_MATERIALS_TIN = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "raw_materials/tin"));
         public static final TagKey<Item> RAW_MATERIALS_LEAD = ItemTags.create(
@@ -303,6 +323,22 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ores/thorium"));
         public static final TagKey<Item> ORES_URANIUM = ItemTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ores/uranium"));
+        public static final TagKey<Item> BUCKETS_NITROGEN = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/nitrogen"));
+        public static final TagKey<Item> BUCKETS_OXYGEN = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/oxygen"));
+        public static final TagKey<Item> BUCKETS_FLUORINE = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/fluorine"));
+        public static final TagKey<Item> BUCKETS_HYDROGEN = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/hydrogen"));
+        public static final TagKey<Item> BUCKETS_DEUTERIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/deuterium"));
+        public static final TagKey<Item> BUCKETS_TRITIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/tritium"));
+        public static final TagKey<Item> BUCKETS_HELIUM = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/helium"));
+        public static final TagKey<Item> BUCKETS_HELIUM_3 = ItemTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "buckets/helium_3"));
     }
 
     public static class Blocks {
@@ -322,5 +358,24 @@ public final class CTags {
                 ResourceLocation.fromNamespaceAndPath("c", "ores/thorium"));
         public static final TagKey<Block> ORES_URANIUM = BlockTags.create(
                 ResourceLocation.fromNamespaceAndPath("c", "ores/uranium"));
+    }
+
+    public static class Fluids {
+        public static final TagKey<Fluid> NITROGEN = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "nitrogen"));
+        public static final TagKey<Fluid> OXYGEN = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "oxygen"));
+        public static final TagKey<Fluid> FLUORINE = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "fluorine"));
+        public static final TagKey<Fluid> HYDROGEN = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "hydrogen"));
+        public static final TagKey<Fluid> DEUTERIUM = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "deuterium"));
+        public static final TagKey<Fluid> TRITIUM = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "tritium"));
+        public static final TagKey<Fluid> HELIUM = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "helium"));
+        public static final TagKey<Fluid> HELIUM_3 = FluidTags.create(
+                ResourceLocation.fromNamespaceAndPath("c", "helium_3"));
     }
 }

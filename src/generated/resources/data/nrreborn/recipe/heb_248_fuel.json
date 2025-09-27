@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/berkelium_248"
+    },
+    {
+      "tag": "c:ingots/berkelium_248"
+    },
+    {
+      "tag": "c:ingots/berkelium_248"
+    },
+    {
+      "tag": "c:ingots/berkelium_248"
+    },
+    {
+      "tag": "c:ingots/berkelium_247"
+    },
+    {
+      "tag": "c:ingots/berkelium_247"
+    },
+    {
+      "tag": "c:ingots/berkelium_247"
+    },
+    {
+      "tag": "c:ingots/berkelium_247"
+    },
+    {
+      "tag": "c:ingots/berkelium_247"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:heb_248_fuel"
+  }
+}

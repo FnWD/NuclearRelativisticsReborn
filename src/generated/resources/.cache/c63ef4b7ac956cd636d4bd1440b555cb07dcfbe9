@@ -1,0 +1,9 @@
+// 1.21.1	2025-09-27T16:54:29.4182983	Tags for minecraft:fluid mod id nrreborn
+92e5481e11e24eea23eb3f93bb5d5f1a2b20cf23 data/c/tags/fluid/deuterium.json
+b8b0ae3fa0cabcb6850ca852e35824208945c5fc data/c/tags/fluid/fluorine.json
+9b466050a98e4dfa99b70501ad47f602b0e6f083 data/c/tags/fluid/helium.json
+c635beae456c800dd7d94fd614efe4d3cba23dac data/c/tags/fluid/helium_3.json
+1eb22e7a30db5bad898f2dae611ebee48d86f3c5 data/c/tags/fluid/hydrogen.json
+1fbf8c69f7c65ef1d75b93444a4606f85f80280f data/c/tags/fluid/nitrogen.json
+2397d8aa4a64c3a5530555f4a76297c7fd7f3eaa data/c/tags/fluid/oxygen.json
+22e41fa4e5abb8267af54a1f7b88a4b9b931f13b data/c/tags/fluid/tritium.json

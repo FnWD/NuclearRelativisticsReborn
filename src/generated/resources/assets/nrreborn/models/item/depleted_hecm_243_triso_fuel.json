@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nrreborn:item/depleted_hecm_243_triso_fuel"
+  }
+}

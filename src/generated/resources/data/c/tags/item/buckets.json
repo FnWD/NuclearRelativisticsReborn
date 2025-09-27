@@ -1,0 +1,12 @@
+{
+  "values": [
+    "nrreborn:nitrogen_bucket",
+    "nrreborn:oxygen_bucket",
+    "nrreborn:fluorine_bucket",
+    "nrreborn:hydrogen_bucket",
+    "nrreborn:deuterium_bucket",
+    "nrreborn:tritium_bucket",
+    "nrreborn:helium_bucket",
+    "nrreborn:helium_3_bucket"
+  ]
+}

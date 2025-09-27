@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/plutonium_241"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    },
+    {
+      "tag": "c:ingots/plutonium_242"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:lep_241_fuel"
+  }
+}

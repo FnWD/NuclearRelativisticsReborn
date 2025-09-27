@@ -4,6 +4,7 @@ import com.fnwd.nrreborn.NuclearRelativisticsReborn;
 import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.util.CTags;
+import com.fnwd.nrreborn.util.NRRTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -172,6 +173,15 @@ public class NRRItemTagProvider extends ItemTagsProvider {
                 .add(NRRBlocks.DEEPSLATE_THORIUM_ORE.asItem())
                 .add(NRRBlocks.URANIUM_ORE.asItem())
                 .add(NRRBlocks.DEEPSLATE_URANIUM_ORE.asItem());
+        tag(CTags.Items.BUCKETS)
+                .add(NRRItems.NITROGEN_BUCKET.get())
+                .add(NRRItems.OXYGEN_BUCKET.get())
+                .add(NRRItems.FLUORINE_BUCKET.get())
+                .add(NRRItems.HYDROGEN_BUCKET.get())
+                .add(NRRItems.DEUTERIUM_BUCKET.get())
+                .add(NRRItems.TRITIUM_BUCKET.get())
+                .add(NRRItems.HELIUM_BUCKET.get())
+                .add(NRRItems.HELIUM_3_BUCKET.get());
         tag(CTags.Items.INGOTS_TIN).add(NRRItems.TIN_INGOT.get());
         tag(CTags.Items.INGOTS_ALUMINUM).add(NRRItems.ALUMINUM_INGOT.get());
         tag(CTags.Items.INGOTS_SILVER).add(NRRItems.SILVER_INGOT.get());
@@ -326,5 +336,28 @@ public class NRRItemTagProvider extends ItemTagsProvider {
         tag(CTags.Items.ORES_URANIUM)
                 .add(NRRBlocks.URANIUM_ORE.asItem())
                 .add(NRRBlocks.DEEPSLATE_URANIUM_ORE.asItem());
+        tag(CTags.Items.BUCKETS_NITROGEN).add(NRRItems.NITROGEN_BUCKET.get());
+        tag(CTags.Items.BUCKETS_OXYGEN).add(NRRItems.OXYGEN_BUCKET.get());
+        tag(CTags.Items.BUCKETS_FLUORINE).add(NRRItems.FLUORINE_BUCKET.get());
+        tag(CTags.Items.BUCKETS_HYDROGEN).add(NRRItems.HYDROGEN_BUCKET.get());
+        tag(CTags.Items.BUCKETS_DEUTERIUM).add(NRRItems.DEUTERIUM_BUCKET.get());
+        tag(CTags.Items.BUCKETS_TRITIUM).add(NRRItems.TRITIUM_BUCKET.get());
+        tag(CTags.Items.BUCKETS_HELIUM).add(NRRItems.HELIUM_BUCKET.get());
+        tag(CTags.Items.BUCKETS_HELIUM_3).add(NRRItems.HELIUM_3_BUCKET.get());
+        tag(NRRTags.Items.EXPLOSIVE_INGREDIENTS)
+                .addTag(CTags.Items.INGOTS_LITHIUM)
+                .addTag(CTags.Items.INGOTS_LITHIUM_6)
+                .addTag(CTags.Items.INGOTS_LITHIUM_7)
+                .addTag(CTags.Items.DUSTS_LITHIUM)
+//                .addTag(CTags.Items.INGOTS_SODIUM)
+                .addTag(CTags.Items.INGOTS_SODIUM_22)
+//                .addTag(CTags.Items.DUSTS_SODIUM)
+//                .addTag(CTags.Items.INGOTS_POTASSIUM)
+//                .addTag(CTags.Items.DUSTS_POTASSIUM)
+//                .addTag(CTags.Items.INGOTS_RUBIDIUM)
+//                .addTag(CTags.Items.DUSTS_RUBIDIUM)
+//                .addTag(CTags.Items.INGOTS_CAESIUM)
+                .addTag(CTags.Items.INGOTS_CAESIUM_137);
+//                .addTag(CTags.Items.DUSTS_CAESIUM);
     }
 }

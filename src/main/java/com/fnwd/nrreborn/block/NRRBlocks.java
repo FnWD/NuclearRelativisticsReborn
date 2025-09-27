@@ -10,6 +10,7 @@ import com.fnwd.nrreborn.block.generators.solar_panels.BasicSolarPanelBlock;
 import com.fnwd.nrreborn.block.generators.solar_panels.DepletedUraniumSolarPanelBlock;
 import com.fnwd.nrreborn.block.generators.solar_panels.EliteSolarPanelBlock;
 import com.fnwd.nrreborn.block.manufactory.ManufactoryBlock;
+import com.fnwd.nrreborn.fluid.NRRFluids;
 import com.fnwd.nrreborn.item.NRRItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -17,9 +18,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -117,6 +116,22 @@ public class NRRBlocks {
                     .strength(4.5F, 3.0F)
                     .sound(SoundType.DEEPSLATE)
                     .mapColor(MapColor.DEEPSLATE)));
+    public static final DeferredBlock<LiquidBlock> NITROGEN_BLOCK = registerFluidBlock(
+            "nitrogen", () -> new LiquidBlock(NRRFluids.NITROGEN_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> OXYGEN_BLOCK = registerFluidBlock(
+            "oxygen", () -> new LiquidBlock(NRRFluids.OXYGEN_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> FLUORINE_BLOCK = registerFluidBlock(
+            "fluorine", () -> new LiquidBlock(NRRFluids.FLUORINE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> HYDROGEN_BLOCK = registerFluidBlock(
+            "hydrogen", () -> new LiquidBlock(NRRFluids.HYDROGEN_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> DEUTERIUM_BLOCK = registerFluidBlock(
+            "deuterium", () -> new LiquidBlock(NRRFluids.DEUTERIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> TRITIUM_BLOCK = registerFluidBlock(
+            "tritium", () -> new LiquidBlock(NRRFluids.TRITIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> HELIUM_BLOCK = registerFluidBlock(
+            "helium", () -> new LiquidBlock(NRRFluids.HELIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> HELIUM_3_BLOCK = registerFluidBlock(
+            "helium_3", () -> new LiquidBlock(NRRFluids.HELIUM_3_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
     public static final DeferredBlock<Block> MANUFACTORY = registerBlock(
             "manufactory", () -> new ManufactoryBlock(BlockBehaviour.Properties.of()
                     .requiresCorrectToolForDrops()
@@ -231,6 +246,10 @@ public class NRRBlocks {
         DeferredBlock<T> deferredBlock = BLOCKS.register(name, block);
         registerBlockItem(name, deferredBlock);
         return deferredBlock;
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerFluidBlock(String name, Supplier<T> fluidBlock) {
+        return BLOCKS.register(name, fluidBlock);
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/curium_243"
+    },
+    {
+      "tag": "c:ingots/curium_243"
+    },
+    {
+      "tag": "c:ingots/curium_243"
+    },
+    {
+      "tag": "c:ingots/curium_243"
+    },
+    {
+      "tag": "c:ingots/curium_246"
+    },
+    {
+      "tag": "c:ingots/curium_246"
+    },
+    {
+      "tag": "c:ingots/curium_246"
+    },
+    {
+      "tag": "c:ingots/curium_246"
+    },
+    {
+      "tag": "c:ingots/curium_246"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:hecm_243_fuel"
+  }
+}

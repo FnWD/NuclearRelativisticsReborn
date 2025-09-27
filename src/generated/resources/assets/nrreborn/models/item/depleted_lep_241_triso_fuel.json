@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nrreborn:item/depleted_lep_241_triso_fuel"
+  }
+}

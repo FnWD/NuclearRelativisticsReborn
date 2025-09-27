@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/neptunium_236"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    },
+    {
+      "tag": "c:ingots/neptunium_237"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nrreborn:len_236_fuel"
+  }
+}
