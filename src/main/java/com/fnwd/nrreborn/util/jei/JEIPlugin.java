@@ -2,29 +2,34 @@ package com.fnwd.nrreborn.util.jei;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
 import com.fnwd.nrreborn.block.NRRBlocks;
-import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipe;
+import com.fnwd.nrreborn.client.screen.manufactory.ManufactoryScreen;
+import com.fnwd.nrreborn.particle.NRRParticles;
+import com.fnwd.nrreborn.particle.Particle;
+import com.fnwd.nrreborn.particle.ParticleStack;
 import com.fnwd.nrreborn.recipe.NRRRecipes;
-import com.fnwd.nrreborn.screen.manufactory.ManufactoryScreen;
+import com.fnwd.nrreborn.util.MathUtils;
+import com.fnwd.nrreborn.util.jei.recipe_categories.ManufactoryRecipeCategory;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.IGuiHandlerRegistration;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.ingredients.IIngredientHelper;
+import mezz.jei.api.ingredients.IIngredientRenderer;
+import mezz.jei.api.ingredients.IIngredientType;
+import mezz.jei.api.ingredients.subtypes.UidContext;
+import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.Registry;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeManager;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.fnwd.nrreborn.util.RecipeOutputSupplier.Manufactory.getDustOf;
+import static com.fnwd.nrreborn.util.jei.ParticleStackType.PARTICLE_STACK_TYPE;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
@@ -40,49 +45,12 @@ public class JEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        List<TagKey<Item>> manufactoryAvailableIngots = BuiltInRegistries.ITEM.getTagNames()
-                .filter(tag -> tag.location().toString().startsWith("c:ingots/"))
-                .toList();
-        List<TagKey<Item>> manufactoryAvailableOres = BuiltInRegistries.ITEM.getTagNames()
-                .filter(tag -> tag.location().toString().startsWith("c:ores/"))
-                .toList();
-        List<TagKey<Item>> manufactoryAvailableRawMaterials = BuiltInRegistries.ITEM.getTagNames()
-                .filter(tag -> tag.location().toString().startsWith("c:raw_materials/"))
-                .toList();
-        List<TagKey<Item>> manufactoryAvailableGems = BuiltInRegistries.ITEM.getTagNames()
-                .filter(tag -> tag.location().toString().startsWith("c:gems/"))
-                .toList();
-        List<ManufactoryRecipe> manufactoryRecipesComplement = new ArrayList<>();
-        for (var tag : manufactoryAvailableIngots) {
-            if (getDustOf(tag.location().toString().substring("c:ingots/".length()), 1).isEmpty()) {
-                continue;
-            }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 400, getDustOf(tag.location().toString().substring("c:ingots/".length()), 1)));
-        }
-        for (var tag : manufactoryAvailableOres) {
-            if (getDustOf(tag.location().toString().substring("c:ores/".length()), 1).isEmpty()) {
-                continue;
-            }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, getDustOf(tag.location().toString().substring("c:ores/".length()), 2)));
-        }
-        for (var tag : manufactoryAvailableRawMaterials) {
-            if (getDustOf(tag.location().toString().substring("c:raw_materials/".length()), 1).isEmpty()) {
-                continue;
-            }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 20, 500, getDustOf(tag.location().toString().substring("c:raw_materials/".length()), 2)));
-        }
-        for (var tag : manufactoryAvailableGems) {
-            if (getDustOf(tag.location().toString().substring("c:gems/".length()), 1).isEmpty()) {
-                continue;
-            }
-            manufactoryRecipesComplement.add(new ManufactoryRecipe(Ingredient.of(tag), 1, 30, 600, getDustOf(tag.location().toString().substring("c:gems/".length()), 1)));
-        }
-        registration.addRecipes(ManufactoryRecipeCategory.MANUFACTORY_RECIPE_TYPE, manufactoryRecipesComplement);
-        RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
-        List<ManufactoryRecipe> manufactoryRecipes = manager.getAllRecipesFor(NRRRecipes.MANUFACTORY_TYPE.get()).stream()
+        var manager = Minecraft.getInstance().level.getRecipeManager();
+        var manufactoryRecipes = manager.getAllRecipesFor(NRRRecipes.MANUFACTORY_TYPE.get()).stream()
                 .map(RecipeHolder::value)
                 .toList();
         registration.addRecipes(ManufactoryRecipeCategory.MANUFACTORY_RECIPE_TYPE, manufactoryRecipes);
+        addParticleInfo(registration);
     }
 
     @Override
@@ -93,5 +61,89 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(new ItemStack(NRRBlocks.MANUFACTORY.asItem()), ManufactoryRecipeCategory.MANUFACTORY_RECIPE_TYPE);
+    }
+
+    @Override
+    public void registerIngredients(IModIngredientRegistration registration) {
+        var registry = Minecraft.getInstance().level
+                .registryAccess()
+                .registryOrThrow(NRRParticles.KEY);
+        var ingredients = registry.entrySet().stream()
+                .map(entry -> new ParticleStack(entry.getValue()))
+                .toList();
+        registration.register(PARTICLE_STACK_TYPE, ingredients, new IIngredientHelper<>() {
+            @Override
+            public IIngredientType<ParticleStack> getIngredientType() {
+                return PARTICLE_STACK_TYPE;
+            }
+
+            @Override
+            public String getDisplayName(ParticleStack ingredient) {
+                return ingredient.getParticle().toString();
+            }
+
+            @Override
+            public String getUniqueId(ParticleStack ingredient, UidContext context) {
+                return "particle:" + ingredient.getParticle().getName();
+            }
+
+            @Override
+            public ResourceLocation getResourceLocation(ParticleStack ingredient) {
+                return ingredient.getParticle().getTexture();
+            }
+
+            @Override
+            public ParticleStack copyIngredient(ParticleStack ingredient) {
+                return new ParticleStack(ingredient.getParticle(), ingredient.getCount(), ingredient.getEnergy(), ingredient.getFocus());
+            }
+
+            @Override
+            public String getErrorInfo(@Nullable ParticleStack ingredient) {
+                if (ingredient == null) return "null";
+                return null;
+            }
+        }, new IIngredientRenderer<>() {
+            @Override
+            public void render(GuiGraphics guiGraphics, ParticleStack ingredient) {
+                render(guiGraphics, ingredient, 0, 0);
+            }
+
+            @Override
+            public void render(GuiGraphics guiGraphics, ParticleStack ingredient, int posX, int posY) {
+                if (ingredient.isEmpty()) return;
+                var texture = ingredient.getParticle().getTexture();
+                guiGraphics.blit(texture, posX, posY, 0, 0, 16, 16, 16, 16);
+            }
+
+            @Override
+            public List<Component> getTooltip(ParticleStack ingredient, TooltipFlag tooltipFlag) {
+                List<Component> tooltip = new ArrayList<>();
+                tooltip.add(Component.translatable(ingredient.getParticle().toString()));
+                return tooltip;
+            }
+        });
+    }
+
+    @Override
+    public void registerItemSubtypes(ISubtypeRegistration registration) {
+        IModPlugin.super.registerItemSubtypes(registration);
+    }
+
+    private static void addParticleInfo(IRecipeRegistration registration) {
+        Registry<Particle> registry = Minecraft.getInstance().level
+                .registryAccess()
+                .registryOrThrow(NRRParticles.KEY);
+        List<ParticleStack> ingredients = registry.entrySet().stream()
+                .map(entry -> new ParticleStack(entry.getValue()))
+                .toList();
+        for (var ingredient : ingredients) {
+            var particle = ingredient.getParticle();
+            registration.addIngredientInfo(ingredient, PARTICLE_STACK_TYPE, Component.translatable(particle.toString()).append("\n")
+                    .append(Component.translatable("jei.nrreborn.mass").append(MathUtils.formatParticleMass(particle.getMass())).append("\n")
+                    .append(Component.translatable("jei.nrreborn.charge").append(MathUtils.formatFractal(particle.getChargeNumerator(), particle.getChargeDenominator())).append("\n")
+                    .append(Component.translatable("jei.nrreborn.spin").append(MathUtils.formatFractal(particle.getSpinNumerator(), particle.getSpinDenominator())).append("\n")
+                    .append(Component.translatable("jei.nrreborn.strong_interaction").append(String.valueOf(particle.hasStrongInteraction())).append("\n")
+                    .append(Component.translatable("jei.nrreborn.weak_interaction").append(String.valueOf(particle.hasWeakInteraction())).append("\n")))))));
+        }
     }
 }

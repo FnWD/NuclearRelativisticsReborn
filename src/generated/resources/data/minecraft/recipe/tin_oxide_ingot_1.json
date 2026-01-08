@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "ingredient": {
+    "tag": "c:dusts/tin_oxide"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:tin_oxide_ingot"
+  }
+}

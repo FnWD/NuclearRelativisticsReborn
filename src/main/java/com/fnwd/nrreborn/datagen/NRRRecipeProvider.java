@@ -3,7 +3,7 @@ package com.fnwd.nrreborn.datagen;
 import com.fnwd.nrreborn.block.NRRBlocks;
 import com.fnwd.nrreborn.item.NRRItems;
 import com.fnwd.nrreborn.recipe.manufactory.ManufactoryRecipeBuilder;
-import com.fnwd.nrreborn.util.CTags;
+import com.fnwd.nrreborn.util.tag.CTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -668,6 +668,22 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "tin_ingot_2");
         SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_TIN_OXIDE), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "tin_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_TIN_OXIDE), RecipeCategory.MISC, NRRItems.TIN_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "tin_ingot_4");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_TIN_OXIDE), RecipeCategory.MISC, NRRItems.TIN_OXIDE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "tin_oxide_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_TIN_OXIDE), RecipeCategory.MISC, NRRItems.TIN_OXIDE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "tin_oxide_ingot_2");
+        SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_ALUMINUM), RecipeCategory.MISC, NRRItems.ALUMINUM_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "aluminum_ingot_1");
@@ -731,6 +747,22 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .blasting(Ingredient.of(CTags.Items.DUSTS_ZIRCONIUM), RecipeCategory.MISC, NRRItems.ZIRCONIUM_INGOT.get(), 0.3F, 100)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "zirconium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_ZIRCONIA), RecipeCategory.MISC, NRRItems.ZIRCONIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "zirconium_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_ZIRCONIA), RecipeCategory.MISC, NRRItems.ZIRCONIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "zirconium_ingot_4");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_ZIRCONIA), RecipeCategory.MISC, NRRItems.ZIRCONIA_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "zirconia_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_ZIRCONIA), RecipeCategory.MISC, NRRItems.ZIRCONIA_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "zirconia_ingot_2");
         SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_THORIUM), RecipeCategory.MISC, NRRItems.THORIUM_INGOT.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
@@ -828,6 +860,214 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "graphite_ingot_2");
         SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_NICKEL), RecipeCategory.MISC, NRRItems.NICKEL_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "nickel_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_NICKEL), RecipeCategory.MISC, NRRItems.NICKEL_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "nickel_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_NICKEL_OXIDE), RecipeCategory.MISC, NRRItems.NICKEL_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "nickel_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_NICKEL_OXIDE), RecipeCategory.MISC, NRRItems.NICKEL_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "nickel_ingot_4");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_NICKEL_OXIDE), RecipeCategory.MISC, NRRItems.NICKEL_OXIDE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "nickel_oxide_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_NICKEL_OXIDE), RecipeCategory.MISC, NRRItems.NICKEL_OXIDE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "nickel_oxide_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_COBALT), RecipeCategory.MISC, NRRItems.COBALT_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "cobalt_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_COBALT), RecipeCategory.MISC, NRRItems.COBALT_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "cobalt_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_COBALT_OXIDE), RecipeCategory.MISC, NRRItems.COBALT_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "cobalt_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_COBALT_OXIDE), RecipeCategory.MISC, NRRItems.COBALT_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "cobalt_ingot_4");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_COBALT_OXIDE), RecipeCategory.MISC, NRRItems.COBALT_OXIDE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "cobalt_oxide_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_COBALT_OXIDE), RecipeCategory.MISC, NRRItems.COBALT_OXIDE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "cobalt_oxide_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_CHROMIUM), RecipeCategory.MISC, NRRItems.CHROMIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "chromium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_CHROMIUM), RecipeCategory.MISC, NRRItems.CHROMIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "chromium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_TITANIUM), RecipeCategory.MISC, NRRItems.TITANIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "titanium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_TITANIUM), RecipeCategory.MISC, NRRItems.TITANIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "titanium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_ZINC), RecipeCategory.MISC, NRRItems.ZINC_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "zinc_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_ZINC), RecipeCategory.MISC, NRRItems.ZINC_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "zinc_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_TUNGSTEN), RecipeCategory.MISC, NRRItems.TUNGSTEN_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "tungsten_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_TUNGSTEN), RecipeCategory.MISC, NRRItems.TUNGSTEN_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "tungsten_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_HAFNIUM), RecipeCategory.MISC, NRRItems.HAFNIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "hafnium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_HAFNIUM), RecipeCategory.MISC, NRRItems.HAFNIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "hafnium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_NIOBIUM), RecipeCategory.MISC, NRRItems.NIOBIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "niobium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_NIOBIUM), RecipeCategory.MISC, NRRItems.NIOBIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "niobium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_YTTRIUM), RecipeCategory.MISC, NRRItems.YTTRIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "yttrium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_YTTRIUM), RecipeCategory.MISC, NRRItems.YTTRIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "yttrium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_NEODYMIUM), RecipeCategory.MISC, NRRItems.NEODYMIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "neodymium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_NEODYMIUM), RecipeCategory.MISC, NRRItems.NEODYMIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "neodymium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_PALLADIUM), RecipeCategory.MISC, NRRItems.PALLADIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "palladium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_PALLADIUM), RecipeCategory.MISC, NRRItems.PALLADIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "palladium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_PLATINUM), RecipeCategory.MISC, NRRItems.PLATINUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "platinum_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_PLATINUM), RecipeCategory.MISC, NRRItems.PLATINUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "platinum_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_IRIDIUM), RecipeCategory.MISC, NRRItems.IRIDIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "iridium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_IRIDIUM), RecipeCategory.MISC, NRRItems.IRIDIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "iridium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.INGOTS_IRIDIUM_OXIDE), RecipeCategory.MISC, NRRItems.IRIDIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "iridium_ingot_3");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.INGOTS_IRIDIUM_OXIDE), RecipeCategory.MISC, NRRItems.IRIDIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "iridium_ingot_4");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_IRIDIUM_OXIDE), RecipeCategory.MISC, NRRItems.IRIDIUM_OXIDE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "iridium_oxide_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_IRIDIUM_OXIDE), RecipeCategory.MISC, NRRItems.IRIDIUM_OXIDE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "iridium_oxide_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_RUTHENIUM_OXIDE), RecipeCategory.MISC, NRRItems.RUTHENIUM_OXIDE_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "ruthenium_oxide_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_RUTHENIUM_OXIDE), RecipeCategory.MISC, NRRItems.RUTHENIUM_OXIDE_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "ruthenium_oxide_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_OSMIUM), RecipeCategory.MISC, NRRItems.OSMIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "osmium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_OSMIUM), RecipeCategory.MISC, NRRItems.OSMIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "osmium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_SODIUM), RecipeCategory.MISC, NRRItems.SODIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "sodium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_SODIUM), RecipeCategory.MISC, NRRItems.SODIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "sodium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_POTASSIUM), RecipeCategory.MISC, NRRItems.POTASSIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "potassium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_POTASSIUM), RecipeCategory.MISC, NRRItems.POTASSIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "potassium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_CALCIUM), RecipeCategory.MISC, NRRItems.CALCIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "calcium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_CALCIUM), RecipeCategory.MISC, NRRItems.CALCIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "calcium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_STRONTIUM), RecipeCategory.MISC, NRRItems.STRONTIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "strontium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_STRONTIUM), RecipeCategory.MISC, NRRItems.STRONTIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "strontium_ingot_2");
+        SimpleCookingRecipeBuilder
+                .smelting(Ingredient.of(CTags.Items.DUSTS_BARIUM), RecipeCategory.MISC, NRRItems.BARIUM_INGOT.get(), 0.3F, 200)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "barium_ingot_1");
+        SimpleCookingRecipeBuilder
+                .blasting(Ingredient.of(CTags.Items.DUSTS_BARIUM), RecipeCategory.MISC, NRRItems.BARIUM_INGOT.get(), 0.3F, 100)
+                .unlockedBy("default", has(ItemTags.LOGS))
+                .save(recipeOutput, "barium_ingot_2");
+        SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(CTags.Items.DUSTS_RHODOCHROSITE), RecipeCategory.MISC, NRRItems.MANGANESE_OXIDE_DUST.get(), 0.3F, 200)
                 .unlockedBy("default", has(ItemTags.LOGS))
                 .save(recipeOutput, "manganese_oxide_dust_1");
@@ -846,7 +1086,7 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .baseProcessPower(20)
                 .baseProcessTime(400)
                 .output(new ItemStack(Items.PRISMARINE_CRYSTALS, 1))
-                .save(recipeOutput, "prismarine_crystals");
+                .save(recipeOutput, "prismarine_crystals_1");
         ManufactoryRecipeBuilder.builder()
                 .input(Ingredient.of(Tags.Items.COBBLESTONES), 1)
                 .baseProcessPower(20)
@@ -889,6 +1129,24 @@ public class NRRRecipeProvider extends RecipeProvider implements IConditionBuild
                 .baseProcessTime(200)
                 .output(new ItemStack(Items.WARPED_FUNGUS, 9))
                 .save(recipeOutput, "warped_fungus");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.GILDED_BLACKSTONE), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(400)
+                .output(new ItemStack(Items.GOLD_NUGGET, 6))
+                .save(recipeOutput, "gold_nugget");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.SEA_LANTERN), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(400)
+                .output(new ItemStack(Items.PRISMARINE_CRYSTALS, 9))
+                .save(recipeOutput, "prismarine_crystals_2");
+        ManufactoryRecipeBuilder.builder()
+                .input(Ingredient.of(Items.MAGMA_BLOCK), 1)
+                .baseProcessPower(20)
+                .baseProcessTime(200)
+                .output(new ItemStack(Items.MAGMA_CREAM, 4))
+                .save(recipeOutput, "magma_cream");
         ManufactoryRecipeBuilder.builder()
                 .input(Ingredient.of(Items.AMETHYST_BLOCK), 1)
                 .baseProcessPower(20)

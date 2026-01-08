@@ -31,9 +31,7 @@ public record ManufactoryRecipe(Ingredient input, int inputCount, int baseProces
 
     @Override
     public boolean matches(@NotNull ManufactoryRecipeInput manufactoryRecipeInput, @NotNull Level level) {
-        if (level.isClientSide()) {
-            return false;
-        }
+        if (level.isClientSide()) return false;
         return input.test(manufactoryRecipeInput.getItem(0));
     }
 

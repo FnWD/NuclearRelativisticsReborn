@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 200,
+  "input": {
+    "item": "minecraft:magma_block"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 4,
+    "id": "minecraft:magma_cream"
+  }
+}

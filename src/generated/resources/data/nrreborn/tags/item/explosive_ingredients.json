@@ -4,7 +4,15 @@
     "#c:ingots/lithium_6",
     "#c:ingots/lithium_7",
     "#c:dusts/lithium",
+    "#c:ingots/sodium",
     "#c:ingots/sodium_22",
-    "#c:ingots/caesium_137"
+    "#c:dusts/sodium",
+    "#c:ingots/potassium",
+    "#c:dusts/potassium",
+    "#c:ingots/rubidium",
+    "#c:dusts/rubidium",
+    "#c:ingots/caesium",
+    "#c:ingots/caesium_137",
+    "#c:dusts/caesium"
   ]
 }

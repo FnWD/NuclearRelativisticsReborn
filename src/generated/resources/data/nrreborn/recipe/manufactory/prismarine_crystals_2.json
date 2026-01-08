@@ -1,0 +1,13 @@
+{
+  "type": "nrreborn:manufactory",
+  "base_process_power": 20,
+  "base_process_time": 400,
+  "input": {
+    "item": "minecraft:sea_lantern"
+  },
+  "input_count": 1,
+  "output": {
+    "count": 9,
+    "id": "minecraft:prismarine_crystals"
+  }
+}

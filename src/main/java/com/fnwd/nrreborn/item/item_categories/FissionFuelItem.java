@@ -1,6 +1,6 @@
 package com.fnwd.nrreborn.item.item_categories;
 
-import com.fnwd.nrreborn.util.GUIUtils;
+import com.fnwd.nrreborn.util.MathUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,9 +27,21 @@ public class FissionFuelItem extends Item {
         tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_process_time").withColor(11184810)
                 .append(baseProcessTime + " t"));
         tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_generation_rate").withColor(11184810)
-                .append(GUIUtils.formatNumber(baseGenerationRate.getAsDouble(), 1) + " FE/t"));
+                .append(MathUtils.formatNumber(baseGenerationRate.getAsDouble(), 1) + " FE/t"));
         tooltipComponents.add(Component.translatable("tooltip.nrreborn.fuel_base_heat_generation").withColor(11184810)
-                .append(GUIUtils.formatNumber(baseHeatGeneration, 1) + " H/t"));
+                .append(MathUtils.formatNumber(baseHeatGeneration, 1) + " H/t"));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    }
+
+    public int getBaseProcessTime() {
+        return baseProcessTime;
+    }
+
+    public double getBaseGenerationRate() {
+        return baseGenerationRate.getAsDouble();
+    }
+
+    public double getBaseHeatGeneration() {
+        return baseHeatGeneration;
     }
 }

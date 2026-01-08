@@ -127,11 +127,57 @@ public class NRRBlocks {
     public static final DeferredBlock<LiquidBlock> DEUTERIUM_BLOCK = registerFluidBlock(
             "deuterium", () -> new LiquidBlock(NRRFluids.DEUTERIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
     public static final DeferredBlock<LiquidBlock> TRITIUM_BLOCK = registerFluidBlock(
-            "tritium", () -> new LiquidBlock(NRRFluids.TRITIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+            "tritium", () -> new LiquidBlock(NRRFluids.TRITIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).lightLevel(block -> 3)));
     public static final DeferredBlock<LiquidBlock> HELIUM_BLOCK = registerFluidBlock(
             "helium", () -> new LiquidBlock(NRRFluids.HELIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
     public static final DeferredBlock<LiquidBlock> HELIUM_3_BLOCK = registerFluidBlock(
             "helium_3", () -> new LiquidBlock(NRRFluids.HELIUM_3_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> CARBON_DIOXIDE_BLOCK = registerFluidBlock(
+            "carbon_dioxide", () -> new LiquidBlock(NRRFluids.CARBON_DIOXIDE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> CARBON_MONOXIDE_BLOCK = registerFluidBlock(
+            "carbon_monoxide", () -> new LiquidBlock(NRRFluids.CARBON_MONOXIDE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> AMMONIA_BLOCK = registerFluidBlock(
+            "ammonia", () -> new LiquidBlock(NRRFluids.AMMONIA_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> SULFUR_DIOXIDE_BLOCK = registerFluidBlock(
+            "sulfur_dioxide", () -> new LiquidBlock(NRRFluids.SULFUR_DIOXIDE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> SULFUR_TRIOXIDE_BLOCK = registerFluidBlock(
+            "sulfur_trioxide", () -> new LiquidBlock(NRRFluids.SULFUR_TRIOXIDE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> ETHYLENE_BLOCK = registerFluidBlock(
+            "ethylene", () -> new LiquidBlock(NRRFluids.ETHYLENE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> DIBORANE_BLOCK = registerFluidBlock(
+            "diborane", () -> new LiquidBlock(NRRFluids.DIBORANE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> OXYGEN_DIFLUORIDE_BLOCK = registerFluidBlock(
+            "oxygen_difluoride", () -> new LiquidBlock(NRRFluids.OXYGEN_DIFLUORIDE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> FLUOROMETHANE_BLOCK = registerFluidBlock(
+            "fluoromethane", () -> new LiquidBlock(NRRFluids.FLUOROMETHANE_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> LIQUID_NITROGEN_BLOCK = registerFluidBlock(
+            "liquid_nitrogen", () -> new LiquidBlock(NRRFluids.LIQUID_NITROGEN_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> LIQUID_HELIUM_BLOCK = registerFluidBlock(
+            "liquid_helium", () -> new LiquidBlock(NRRFluids.LIQUID_HELIUM_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> METHANOL_BLOCK = registerFluidBlock(
+            "methanol", () -> new LiquidBlock(NRRFluids.METHANOL_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> ETHANOL_BLOCK = registerFluidBlock(
+            "ethanol", () -> new LiquidBlock(NRRFluids.ETHANOL_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> SULFURIC_ACID_BLOCK = registerFluidBlock(
+            "sulfuric_acid", () -> new LiquidBlock(NRRFluids.SULFURIC_ACID_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> BORIC_ACID_BLOCK = registerFluidBlock(
+            "boric_acid", () -> new LiquidBlock(NRRFluids.BORIC_ACID_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> BORAX_SOLUTION_BLOCK = registerFluidBlock(
+            "borax_solution", () -> new LiquidBlock(NRRFluids.BORAX_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> CALCIUM_SULFATE_SOLUTION_BLOCK = registerFluidBlock(
+            "calcium_sulfate_solution", () -> new LiquidBlock(NRRFluids.CALCIUM_SULFATE_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> SODIUM_FLUORIDE_SOLUTION_BLOCK = registerFluidBlock(
+            "sodium_fluoride_solution", () -> new LiquidBlock(NRRFluids.SODIUM_FLUORIDE_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> POTASSIUM_FLUORIDE_SOLUTION_BLOCK = registerFluidBlock(
+            "potassium_fluoride_solution", () -> new LiquidBlock(NRRFluids.POTASSIUM_FLUORIDE_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> SODIUM_HYDROXIDE_SOLUTION_BLOCK = registerFluidBlock(
+            "sodium_hydroxide_solution", () -> new LiquidBlock(NRRFluids.SODIUM_HYDROXIDE_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> POTASSIUM_HYDROXIDE_SOLUTION_BLOCK = registerFluidBlock(
+            "potassium_hydroxide_solution", () -> new LiquidBlock(NRRFluids.POTASSIUM_HYDROXIDE_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> FLUORITE_WATER_BLOCK = registerFluidBlock(
+            "fluorite_water", () -> new LiquidBlock(NRRFluids.FLUORITE_WATER_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredBlock<LiquidBlock> BORON_NITRIDE_SOLUTION_BLOCK = registerFluidBlock(
+            "boron_nitride_solution", () -> new LiquidBlock(NRRFluids.BORON_NITRIDE_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
     public static final DeferredBlock<Block> MANUFACTORY = registerBlock(
             "manufactory", () -> new ManufactoryBlock(BlockBehaviour.Properties.of()
                     .requiresCorrectToolForDrops()

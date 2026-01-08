@@ -1,6 +1,6 @@
 package com.fnwd.nrreborn.multiblock.fission_reactor;
 
-import com.fnwd.nrreborn.util.NRRTags;
+import com.fnwd.nrreborn.util.tag.NRRTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;

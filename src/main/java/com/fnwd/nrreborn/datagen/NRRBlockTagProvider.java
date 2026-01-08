@@ -2,7 +2,7 @@ package com.fnwd.nrreborn.datagen;
 
 import com.fnwd.nrreborn.NuclearRelativisticsReborn;
 import com.fnwd.nrreborn.block.NRRBlocks;
-import com.fnwd.nrreborn.util.CTags;
+import com.fnwd.nrreborn.util.tag.CTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;

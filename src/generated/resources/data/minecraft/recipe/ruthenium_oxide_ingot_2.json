@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "ingredient": {
+    "tag": "c:dusts/ruthenium_oxide"
+  },
+  "result": {
+    "count": 1,
+    "id": "nrreborn:ruthenium_oxide_ingot"
+  }
+}

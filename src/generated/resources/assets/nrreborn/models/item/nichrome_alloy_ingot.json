@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nrreborn:item/nichrome_alloy_ingot"
+  }
+}

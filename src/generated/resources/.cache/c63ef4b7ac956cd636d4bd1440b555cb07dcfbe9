@@ -1,9 +1,32 @@
-// 1.21.1	2025-09-27T16:54:29.4182983	Tags for minecraft:fluid mod id nrreborn
+// 1.21.1	2025-10-02T09:03:45.1882928	Tags for minecraft:fluid mod id nrreborn
+6a97e3dfe4561ee481110371b3af1a2b1fcea5f0 data/c/tags/fluid/ammonia.json
+e10546cc21e323a3260529babaa573d573bb2eb3 data/c/tags/fluid/borax_solution.json
+d41db27dca9d20785ee02ad2af9e102dbc4882f1 data/c/tags/fluid/boric_acid.json
+88003d7e299eab3d4b9634bf80369b47a30461cb data/c/tags/fluid/boron_nitride_solution.json
+12bc177a59bdeb68047e555b450813057443372e data/c/tags/fluid/calcium_sulfate_solution.json
+6366d21126d2632bd4384dd50595119fe65da9dc data/c/tags/fluid/carbon_dioxide.json
+0c8384cad6206568c453ecd38e64e1207737438f data/c/tags/fluid/carbon_monoxide.json
 92e5481e11e24eea23eb3f93bb5d5f1a2b20cf23 data/c/tags/fluid/deuterium.json
+4a53a27914c25d87559259bdb3ddaa882d5d26bd data/c/tags/fluid/diborane.json
+5d7f436c5c1d0f543144f43634ecf34f35acc965 data/c/tags/fluid/ethanol.json
+74aeef6611fe1b256f81176e1561eb3f94b5d441 data/c/tags/fluid/ethylene.json
 b8b0ae3fa0cabcb6850ca852e35824208945c5fc data/c/tags/fluid/fluorine.json
+6b1577d9d3e6227ebd97cf5efe07da394f35ff35 data/c/tags/fluid/fluorite_water.json
+f04082225673b4f22bda847d2948c8ac20002a04 data/c/tags/fluid/fluoromethane.json
 9b466050a98e4dfa99b70501ad47f602b0e6f083 data/c/tags/fluid/helium.json
 c635beae456c800dd7d94fd614efe4d3cba23dac data/c/tags/fluid/helium_3.json
 1eb22e7a30db5bad898f2dae611ebee48d86f3c5 data/c/tags/fluid/hydrogen.json
+fb4f21f4ea2fba4e5dec35d1e6831137eecbec6f data/c/tags/fluid/liquid_helium.json
+c2d1d1fdf6a32c3dd2d3ca918197bdfacfc7f5e0 data/c/tags/fluid/liquid_nitrogen.json
+7946d367ef7dfb291d541a3a5b8fbae21b25f620 data/c/tags/fluid/methanol.json
 1fbf8c69f7c65ef1d75b93444a4606f85f80280f data/c/tags/fluid/nitrogen.json
 2397d8aa4a64c3a5530555f4a76297c7fd7f3eaa data/c/tags/fluid/oxygen.json
+43de392f5a9ea496665313fea8ac88f10ed20631 data/c/tags/fluid/oxygen_difluoride.json
+d85ee49cde6d327893ed20509b05c95d236bcd3c data/c/tags/fluid/potassium_fluoride_solution.json
+f22ed28f52069bfc70c87105aecd70936c86abc9 data/c/tags/fluid/potassium_hydroxide_solution.json
+e3bc560e6111a7e7d639d785a748ffb00acd3db1 data/c/tags/fluid/sodium_fluoride_solution.json
+8c990fe57ee70909ed8d524bc34b29d5d6deda25 data/c/tags/fluid/sodium_hydroxide_solution.json
+11ec6c2fb90a260c1818303c34d239509f6d1cc4 data/c/tags/fluid/sulfuric_acid.json
+4839338e1d593992968a39608428f8cbac976775 data/c/tags/fluid/sulfur_dioxide.json
+2b12d24041736e42448131dd7f5f659c67b4c04c data/c/tags/fluid/sulfur_trioxide.json
 22e41fa4e5abb8267af54a1f7b88a4b9b931f13b data/c/tags/fluid/tritium.json
